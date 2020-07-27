@@ -63,11 +63,52 @@ android:fitsSystemWindows="true">
         android:layout_height="?actionBarSize" >
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:src="@drawable/chakri_beta"
-            android:layout_marginStart="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/hamburber_menu"
+            android:backgroundTint="@color/colorWhite"
+
+
             />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:src="@drawable/chakri_beta"
+            android:layout_marginStart="50dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:src="@drawable/likes"
+                android:padding="5dp"
+                android:background="@drawable/group"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_baseline_bookmark_border_24"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/group"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:src="@drawable/share"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/group"/>
+        </LinearLayout>
 
 
     </com.google.android.material.appbar.MaterialToolbar>
