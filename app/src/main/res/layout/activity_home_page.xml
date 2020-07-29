@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorAppBackground"
+    tools:context=".home_page">
+   <LinearLayout
+       android:fitsSystemWindows="true"
+       android:focusableInTouchMode="false"
+       android:descendantFocusability="blocksDescendants"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <include layout="@layout/app_bar_home_page"/>
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="wrap_content"
+           android:text="সর্বশেষ আপডেট"
+           android:layout_marginTop="10dp"
+           android:drawableStart="@drawable/clock"
+           android:drawablePadding="-3dp"
+           android:padding="4dp"
+           android:textColor="@color/colorWhite"
+           android:textSize="16sp"
+           android:background="@drawable/one_sided_curve"
+           android:layout_height="wrap_content" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/latestData"
+           android:layout_width="match_parent"
+           tools:listitem="@layout/row_post"
+           android:nestedScrollingEnabled="false"
+           android:layout_marginTop="@dimen/_5sdp"
+           android:layout_height="wrap_content"/>
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="wrap_content"
+           android:text="সর্বশেষ সার্কুলার"
+           android:layout_marginTop="10dp"
+           android:drawableStart="@drawable/clock"
+           android:drawablePadding="-3dp"
+           android:padding="4dp"
+           android:textColor="@color/colorWhite"
+           android:textSize="16sp"
+           android:background="@drawable/one_sided_curve"
+           android:layout_height="wrap_content" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/latestJobPrep"
+           android:layout_width="match_parent"
+           tools:listitem="@layout/row_post"
+           android:layout_marginTop="@dimen/_5sdp"
+           android:layout_height="wrap_content"/>
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="wrap_content"
+           android:text="সর্বশেষ চাকরির প্রস্তুতি"
+           android:layout_marginTop="10dp"
+           android:drawableStart="@drawable/clock"
+           android:padding="2dp"
+           android:textColor="@color/colorWhite"
+           android:textSize="16sp"
+           android:background="@drawable/one_sided_curve"
+           android:layout_height="wrap_content" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/latestCircular"
+           android:layout_width="match_parent"
+           tools:listitem="@layout/row_post"
+           android:layout_marginTop="@dimen/_5sdp"
+           android:layout_height="wrap_content"/>
+   </LinearLayout>
+</androidx.core.widget.NestedScrollView>
