@@ -78,7 +78,8 @@ android:background="#2471A3">
 
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chip_top"
+            android:id="@+id/best_job_circular"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/kalpurush"
@@ -92,6 +93,7 @@ android:background="#2471A3">
             android:orientation="horizontal" >
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/job_category_id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -105,6 +107,7 @@ android:background="#2471A3">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="4dp"
+                android:id="@+id/job_prep"
                 app:chipBackgroundColor="@color/colorAccent"
                 android:fontFamily="@font/kalpurush"
                 app:chipIcon="@mipmap/category_drawable"
@@ -116,7 +119,7 @@ android:background="#2471A3">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/kalpurush"
-
+            android:id="@+id/running_job_notice_result"
             app:chipIcon="@mipmap/category_drawable"
             app:chipBackgroundColor="@color/colorAccent"
             android:text="চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট দেখুন"/>
