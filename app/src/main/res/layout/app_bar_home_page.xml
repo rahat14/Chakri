@@ -83,7 +83,7 @@ android:background="#2471A3">
             android:backgroundTint="#1A577F"
             android:textAppearance="@style/chip_text_style"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/colorAccent"
             android:textColor="@color/white"
             android:text="🔥বাছাইকৃত বেস্ট ২০০০+ চাকরির বিজ্ঞপ্তি🔥"/>
@@ -97,7 +97,7 @@ android:background="#2471A3">
             <com.google.android.material.chip.Chip
                 android:id="@+id/job_category_id"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_45sdp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#1A577F"
                 android:textColor="@color/white"
                 android:textAppearance="@style/chip_text_style"
@@ -107,7 +107,7 @@ android:background="#2471A3">
 
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_45sdp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#1A577F"
                 android:textColor="@color/white"
                 android:layout_marginStart="4dp"
@@ -121,7 +121,7 @@ android:background="#2471A3">
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/kalpurush"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
