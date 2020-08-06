@@ -39,40 +39,7 @@
                     android:orientation="horizontal"
                     android:weightSum="3">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        app:cardCornerRadius="8dp">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
-                                android:layout_gravity="center"
-                                android:background="@mipmap/home_back"
-                                android:padding="16dp"
-                                android:src="@mipmap/tip" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:gravity="center_vertical|center"
-                                android:maxLines="2"
-                                android:minLines="2"
-                                android:text="বিসিএস স্পেশাল"
-                                android:textColor="@color/colorBlack" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
@@ -109,6 +76,40 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_gravity="center"
+                                android:background="@mipmap/home_back"
+                                android:padding="16dp"
+                                android:src="@mipmap/tip" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical|center"
+                                android:maxLines="2"
+                                android:minLines="2"
+                                android:text="বিসিএস স্পেশাল"
+                                android:textColor="@color/colorBlack" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -519,7 +520,7 @@
                                 android:gravity="center_vertical|center"
                                 android:maxLines="2"
                                 android:minLines="2"
-                                android:text="বাস্তব ঘটনায় প্রেরণা"
+                                android:text="অনুপ্রেরণা"
                                 android:textColor="@color/colorBlack" />
 
                         </LinearLayout>

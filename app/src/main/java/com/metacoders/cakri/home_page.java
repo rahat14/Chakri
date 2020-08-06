@@ -21,15 +21,15 @@ public class home_page extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         latestCircular = findViewById(R.id.latestCircular) ;
-        latestUpdate= findViewById(R.id.latestData) ;
+
         latestJobPrep = findViewById(R.id.latestJobPrep) ;
 
         latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
-        latestUpdate.setLayoutManager(new LinearLayoutManager(this));
+//        latestUpdate.setLayoutManager(new LinearLayoutManager(this));
         latestCircular.setLayoutManager(new LinearLayoutManager(this));
 
 
-        latestUpdate.setAdapter(new listAdapter(this));
+     //   latestUpdate.setAdapter(new listAdapter(this));
         latestJobPrep.setAdapter(new listAdapter(this));
         latestCircular.setAdapter(new listAdapter(this));
 

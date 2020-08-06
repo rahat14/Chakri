@@ -79,50 +79,57 @@ android:background="#2471A3">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/best_job_circular"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/kalpurush"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#1A577F"
+            android:textAppearance="@style/chip_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             app:chipBackgroundColor="@color/colorAccent"
-            app:chipIcon="@mipmap/category_drawable"
-            android:text="বাছাইকৃত বেষ্ট ১০০০+ পদে চাকরির বিজ্ঞপ্তি দেখুন"/>
+            android:textColor="@color/white"
+            android:text="🔥বাছাইকৃত বেস্ট ২০০০+ চাকরির বিজ্ঞপ্তি🔥"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="horizontal" >
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/job_category_id"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:backgroundTint="#1A577F"
+                android:textColor="@color/white"
+                android:textAppearance="@style/chip_text_style"
                 app:chipBackgroundColor="@color/colorAccent"
                 android:fontFamily="@font/kalpurush"
-                app:chipIcon="@mipmap/category_drawable"
-                android:text="চাকরির ক্যাটাগরী দেখুন"/>
+                android:text="💼চাকরির ক্যাটাগরী "/>
 
             <com.google.android.material.chip.Chip
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:backgroundTint="#1A577F"
+                android:textColor="@color/white"
                 android:layout_marginStart="4dp"
+                android:textAppearance="@style/chip_text_style"
                 android:id="@+id/job_prep"
                 app:chipBackgroundColor="@color/colorAccent"
                 android:fontFamily="@font/kalpurush"
-                app:chipIcon="@mipmap/category_drawable"
-                android:text="চাকরির প্রস্তুতি "/>
+                android:text="📚চাকরির প্রস্তুতি "/>
 
         </LinearLayout>
 
         <com.google.android.material.chip.Chip
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:fontFamily="@font/kalpurush"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#1A577F"
+            android:textAppearance="@style/chip_text_style"
             android:id="@+id/running_job_notice_result"
-            app:chipIcon="@mipmap/category_drawable"
             app:chipBackgroundColor="@color/colorAccent"
-            android:text="চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট দেখুন"/>
+            android:text="📌চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট"/>
 
     </LinearLayout>
 

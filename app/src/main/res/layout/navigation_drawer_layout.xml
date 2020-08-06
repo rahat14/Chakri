@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/drawer_background"
+        android:fitsSystemWindows="true"
+
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarFadeDuration="20000"
+            android:scrollbarSize="@dimen/_3sdp"
+            android:scrollbarThumbVertical="@color/whiteTrans"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <include layout="@layout/nav_header_home" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="বিসিএস মডেল টেস্ট       "
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/list"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:drawableStart="@drawable/list"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:text="ব্যাংক মডেল টেস্ট          "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="বয়স গণনা করুন             "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/cal"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="আবেদন ও সিভি তৈরি      "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/cv"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="চাকরির প্রশ্ন জিজ্ঞাসা      "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/qustion"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="নোটিফিকেশন                 "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/notificaiton_image"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_150sdp"
+                    android:text="অ্যাপ সম্পর্কিত     "
+                    android:drawableStart="@drawable/app_related"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#3480B1"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="আমাদের শর্তাবলী          "
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/rules"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="চেক ফর আপডেট          "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/check_for_update"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="অ্যাপ এর সমস্যা জানান  "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/error"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/_170sdp"
+                    android:text="আমাদের পরিচিতি           "
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/we"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:background="@drawable/one_sided_curve"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </com.google.android.material.navigation.NavigationView>
