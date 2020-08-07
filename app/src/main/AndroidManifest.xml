@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PostDetailActivity"></activity>
-        <activity android:name=".Bank_job_special">
+        <activity android:name=".bcsSpecialPage"></activity>
+        <activity android:name=".PostDetailActivity" />
+        <activity android:name=".Bank_job_special"></activity>
+        <activity android:name=".Master_List_Page" />
+        <activity android:name=".Runinng_Exam_notice_and_result_page" />
+        <activity android:name=".JobCategoryPage" />
+        <activity android:name=".home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Master_List_Page" />
-        <activity android:name=".Runinng_Exam_notice_and_result_page" />
-        <activity android:name=".JobCategoryPage" />
-        <activity android:name=".home_page"></activity>
         <activity android:name=".SplashScreen" />
         <activity android:name=".Job_prep_page" />
     </application>

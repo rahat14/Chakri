@@ -32,6 +32,7 @@
                 android:ellipsize="marquee"
                 android:marqueeRepeatLimit ="marquee_forever"
                 android:focusable="true"
+                android:textSize="17.5sp"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite" />
 

@@ -1,19 +1,25 @@
 package com.metacoders.cakri;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.metacoders.cakri.Adapter.listAdapter;
 
 public class home_page extends AppCompatActivity {
 
 
     RecyclerView latestUpdate , latestCircular , latestJobPrep ;
+    DrawerLayout drawerLayout ;
+    ImageView hamburger_Btn  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,8 @@ public class home_page extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         latestCircular = findViewById(R.id.latestCircular) ;
-
+        drawerLayout = findViewById(R.id.drawer_layout) ;
+        hamburger_Btn = findViewById(R.id.hamburgerBtn);
         latestJobPrep = findViewById(R.id.latestJobPrep) ;
 
         latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
@@ -32,6 +39,19 @@ public class home_page extends AppCompatActivity {
      //   latestUpdate.setAdapter(new listAdapter(this));
         latestJobPrep.setAdapter(new listAdapter(this));
         latestCircular.setAdapter(new listAdapter(this));
+
+
+        hamburger_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                }
+            }
+        });
 
         findViewById(R.id.job_category_id).setOnClickListener(new View.OnClickListener() {
             @Override
