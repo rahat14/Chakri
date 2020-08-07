@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bcsSpecialPage"></activity>
+        <activity android:name=".jobCircularCategory"></activity>
+        <activity android:name=".Adapter.allJobSolution" />
+        <activity android:name=".bcsSpecialPage" />
         <activity android:name=".PostDetailActivity" />
-        <activity android:name=".Bank_job_special"></activity>
+        <activity android:name=".Bank_job_special" />
         <activity android:name=".Master_List_Page" />
         <activity android:name=".Runinng_Exam_notice_and_result_page" />
-        <activity android:name=".JobCategoryPage" />
+        <activity android:name=".qus_bank_bcs_govt_list_page" />
         <activity android:name=".home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

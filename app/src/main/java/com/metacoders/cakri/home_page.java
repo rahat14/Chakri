@@ -57,7 +57,7 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , JobCategoryPage.class);
+                Intent p = new Intent(getApplicationContext() , jobCircularCategory.class);
                 startActivity(p);
 
             }

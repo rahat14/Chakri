@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorAppBackground"
-    tools:context=".JobCategoryPage">
-    <include layout="@layout/app_bar"/>
+    tools:context=".qus_bank_bcs_govt_list_page">
+    <include layout="@layout/app_bar_main"/>
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/categoryList"

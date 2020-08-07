@@ -8,8 +8,8 @@ android {
         applicationId "com.metacoders.cakri"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0-App Demo"
+        versionCode 2
+        versionName "1.1-App Demo"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

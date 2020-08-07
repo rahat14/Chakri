@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.metacoders.cakri.Adapter.allJobSolution;
+
 public class Job_prep_page extends AppCompatActivity {
 
-    CardView job_prep_card  , bcs_special ;
+    CardView job_prep_card  , bcs_special  , all_Job_solution , Bcs ;
+
     Intent  nextPage  ;
 
 
@@ -38,11 +41,25 @@ public class Job_prep_page extends AppCompatActivity {
                 startActivity(nextPage);
             }
         });
+
+
+        all_Job_solution.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                nextPage = new Intent(getApplicationContext() , allJobSolution.class);
+                startActivity(nextPage);
+            }
+        });
+
     }
 
     private void setUpView() {
         job_prep_card = findViewById(R.id.bankJobPrep) ;
         bcs_special = findViewById(R.id.bcs_special);
+        all_Job_solution = findViewById(R.id.allJobSolution) ;
+
 
     }
 

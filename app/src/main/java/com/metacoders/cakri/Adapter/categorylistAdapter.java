@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,14 +16,15 @@ public  class categorylistAdapter extends RecyclerView.Adapter<categorylistAdapt
 
 private LayoutInflater mInflater;
         Context context;
+    boolean hideIcon = false ;
 
-public categorylistAdapter(Context context) {
-        this.mInflater = LayoutInflater.from(context);
 
+    public categorylistAdapter(Context context, boolean hideIcon) {
         this.context = context;
-        }
+        this.hideIcon = hideIcon;
+    }
 
-@Override
+    @Override
 public categorylistAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.row_category
         , parent, false);
@@ -31,6 +33,12 @@ public categorylistAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int v
 
 @Override
 public void onBindViewHolder(categorylistAdapter.ViewHolder holder, int position) {
+
+        if(hideIcon){
+
+            holder.title.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);;
+        }
+
 
 
         }
@@ -43,9 +51,13 @@ public int getItemCount() {
 public class ViewHolder extends RecyclerView.ViewHolder {
     public ImageView imageView;
     public CardView container;
+    public  TextView title ;
+
 
     public ViewHolder(View itemView) {
         super(itemView);
+
+        title = itemView.findViewById(R.id.heading_text);
 
 
     }

@@ -14,7 +14,8 @@
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_70sdp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/chakri_beta_big" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/header_logo" />
 
     <EditText
         android:id="@+id/search_ed"

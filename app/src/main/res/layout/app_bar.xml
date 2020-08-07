@@ -81,9 +81,9 @@ android:fitsSystemWindows="true">
             />
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:src="@drawable/chakri_beta"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:background="@drawable/header_logo"
             android:layout_marginStart="50dp"
             />
 
