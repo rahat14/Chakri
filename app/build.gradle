@@ -34,5 +34,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     //sp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-
+    // circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

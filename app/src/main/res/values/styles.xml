@@ -12,6 +12,9 @@
         parent="TextAppearance.MaterialComponents.Chip">
         <item name="android:textSize">18sp</item>
 
-    </style>>
+
+    </style>
+
+
 
 </resources>
