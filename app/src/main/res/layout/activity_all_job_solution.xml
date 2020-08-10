@@ -16,7 +16,7 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/app_bar_main"/>
+            <include layout="@layout/app_bar"/>
 
             <View
                 android:layout_width="match_parent"

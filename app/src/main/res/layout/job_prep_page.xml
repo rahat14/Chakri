@@ -244,8 +244,9 @@
                                 android:layout_height="64dp"
                                 android:layout_gravity="center"
                                 android:background="@mipmap/home_back"
+                                android:src="@drawable/teacher"
                                 android:padding="16dp"
-                                android:src="@mipmap/sadharon_gyan_icon" />
+                                />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -254,7 +255,7 @@
                                 android:gravity="center_vertical|center"
                                 android:maxLines="2"
                                 android:minLines="2"
-                                android:text="সাধারণ জ্ঞান প্রশ্ন ব্যাংক"
+                                android:text="শিক্ষক নিয়োগ প্রস্তুতি"
                                 android:textColor="@color/colorBlack" />
 
                         </LinearLayout>

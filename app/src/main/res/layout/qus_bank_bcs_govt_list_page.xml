@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/colorAppBackground"
     tools:context=".qus_bank_bcs_govt_list_page">
-    <include layout="@layout/app_bar_main"/>
+    <include layout="@layout/app_bar"/>
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/categoryList"

@@ -8,9 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/heading_text"
@@ -19,7 +19,9 @@
             android:fontFamily="@font/kalpurush"
             android:text="বাসায় বসে নিজেই নিজের মোবাইল থেকে সহজেই আবেদন করার নিয়ম শিখে নিন!"
             android:textColor="@color/colorBlack"
-            android:textSize="18sp"
+            android:textSize="17sp"
+            android:maxLines="2"
+            android:minLines="2"
             android:textStyle="bold" />
 
         <TextView

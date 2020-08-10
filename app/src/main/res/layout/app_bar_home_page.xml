@@ -8,7 +8,9 @@ android:layout_height="wrap_content"
 android:orientation="vertical"
 android:background="#2471A3">
 
+
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#2471A3">
@@ -19,15 +21,41 @@ android:background="#2471A3">
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/hamburber_menu"
-            android:backgroundTint="@color/colorWhite"
-            />
+            android:backgroundTint="@color/colorWhite" />
 
-        <ImageView
-            android:layout_width="170dp"
-            android:layout_height="65dp"
-            android:background="@drawable/header_logo"
-            android:layout_marginStart="50dp"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="170dp"-->
+<!--            android:layout_height="65dp"-->
+<!--            android:layout_marginStart="@dimen/_30sdp"-->
+<!--            android:background="@drawable/header_logo" />-->
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/te"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:text="@string/header_eng_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#25A2F2"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/te"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:text="চাকরির সবকিছু"/>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,7 +91,6 @@ android:background="#2471A3">
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-
     <LinearLayout
         android:id="@+id/title_conantainer"
         android:layout_width="match_parent"
@@ -72,7 +99,6 @@ android:background="#2471A3">
         android:layout_marginTop="4dp"
         android:background="@drawable/heading_background_upper_radius"
         android:elevation="12dp"
-        android:padding="14dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,11 +114,12 @@ android:background="#2471A3">
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/colorAccent"
             android:textColor="@color/white"
-            android:text="🔥বাছাইকৃত বেস্ট ২০০০+ চাকরির বিজ্ঞপ্তি🔥"/>
+            android:text="🔥বেস্ট ২০০০+ চাকরির বিজ্ঞপ্তি🔥"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal" >
 
@@ -104,7 +131,7 @@ android:background="#2471A3">
                 android:textColor="@color/white"
                 android:textAppearance="@style/chip_text_style"
                 app:chipBackgroundColor="@color/colorAccent"
-                android:fontFamily="@font/kalpurush"
+
                 android:text="💼চাকরির ক্যাটাগরী "/>
 
             <com.google.android.material.chip.Chip
@@ -116,22 +143,23 @@ android:background="#2471A3">
                 android:textAppearance="@style/chip_text_style"
                 android:id="@+id/job_prep"
                 app:chipBackgroundColor="@color/colorAccent"
-                android:fontFamily="@font/kalpurush"
+
                 android:text="📚চাকরির প্রস্তুতি "/>
 
         </LinearLayout>
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/running_job_notice_result"
+            style="@style/ThinnerChip"
+            android:layout_marginTop="-8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/kalpurush"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:backgroundTint="#1A577F"
+            android:text="📌চাকরি পরীক্ষার নোটিশ ও রেজাল্ট "
             android:textAppearance="@style/chip_text_style"
-            android:id="@+id/running_job_notice_result"
-            app:chipBackgroundColor="@color/colorAccent"
-            android:text="📌চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট"/>
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/colorAccent" />
 
     </LinearLayout>
 

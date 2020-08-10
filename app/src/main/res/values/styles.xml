@@ -10,7 +10,11 @@
 
     <style name="chip_text_style"
         parent="TextAppearance.MaterialComponents.Chip">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16.5sp</item>
+
+    </style>
+    <style name="ThinnerChip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipCornerRadius">12dp</item>
 
 
     </style>
