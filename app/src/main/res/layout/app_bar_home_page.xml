@@ -17,10 +17,11 @@ android:background="#2471A3">
 
         <ImageView
             android:id="@+id/hamburgerBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/hamburber_menu"
+
             android:backgroundTint="@color/colorWhite" />
 
 <!--        <ImageView-->
@@ -39,7 +40,7 @@ android:background="#2471A3">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-light"
                 android:textStyle="bold"
@@ -59,34 +60,55 @@ android:background="#2471A3">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
             android:gravity="end"
-            android:orientation="horizontal">
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            >
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="30dp"
-                android:layout_height="32dp"
-                android:background="@drawable/group"
                 android:padding="5dp"
-                android:src="@drawable/likes" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="32dp"
                 android:layout_marginStart="10dp"
-                android:background="@drawable/group"
-                android:padding="5dp"
-                android:src="@drawable/ic_baseline_bookmark_border_24" />
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/likes"
 
-            <ImageView
+                    />
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="30dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/group"
                 android:padding="5dp"
-                android:src="@drawable/share" />
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_bookmark_border_24"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="30dp"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/share"
+
+                    />
+
+            </LinearLayout>
         </LinearLayout>
 
     </com.google.android.material.appbar.MaterialToolbar>
@@ -119,7 +141,7 @@ android:background="#2471A3">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-8dp"
+            android:layout_marginTop="-10dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal" >
 
@@ -131,7 +153,6 @@ android:background="#2471A3">
                 android:textColor="@color/white"
                 android:textAppearance="@style/chip_text_style"
                 app:chipBackgroundColor="@color/colorAccent"
-
                 android:text="💼চাকরির ক্যাটাগরী "/>
 
             <com.google.android.material.chip.Chip
@@ -151,7 +172,7 @@ android:background="#2471A3">
         <com.google.android.material.chip.Chip
             android:id="@+id/running_job_notice_result"
             style="@style/ThinnerChip"
-            android:layout_marginTop="-8dp"
+            android:layout_marginTop="-10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

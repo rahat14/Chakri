@@ -60,8 +60,11 @@
         android:focusable="true"
         android:imeOptions="actionSearch"
         android:inputType="textImeMultiLine"
+        android:maxLines="1"
+        android:minLines="1"
+        android:ems="12"
         android:paddingStart="@dimen/_5sdp"
-        android:text="আমি"
+        android:text="আমি sdfaf asf"
         android:textColor="@color/colorBlack" />
 
 </RelativeLayout>

@@ -13,51 +13,100 @@
             android:background="#2471A3">
 
             <ImageView
-                android:layout_width="wrap_content"
+
                 android:id="@+id/hamburgerBtn"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/hamburber_menu"
                 android:backgroundTint="@color/colorWhite"
                 />
 
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="55dp"
-                android:background="@drawable/header_logo"
-                android:layout_marginStart="@dimen/_30sdp"
-                />
+<!--            <ImageView-->
+<!--                android:layout_width="160dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/header_logo"-->
+<!--                android:layout_marginStart="@dimen/_30sdp"-->
+<!--                />-->
 
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/te"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-light"
+                    android:textStyle="bold"
+                    android:text="@string/header_eng_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#25A2F2"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/te"
+                    android:fontFamily="sans-serif-light"
+                    android:textStyle="bold"
+                    android:text="চাকরির সবকিছু"/>
+
+            </RelativeLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
                 android:gravity="end"
-                android:orientation="horizontal">
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                >
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="30dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/group"
                     android:padding="5dp"
-                    android:src="@drawable/likes" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="32dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/group"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_baseline_bookmark_border_24" />
+                    android:background="@drawable/rounded_square"
+                    android:layout_height="32dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/likes"
 
-                <ImageView
+                        />
+
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="30dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/group"
                     android:padding="5dp"
-                    android:src="@drawable/share" />
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_square"
+                    android:layout_height="32dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_bookmark_border_24"
+
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:padding="5dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_square"
+                    android:layout_height="32dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/share"
+
+                        />
+
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.appbar.MaterialToolbar>
 
