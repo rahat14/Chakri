@@ -8,7 +8,6 @@
     android:background="@color/colorAppBackground"
     android:fitsSystemWindows="true"
     tools:context=".Job_prep_page">
-
     <include layout="@layout/app_bar"/>
 
     <androidx.core.widget.NestedScrollView
@@ -244,7 +243,7 @@
                                 android:layout_height="64dp"
                                 android:layout_gravity="center"
                                 android:background="@mipmap/home_back"
-                                android:src="@drawable/teacher"
+                                android:src="@mipmap/school"
                                 android:padding="16dp"
                                 />
 

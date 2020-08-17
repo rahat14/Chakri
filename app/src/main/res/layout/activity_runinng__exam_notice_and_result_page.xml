@@ -9,14 +9,10 @@
     android:background="@color/colorAppBackground"
     tools:context=".qus_bank_bcs_govt_list_page">
     <include layout="@layout/app_bar"/>
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
 </LinearLayout>

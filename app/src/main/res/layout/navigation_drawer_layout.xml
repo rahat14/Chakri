@@ -26,134 +26,523 @@
                 android:orientation="vertical"
                 >
                 <include layout="@layout/nav_header_home" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="বিসিএস মডেল টেস্ট       "
-                    android:layout_marginTop="5dp"
-                    android:drawableStart="@drawable/list"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="প্রতিদিনের তথ্য"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:drawableStart="@drawable/list"
-                    android:padding="8dp"
-                    android:text="ব্যাংক মডেল টেস্ট          "
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp" />
+                </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="বয়স গণনা করুন             "
-                    android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/cal"
-
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="আবেদন ও সিভি তৈরি      "
-                    android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/cv"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="চাকরির প্রশ্ন জিজ্ঞাসা      "
-                    android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/qustion"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="নোটিফিকেশন                 "
-                    android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/notificaiton_image"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_15sdp"/>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_150sdp"
-                    android:text="অ্যাপ সম্পর্কিত     "
-                    android:drawableStart="@drawable/app_related"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#3480B1"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="আমাদের শর্তাবলী          "
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/rules"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
-                    android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="চেক ফর আপডেট          "
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="বিসিএস প্রস্তুতিট"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/check_for_update"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
                     android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="অ্যাপ এর সমস্যা জানান  "
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="বিসিএস মডেল টেস্ট"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/error"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
                     android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="@dimen/_170sdp"
-                    android:text="আমাদের পরিচিতি           "
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="ব্যাংক প্রস্তুতি"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/we"
-                    android:padding="8dp"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:background="@drawable/one_sided_rounded_shape"
                     android:backgroundTint="#80ffffff"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="ব্যাংক মডেল টেস্ট"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:text="শিক্ষক নিয়োগ প্রস্তুতি"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="সাম্প্রতিক প্রশ্ন সমাধান"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="অল জব সলিউশন"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="ভাইভা অভিজ্ঞতা"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="ইন্টারভিউ টিপস"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="আবেদন ও সিভি তৈরি"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="চাকরির প্রশ্ন জিজ্ঞাসা"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="অনুপ্রেরণা"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="পরিচিতি ও শর্তাবলী"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="অ্যাপ সমস্যা ও আপডেট"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
+                        android:background="@drawable/cal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="নোটিফিকেশন"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+
 
                 <View
                     android:layout_width="match_parent"

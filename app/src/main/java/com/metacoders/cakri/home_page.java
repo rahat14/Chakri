@@ -35,7 +35,7 @@ public class home_page extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar) ;
         hamburger_Btn = findViewById(R.id.hamburgerBtn);
         latestJobPrep = findViewById(R.id.latestJobPrep) ;
-        setSupportActionBar(toolbar);
+
         latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
 //        latestUpdate.setLayoutManager(new LinearLayoutManager(this));
         latestCircular.setLayoutManager(new LinearLayoutManager(this));

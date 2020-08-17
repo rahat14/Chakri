@@ -20,7 +20,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_25sdp"/>
+                android:layout_height="15dp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"

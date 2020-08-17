@@ -13,7 +13,6 @@ android:fitsSystemWindows="true">
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     app:contentScrim="?attr/colorPrimaryDark"
-
     app:statusBarScrim="?attr/colorPrimaryDark">
 
     <LinearLayout
@@ -80,13 +79,16 @@ android:fitsSystemWindows="true">
 
             />
 
-<!--        <ImageView-->
-<!--            android:layout_width="170dp"-->
-<!--            android:layout_height="65dp"-->
-<!--            android:background="@drawable/header_logo"-->
-<!--            android:layout_marginStart="@dimen/_30sdp"-->
-<!--            />-->
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:background="@drawable/insidelogo"
+            android:layout_marginStart="@dimen/_25sdp"
+
+            />
+
         <RelativeLayout
+            android:visibility="gone"
             android:layout_width="200dp"
             android:gravity="center_horizontal"
             android:layout_height="wrap_content">
@@ -117,15 +119,15 @@ android:fitsSystemWindows="true">
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="5dp"
             android:layout_gravity="end"
             android:layout_height="wrap_content"
             >
 
             <LinearLayout
                 android:layout_width="30dp"
-                android:padding="5dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="8dp"
+                android:padding="3dp"
                 android:background="@drawable/rounded_square"
                 android:layout_height="32dp">
                 <ImageView
@@ -138,22 +140,22 @@ android:fitsSystemWindows="true">
             </LinearLayout>
             <LinearLayout
                 android:layout_width="30dp"
-                android:padding="5dp"
-                android:layout_marginStart="10dp"
+                android:padding="3dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/rounded_square"
                 android:layout_height="32dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_bookmark_border_24"
+                    android:src="@drawable/bookmark2"
 
                     />
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="30dp"
-                android:padding="5dp"
-                android:layout_marginStart="10dp"
+                android:padding="3dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/rounded_square"
                 android:layout_height="32dp">
                 <ImageView
@@ -165,7 +167,6 @@ android:fitsSystemWindows="true">
 
             </LinearLayout>
         </LinearLayout>
-
 
     </com.google.android.material.appbar.MaterialToolbar>
 
