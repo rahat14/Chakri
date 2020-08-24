@@ -24,6 +24,8 @@ public class home_page extends AppCompatActivity {
     ImageView hamburger_Btn  ;
     ActionBarDrawerToggle toggle;
     MaterialToolbar toolbar ;
+    listAdapter.ItemClickListenter itemClickListenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +38,23 @@ public class home_page extends AppCompatActivity {
         hamburger_Btn = findViewById(R.id.hamburgerBtn);
         latestJobPrep = findViewById(R.id.latestJobPrep) ;
 
+        itemClickListenter = new listAdapter.ItemClickListenter() {
+            @Override
+            public void onItemClick(View view, int pos) {
+
+                Intent p = new Intent(getApplicationContext() , PostDetailActivity.class);
+                startActivity(p);
+            }
+        };
+
         latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
 //        latestUpdate.setLayoutManager(new LinearLayoutManager(this));
         latestCircular.setLayoutManager(new LinearLayoutManager(this));
 
 
      //   latestUpdate.setAdapter(new listAdapter(this));
-        latestJobPrep.setAdapter(new listAdapter(this));
-        latestCircular.setAdapter(new listAdapter(this));
+        latestJobPrep.setAdapter(new listAdapter(this,itemClickListenter));
+        latestCircular.setAdapter(new listAdapter(this, itemClickListenter));
 //        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
 //        drawerLayout.addDrawerListener(toggle);

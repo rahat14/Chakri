@@ -35,7 +35,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/every_day"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -67,7 +67,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/target"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -82,7 +82,7 @@
                         android:gravity="center_vertical"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:text="বিসিএস প্রস্তুতিট"/>
+                        android:text="বিসিএস প্রস্তুতি"/>
 
                 </LinearLayout>
 
@@ -99,7 +99,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/bcs_list"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -163,7 +163,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/banl_model_test"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -195,7 +195,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/teacher"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -227,7 +227,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/concept"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -259,7 +259,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/book"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -291,7 +291,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/viva"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -324,7 +324,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/interview"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -357,7 +357,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/paper"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -389,7 +389,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/question"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -421,7 +421,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/fist"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -453,7 +453,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/team"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -486,7 +486,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/gears"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -519,7 +519,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/protest"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"

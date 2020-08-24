@@ -11,44 +11,56 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.metacoders.cakri.R;
 
-public  class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
+public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
 
-private LayoutInflater mInflater;
-        Context context;
+    private LayoutInflater mInflater;
+    Context context;
+    private ItemClickListenter itemClickListenter;
 
-public listAdapter(Context context) {
+    public listAdapter(Context context , ItemClickListenter itemClickListenter) {
         this.mInflater = LayoutInflater.from(context);
-
+        this.itemClickListenter = itemClickListenter  ;
         this.context = context;
-        }
+    }
 
-@Override
-public listAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.row_post
-        , parent, false);
-        return new ViewHolder(view);
-        }
+                , parent, false);
+        return new ViewHolder(view, itemClickListenter);
+    }
 
-@Override
-public void onBindViewHolder(listAdapter.ViewHolder holder, int position) {
+    public interface ItemClickListenter {
+        void onItemClick(View view, int pos);
+    }
 
-
-        }
-
-@Override
-public int getItemCount() {
-        return 5;
-        }
-
-public class ViewHolder extends RecyclerView.ViewHolder {
-    public ImageView imageView;
-    public CardView container;
-
-    public ViewHolder(View itemView) {
-        super(itemView);
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
 
 
     }
-}
+
+    @Override
+    public int getItemCount() {
+        return 5;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder  implements  RecyclerView.OnClickListener{
+        public ImageView imageView;
+        public CardView container;
+        ItemClickListenter itemClickListenter;
+
+        public ViewHolder(View itemView, ItemClickListenter itemClickListenter) {
+            super(itemView);
+
+            itemView.setOnClickListener(this );
+            this.itemClickListenter = itemClickListenter;
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickListenter.onItemClick(v, getAdapterPosition());
+        }
+    }
 }
 
