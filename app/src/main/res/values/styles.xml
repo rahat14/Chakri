@@ -19,6 +19,12 @@
 
     </style>
 
+    <style name="DialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:textColorSecondary">@color/grey</item>
+    </style>
+
 
 
 </resources>

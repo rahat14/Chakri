@@ -37,7 +37,7 @@ import com.metacoders.cakri.Adapter.listAdapter;
             }
         };
         list.setAdapter(new listAdapter(this ,itemClickListenter));
-        headerTitle.setText("বাছাইকৃত বেষ্ট ১০০০+ পদে চাকরির বিজ্ঞপ্তি দেখুন");
+        headerTitle.setText("বাছাইকৃত বেষ্ট ২০০০+ পদে চাকরির বিজ্ঞপ্তি দেখুন");
         headerTitle.setSelected(true);
     }
 }

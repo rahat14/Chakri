@@ -328,7 +328,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
 
@@ -362,7 +361,6 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_15sdp"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -389,8 +387,42 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:visibility="invisible"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="📒নৈতিকতা মূল্যবোধ ও সু-শাসন"
+                        android:layout_marginStart="@dimen/_55sdp"
+                        android:textAlignment="center"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"/>
         </LinearLayout>
 
 

@@ -131,7 +131,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/cal"
+                        android:background="@drawable/banl_model_test"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"
@@ -163,7 +163,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
-                        android:background="@drawable/banl_model_test"
+                        android:background="@drawable/cal"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:scaleType="centerCrop"

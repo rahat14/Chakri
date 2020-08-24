@@ -20,6 +20,7 @@
             android:text="জীবের মধ্যে সবচেয়ে সম্পূর্ণতা মানুষের। কিন্তু সবচেয়ে অসম্পূর্ণ হয়ে সে জন্মগ্রহণ করে। "
             android:fontFamily="@font/kalpurush"
             android:layout_margin="8dp"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_height="wrap_content"/>
 
@@ -32,20 +33,11 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:layout_height="wrap_content"/>
 
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/placeholder"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:id="@+id/desc"
             android:fontFamily="@font/kalpurush"
             android:justificationMode="inter_word"
             android:text="জীবের মধ্যে সবচেয়ে সম্পূর্ণতা মানুষের। কিন্তু সবচেয়ে অসম্পূর্ণ হয়ে সে জন্মগ্রহণ করে। বাঘ ভালুক তার জীবনযাত্রার পনেরো- আনা মূলধন নিয়ে আসে প্রকৃতির মালখানা থেকে। জীবরঙ্গভূমিতে মানুষ এসে দেখা দেয় দুই শূন্য হাতে মুঠো বেঁধে।
@@ -54,6 +46,13 @@
 
    মানুষকে দেখতে হল খুব ছোটো, কিন্তু সেটা একটা কৌশল মাত্র। এবারকার জীবযাত্রার পালায় বিপুলতাকে করা হল বহুলতায় পরিণত। মহাকায় জন্তু ছিল প্রকাণ্ড একলা, মানুষ হল দূরপ্রসারিত অনেক।এবারকার জীবযাত্রার পালায় বিপুলতাকে করা কিন্তু সেটা একটা কৌশল মাত্র। "
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/placeholder"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="match_parent"
