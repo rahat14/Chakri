@@ -8,7 +8,19 @@
     android:background="@color/colorAppBackground"
     tools:context=".Bank_job_special">
 
+    <LinearLayout
+        android:id="@+id/app_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/app_bar"/>
+    </LinearLayout>
+
+
+
     <ScrollView
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/app_bar_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -16,49 +28,18 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/app_bar"/>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="15dp"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:id="@+id/adviceBtn"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="🔥🔥পরামর্শ ও দিক নির্দেশনা🔥🔥"
-                        android:layout_gravity="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
+                android:id="@+id/subjectBtn"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
@@ -76,40 +57,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
                         android:textAlignment="center"
-                        android:text="📕 বাংলা ভাষা ও সাহিত্য"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:id="@+id/engBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📗 ইংরেজি ভাষা ও সাহিত্য"
-                        android:textAlignment="center"
+                        android:text="🌟বিষয়ভিত্তিক মডেল টেস্ট🌟"
                         android:layout_marginStart="@dimen/_55sdp"
                         android:drawablePadding="8dp"
                         android:textColor="@color/colorBlack"
@@ -126,6 +74,14 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:id="@+id/wholeBtn"
+                android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -136,13 +92,13 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/gkBtn"
+                        android:id="@+id/bdMatterBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
-                        android:text="📘 সাধারণ জ্ঞান"
+                        android:text="⚡পূর্ণাঙ্গ মডেল টেস্ট⚡"
                         android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
+                        android:layout_marginStart="@dimen/_60sdp"
                         android:drawablePadding="8dp"
                         android:textColor="@color/colorBlack"
                         android:textSize="18sp"
@@ -158,39 +114,56 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:id="@+id/math"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📙 গণিত"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
+                app:cardCornerRadius="16dp"/>
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_15sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:visibility="invisible"
+                android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -198,28 +171,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:id="@+id/ictBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📒 কম্পিউটার ও তথ্য প্রযুক্তি"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:textAlignment="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
+                    android:padding="8dp"/>
 
             </com.google.android.material.card.MaterialCardView>
 
-
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"/>
         </LinearLayout>
 
 
@@ -233,16 +191,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/bottomContainer"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_height="wrap_content">
-
-    <include layout="@layout/bottom_heading_layout"/>
-
-
-
-
-    </LinearLayout>
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

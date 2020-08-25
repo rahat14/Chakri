@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
@@ -86,6 +87,8 @@ public class home_page extends AppCompatActivity {
             }
         });
 
+        setUpSideBar();
+
         findViewById(R.id.job_category_id).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,5 +128,39 @@ public class home_page extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    public  void setUpSideBar(){
+
+        LinearLayout bcs_model_test , bank_model_test ;
+
+        bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test) ;
+        bank_model_test = drawerLayout.findViewById(R.id.bank_model_test) ;
+
+
+        bcs_model_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext() , modelTestCategory.class);
+                p.putExtra("TITLE" , "বিসিএস মডেল টেস্ট") ;
+                p.putExtra("CAT_ID" , "1") ;
+                startActivity(p);
+
+            }
+        });
+
+        bank_model_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext() , modelTestCategory.class);
+                p.putExtra("TITLE" , "ব্যাংক মডেল টেস্ট") ;
+                p.putExtra("CAT_ID" , "2") ;
+                startActivity(p);
+
+            }
+        });
+
+
     }
 }

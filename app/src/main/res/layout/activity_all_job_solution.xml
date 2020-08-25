@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
+                android:id="@+id/bcs_qustion_bank"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
@@ -38,13 +39,14 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/bcs_qustion_bank"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📒 বিসিএস প্রশ্ন ব্যাংক"
                         android:layout_gravity="center"
                         android:drawablePadding="8dp"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="📒 বিসিএস প্রশ্ন ব্যাংক"
+                        android:layout_marginStart="-9dp"
                         android:textColor="@color/colorBlack"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -58,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
+                android:id="@+id/teacher_reg_qustion_bank"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
 
@@ -69,7 +72,7 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/teacher_reg_qustion_bank"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
@@ -91,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_4sdp"
+                android:id="@+id/primary_qus_bank"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
 
@@ -102,7 +106,7 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/primary_qus_bank"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
@@ -122,6 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
+                android:id="@+id/ministry_qus_bank"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="16dp">
@@ -134,7 +139,7 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/ministry_qus_bank"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
@@ -152,7 +157,74 @@
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
+                android:id="@+id/bank_qus_bank"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="📘 ব্যাংক এক্সাম প্রশ্ন ব্যাংক"
+                        android:textAlignment="center"
+                        android:layout_marginStart="@dimen/_55sdp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gk_qus_bank"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="📘 সাধারণ জ্ঞান প্রশ্ন ব্যাংক"
+                        android:textAlignment="center"
+                        android:layout_marginStart="@dimen/_55sdp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/other_qus_bank"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -167,7 +239,7 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/other_qus_bank"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"

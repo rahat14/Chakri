@@ -1,4 +1,4 @@
-package com.metacoders.cakri.Adapter;
+package com.metacoders.cakri;
 
 import androidx.appcompat.app.AppCompatActivity;
 

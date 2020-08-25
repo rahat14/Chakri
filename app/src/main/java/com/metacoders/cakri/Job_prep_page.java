@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.metacoders.cakri.Adapter.allJobSolution;
-
 public class Job_prep_page extends AppCompatActivity {
 
     CardView job_prep_card  , bcs_special  , all_Job_solution , Bcs ;
@@ -62,6 +60,7 @@ public class Job_prep_page extends AppCompatActivity {
 
 
     }
+
 
 
 }
