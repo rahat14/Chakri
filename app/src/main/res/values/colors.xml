@@ -10,4 +10,5 @@
     <color name="drawer_background">#124464</color>
     <color name="grey">#808080</color>
     <color name="whiteTrans">#80ffffff</color>
+    <color name="background">#dddddd</color>
 </resources>

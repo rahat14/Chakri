@@ -455,6 +455,38 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:padding="8dp"
+                        android:background="@drawable/calculator"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="বয়স গণনা করুন"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="#718FA2"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#80ffffff"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:padding="8dp"
                         android:background="@drawable/team"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"

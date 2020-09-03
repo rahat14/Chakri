@@ -2,16 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.metacoders.cakri">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".BcsModelQusPrep"/>
-        <activity android:name=".BankModelQusPrep"/>
-        <activity android:name=".modelTestCategory"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.lists.All_Job_Prep">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Activities.All_Circular_List">
+
+        </activity>
+        <activity android:name=".Quiz_Activity">
+
+
+        </activity>
+        <activity android:name=".BcsModelQusPrep" />
+        <activity android:name=".BankModelQusPrep" />
+        <activity android:name=".modelTestCategory" />
         <activity android:name=".jobCircularCategory" />
         <activity android:name=".allJobSolution" />
         <activity android:name=".bcsSpecialPage" />
@@ -20,13 +38,7 @@
         <activity android:name=".Master_List_Page" />
         <activity android:name=".Runinng_Exam_notice_and_result_page" />
         <activity android:name=".qus_bank_bcs_govt_list_page" />
-        <activity android:name=".home_page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".home_page" />
         <activity android:name=".SplashScreen" />
         <activity android:name=".Job_prep_page" />
     </application>

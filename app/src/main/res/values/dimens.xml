@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="design_navigation_icon_size" tools:override="true" >32dp</dimen>
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="placeholderImage">90dp</dimen>
+    <dimen name="placeholderTextHeight">10dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+</resources>
