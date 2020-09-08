@@ -32,6 +32,30 @@ public class jobCircularCategory extends AppCompatActivity implements View.OnCli
             case R.id.govt_job: // govt job card view
 
                 break;
+            case R.id.non_govt_job: // non govt job card view
+
+                break;
+            case R.id.bank_job: // bank job card view
+
+                break;
+            case R.id.tcr_job: // teacher job card view
+
+                break;
+            case R.id.part_tcr_job: // Part-Time Teacher job card view
+
+                break;
+            case R.id.ngo_job: // ngo job card view
+
+                break;
+            case R.id.garments_job: // garments job card view
+
+                break;
+            case R.id.defence_job: // defence/railway job card view
+
+                break;
+            case R.id.health_job: // medical/health job card view
+
+                break;
 
             default:
                 break;
