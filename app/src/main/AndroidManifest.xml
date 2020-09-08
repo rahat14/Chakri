@@ -13,11 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Activities.lists.All_Job_Prep">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Activities.All_Circular_List">
@@ -38,7 +34,13 @@
         <activity android:name=".Master_List_Page" />
         <activity android:name=".Runinng_Exam_notice_and_result_page" />
         <activity android:name=".qus_bank_bcs_govt_list_page" />
-        <activity android:name=".home_page" />
+        <activity android:name=".home_page">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SplashScreen" />
         <activity android:name=".Job_prep_page" />
     </application>
