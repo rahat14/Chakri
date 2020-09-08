@@ -42,6 +42,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
+                        android:id="@+id/career_guide"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
@@ -159,6 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/protidin_news"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -229,6 +231,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/teacher_prp"
                         android:layout_weight="1"
                         app:cardCornerRadius="8dp">
 
@@ -274,6 +277,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/rcnt_qus_soln"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -306,6 +310,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
+                        android:id="@+id/trnslt_practice"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
@@ -343,6 +348,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/focus_writing"
                         android:layout_weight="1"
                         app:cardCornerRadius="8dp">
 
@@ -387,6 +393,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/exclu_vuca"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -422,6 +429,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/srt_tcnq"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -457,6 +465,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/xm_sgsn"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -500,6 +509,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/inspiration"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -535,6 +545,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/viva_exp"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -570,6 +581,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/interview_tips"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -613,6 +625,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/important_news"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -648,6 +661,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/dwnld_zn"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -683,6 +697,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:id="@+id/others"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
