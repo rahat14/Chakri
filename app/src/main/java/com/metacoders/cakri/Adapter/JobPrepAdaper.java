@@ -1,5 +1,7 @@
 package com.metacoders.cakri.Adapter;
-//
+/*
+ WE DO NOT NEED IT
+ */
 //import android.content.Context;
 //import android.view.LayoutInflater;
 //import android.view.View;

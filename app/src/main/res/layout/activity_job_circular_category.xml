@@ -34,10 +34,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/govt_job"
+
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
-                    app:cardCornerRadius="16dp">
+                    app:cardCornerRadius="16dp"
+                  >
 
                     <LinearLayout
                         android:foreground="?attr/selectableItemBackground"
@@ -70,12 +74,14 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
                         android:orientation="vertical"
                         android:padding="8dp">
 
@@ -83,11 +89,11 @@
                             android:id="@+id/bank"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="ব্যাংক নিয়োগ বিজ্ঞপ্তি"
                             android:layout_gravity="center"
                             android:drawableStart="@mipmap/category_drawable"
                             android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="ব্যাংক নিয়োগ বিজ্ঞপ্তি"
                             android:textColor="@color/colorBlack"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -102,6 +108,8 @@
                     android:id="@+id/non_govt_job"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_marginEnd="@dimen/_20sdp"
                     app:cardCornerRadius="16dp">
 
@@ -136,6 +144,9 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
@@ -165,10 +176,12 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/part_tcr_job"
+                    android:id="@+id/part_time_job"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
@@ -202,6 +215,8 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
@@ -235,6 +250,8 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
@@ -268,6 +285,8 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout
@@ -301,6 +320,8 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="16dp">
 
                     <LinearLayout

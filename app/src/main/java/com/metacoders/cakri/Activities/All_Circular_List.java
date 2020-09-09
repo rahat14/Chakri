@@ -44,6 +44,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
     SpinKitView progress;
     RelativeLayout loadingPanel;
     LottieAnimationView animationView;
+    String SUB_CAT_ID = "1" ;
 
 
     @Override
@@ -54,6 +55,11 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         progress = (SpinKitView) findViewById(R.id.spin_kit);
         loadingPanel = findViewById(R.id.loadingPanel);
         animationView = findViewById(R.id.lav_actionBar);
+
+
+
+        // get data
+        SUB_CAT_ID = getIntent().getStringExtra("SUB_CAT_ID");
 
         manager = new LinearLayoutManager(this);
 
@@ -77,7 +83,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().response("" + (page));
+                .getApi().GetJobCirCularViaCategory(SUB_CAT_ID  ,page);
 
 
         call.enqueue(new Callback<JobCircularReponseModel>() {

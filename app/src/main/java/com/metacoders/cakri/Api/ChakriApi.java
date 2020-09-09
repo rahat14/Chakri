@@ -20,4 +20,11 @@ public interface ChakriApi {
             @Path("sub_cat_id") String sub_cat_id,
             @Query("page") String page
     );
+    // job-circular via category job-circular/fillter/{cat_id}
+    @GET("job-circular/fillter/{cat_id}")
+    Call<JobCircularReponseModel> GetJobCirCularViaCategory(
+            @Path("cat_id") String cat_id,
+            @Query("page") int page
+    );
+
 }
