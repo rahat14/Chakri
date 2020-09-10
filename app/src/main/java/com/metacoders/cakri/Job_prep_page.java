@@ -9,7 +9,8 @@ import android.view.View;
 
 public class Job_prep_page extends AppCompatActivity implements View.OnClickListener{
 
-    CardView job_prep_card  , bcs_special  , all_Job_solution , Bcs ;
+    CardView job_prep_card  , bcs_special  , all_Job_solution , Bcs ,career_guide,protidin_news,teacher_prp,rcnt_qus_soln ,trnslt_practice
+            ,focus_writing,exclu_vuca,srt_tcnq,xm_sgsn,inspiration,viva_exp,interview_tips,important_news,dwnld_zn,other;
 
     Intent  nextPage  ;
 
@@ -18,6 +19,41 @@ public class Job_prep_page extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.job_prep_page);
+
+
+        career_guide = findViewById(R.id.career_guide);
+        protidin_news = findViewById(R.id.protidin_news);
+        teacher_prp = findViewById(R.id.teacher_prp);
+        rcnt_qus_soln = findViewById(R.id.rcnt_qus_soln);
+        trnslt_practice = findViewById(R.id.trnslt_practice);
+        focus_writing = findViewById(R.id.focus_writing);
+        exclu_vuca = findViewById(R.id.exclu_vuca);
+        srt_tcnq = findViewById(R.id.srt_tcnq);
+        xm_sgsn = findViewById(R.id.xm_sgsn);
+        viva_exp = findViewById(R.id.viva_exp);
+        inspiration = findViewById(R.id.inspiration);
+        interview_tips = findViewById(R.id.interview_tips);
+        important_news = findViewById(R.id.important_news);
+        dwnld_zn= findViewById(R.id.dwnld_zn);
+        other = findViewById(R.id.others);
+
+
+        //set click Listener
+        career_guide.setOnClickListener(this);
+        protidin_news.setOnClickListener(this);
+        teacher_prp.setOnClickListener(this);
+        rcnt_qus_soln.setOnClickListener(this);
+        trnslt_practice.setOnClickListener(this);
+        focus_writing.setOnClickListener(this);
+        exclu_vuca.setOnClickListener(this);
+        srt_tcnq.setOnClickListener(this);
+        xm_sgsn.setOnClickListener(this);
+        viva_exp.setOnClickListener(this);
+        inspiration.setOnClickListener(this);
+        important_news.setOnClickListener(this);
+        interview_tips.setOnClickListener(this);
+        dwnld_zn.setOnClickListener(this);
+        other.setOnClickListener(this);
 
         setUpView() ;
 
