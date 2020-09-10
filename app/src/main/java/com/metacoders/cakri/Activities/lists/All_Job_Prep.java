@@ -46,6 +46,7 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
     SpinKitView progress;
     RelativeLayout loadingPanel;
     LottieAnimationView animationView;
+    String cat_id , sub_cat_id ;
 
 
     @Override
@@ -56,6 +57,11 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
         progress = (SpinKitView) findViewById(R.id.spin_kit);
         loadingPanel = findViewById(R.id.loadingPanel);
         animationView = findViewById(R.id.lav_actionBar);
+
+        // getting  the data
+        cat_id = getIntent().getStringExtra("cat_id") ;
+        sub_cat_id = getIntent().getStringExtra("sub_cat_id") ;
+
 
         manager = new LinearLayoutManager(this);
 
@@ -77,7 +83,7 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().getPrepList("1", "0", "" + page);
+                .getApi().getPrepList(cat_id, sub_cat_id, "" + page);
 
 
         call.enqueue(new Callback<JobCircularReponseModel>() {

@@ -3,14 +3,17 @@ package com.metacoders.cakri;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.metacoders.cakri.Activities.lists.All_Job_Prep;
 import com.metacoders.cakri.R;
 
-public class allJobSolution extends AppCompatActivity  implements View.OnClickListener{
+public class allJobSolution extends AppCompatActivity implements View.OnClickListener {
 
-    CardView bcs_qustion_bank, teacher_reg_qustion_bank,primary_qus_bank,ministry_qus_bank,bank_qus_bank,gk_qus_bank,other_qus_bank;
+    CardView bcs_qustion_bank, teacher_reg_qustion_bank, primary_qus_bank, ministry_qus_bank, bank_qus_bank, gk_qus_bank, other_qus_bank;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,37 +40,55 @@ public class allJobSolution extends AppCompatActivity  implements View.OnClickLi
         other_qus_bank.setOnClickListener(this);
 
 
-
     }
 
     @Override
     public void onClick(View v) {
+        Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
         switch (v.getId()) {
 
-
-            case R.id.bcs_qustion_bank: // BCS ques bank  card view
-
+/*
+ ALL JOB SOLUTION CATEGORY ID IS 5
+ */
+            case R.id.bcs_qustion_bank: // BCS ques bank  card view // sub cat = 18
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "18");
+                startActivity(p);
                 break;
 
-            case R.id.teacher_reg_qustion_bank: // Teacher reg qus bank  card view
-
+            case R.id.teacher_reg_qustion_bank: // Teacher reg qus bank  card view 19
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "19");
+                startActivity(p);
                 break;
-            case R.id.primary_qus_bank: // Primary qus bank card view
+            case R.id.primary_qus_bank: // Primary qus bank card view 20
 
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "20");
+                startActivity(p);
                 break;
             case R.id.ministry_qus_bank: //ministry qus bank card view
 
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "21");
+                startActivity(p);
                 break;
-            case R.id.bank_qus_bank: //  bank qus bank card view
-
+            case R.id.bank_qus_bank: //  bank qus bank card view 22
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "22");
+                startActivity(p);
                 break;
 
 
-            case R.id.gk_qus_bank: // gk qus bank card view
-
+            case R.id.gk_qus_bank: // gk qus bank card view 23
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "23");
+                startActivity(p);
                 break;
-            case R.id.other_qus_bank: // other qus bank card view
-
+            case R.id.other_qus_bank: // other qus bank card view 24
+                p.putExtra("cat_id", "5");
+                p.putExtra("sub_cat_id", "24");
+                startActivity(p);
                 break;
 
             default:
