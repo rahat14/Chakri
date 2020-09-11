@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="160dp"
+android:background="#2471A3"
+android:fitsSystemWindows="true">
+
+<com.google.android.material.appbar.CollapsingToolbarLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:contentScrim="?attr/colorPrimaryDark"
+    app:statusBarScrim="?attr/colorPrimaryDark">
+
+    <LinearLayout
+        android:id="@+id/title_conantainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        android:layout_marginTop="4dp"
+        android:background="@drawable/heading_background_upper_radius"
+        android:elevation="12dp"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/page_title_textView"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+                    android:padding="8dp"
+                    android:text="⭐ বয়স গণনা করুন ⭐"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit ="marquee_forever"
+                    android:focusable="true"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:background="#2471A3"
+
+        android:layout_height="?actionBarSize" >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/hamburber_menu"
+            android:id="@+id/hamburgerBtn"
+            android:backgroundTint="@color/colorWhite"
+
+
+            />
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:background="@drawable/insidelogo"
+            android:layout_marginStart="@dimen/_25sdp"
+
+            />
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_width="200dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/te"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:text="@string/header_eng_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#25A2F2"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/te"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:text="চাকরির সবকিছু"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_marginStart="8dp"
+                android:padding="3dp"
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/likes"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="30dp"
+                android:padding="3dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bookmark2"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="30dp"
+                android:padding="3dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/rounded_square"
+                android:layout_height="32dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/share"
+
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+</com.google.android.material.appbar.AppBarLayout>

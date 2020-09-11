@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBackground"
+    tools:context=".AgeCalculator">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/app_bar_age_calculator"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"/>
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/agecalcu_icn"
+                />
+
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="DATE OF BIRTH"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/kalpurush"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/square"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1.0"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_weight=".3"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:text="DATE"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/kalpurush"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@drawable/white_square"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableRight="@drawable/dropdpwn_icon"/>
+                    <TextView
+                        android:layout_weight=".3"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:text="Month"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/kalpurush"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@drawable/white_square"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableRight="@drawable/dropdpwn_icon"/>
+                    <TextView
+                        android:layout_weight=".3"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:text="Year"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/kalpurush"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@drawable/white_square"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableRight="@drawable/dropdpwn_icon"/>
+
+                </LinearLayout>
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="DATE OF BIRTH"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/kalpurush"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/square"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight=".3"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="DATE"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/kalpurush"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/white_square"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableRight="@drawable/dropdpwn_icon"/>
+                <TextView
+                    android:layout_weight=".3"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="Month"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/kalpurush"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/white_square"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableRight="@drawable/dropdpwn_icon"/>
+                <TextView
+                    android:layout_weight=".3"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="Year"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/kalpurush"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/white_square"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableRight="@drawable/dropdpwn_icon"/>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/bottomContainer"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:text="CALCULATE"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/kalpurush"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableLeft="@drawable/calcu"
+            android:drawablePadding="@dimen/_3sdp"
+            android:paddingLeft="@dimen/_30sdp"
+            android:drawableRight="@drawable/group"
+            android:paddingRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/square"/>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

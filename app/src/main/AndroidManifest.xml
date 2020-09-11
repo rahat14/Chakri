@@ -12,17 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.lists.All_Job_Prep">
-
-
-        </activity>
-        <activity android:name=".Activities.All_Circular_List">
-
-        </activity>
-        <activity android:name=".Quiz_Activity">
-
-
-        </activity>
+        <activity android:name=".Result_age_calculator"></activity>
+        <activity android:name=".AgeCalculator" />
+        <activity android:name=".Activities.lists.All_Job_Prep" />
+        <activity android:name=".Activities.All_Circular_List" />
+        <activity android:name=".Quiz_Activity" />
         <activity android:name=".BcsModelQusPrep" />
         <activity android:name=".BankModelQusPrep" />
         <activity android:name=".modelTestCategory" />
