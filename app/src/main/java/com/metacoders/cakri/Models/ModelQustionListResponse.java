@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class JobCircularReponseModel implements Serializable {
+public class ModelQustionListResponse  implements  Serializable{
     @SerializedName("current_page")
     @Expose
     private Integer currentPage;
     @SerializedName("data")
     @Expose
-    private List<Job_Circular_Model> data = null;
+    private List<singleModelQus> data = null;
     @SerializedName("first_page_url")
     @Expose
     private String firstPageUrl;
@@ -52,11 +52,11 @@ public class JobCircularReponseModel implements Serializable {
         this.currentPage = currentPage;
     }
 
-    public List<Job_Circular_Model> getData() {
+    public List<singleModelQus> getData() {
         return data;
     }
 
-    public void setData(List<Job_Circular_Model> data) {
+    public void setData(List<singleModelQus> data) {
         this.data = data;
     }
 
@@ -92,7 +92,7 @@ public class JobCircularReponseModel implements Serializable {
         this.lastPageUrl = lastPageUrl;
     }
 
-    public String getNextPageUrl() {
+    public Object getNextPageUrl() {
         return nextPageUrl;
     }
 
@@ -140,56 +140,28 @@ public class JobCircularReponseModel implements Serializable {
         this.total = total;
     }
 
-    public  class Job_Circular_Model implements Serializable {
-
+    public class singleModelQus implements Serializable {
         @SerializedName("id")
         @Expose
         private Integer id;
         @SerializedName("title")
         @Expose
         private String title;
-        @SerializedName("pdf")
+        @SerializedName("type")
         @Expose
-        private String pdf;
-        @SerializedName("image")
+        private String type;
+        @SerializedName("cat_id")
         @Expose
-        private String image;
+        private String catId;
+        @SerializedName("sub_cat_id")
+        @Expose
+        private String subCatId;
         @SerializedName("description")
         @Expose
         private String description;
-        @SerializedName("cat_id")
-        @Expose
-        private Integer catId;
-        @SerializedName("sub_cat_id")
-        @Expose
-        private Integer subCatId;
         @SerializedName("date")
         @Expose
         private String date;
-        @SerializedName("keywords")
-        @Expose
-        private String keywords;
-        @SerializedName("image2")
-        @Expose
-        private String image2;
-        @SerializedName("image3")
-        @Expose
-        private String image3;
-        @SerializedName("rank")
-        @Expose
-        private Integer rank;
-        @SerializedName("share_text")
-        @Expose
-        private String shareText;
-
-
-        public String getShareText() {
-            return shareText;
-        }
-
-        public void setShareText(String shareText) {
-            this.shareText = shareText;
-        }
 
         public Integer getId() {
             return id;
@@ -207,20 +179,28 @@ public class JobCircularReponseModel implements Serializable {
             this.title = title;
         }
 
-        public String getPdf() {
-            return pdf;
+        public String getType() {
+            return type;
         }
 
-        public void setPdf(String pdf) {
-            this.pdf = pdf;
+        public void setType(String type) {
+            this.type = type;
         }
 
-        public String getImage() {
-            return image;
+        public String getCatId() {
+            return catId;
         }
 
-        public void setImage(String image) {
-            this.image = image;
+        public void setCatId(String catId) {
+            this.catId = catId;
+        }
+
+        public String getSubCatId() {
+            return subCatId;
+        }
+
+        public void setSubCatId(String subCatId) {
+            this.subCatId = subCatId;
         }
 
         public String getDescription() {
@@ -231,22 +211,6 @@ public class JobCircularReponseModel implements Serializable {
             this.description = description;
         }
 
-        public Integer getCatId() {
-            return catId;
-        }
-
-        public void setCatId(Integer catId) {
-            this.catId = catId;
-        }
-
-        public Integer getSubCatId() {
-            return subCatId;
-        }
-
-        public void setSubCatId(Integer subCatId) {
-            this.subCatId = subCatId;
-        }
-
         public String getDate() {
             return date;
         }
@@ -254,39 +218,6 @@ public class JobCircularReponseModel implements Serializable {
         public void setDate(String date) {
             this.date = date;
         }
-
-        public String getKeywords() {
-            return keywords;
-        }
-
-        public void setKeywords(String keywords) {
-            this.keywords = keywords;
-        }
-
-        public String getImage2() {
-            return image2;
-        }
-
-        public void setImage2(String image2) {
-            this.image2 = image2;
-        }
-
-        public String getImage3() {
-            return image3;
-        }
-
-        public void setImage3(String image3) {
-            this.image3 = image3;
-        }
-
-        public Integer getRank() {
-            return rank;
-        }
-
-        public void setRank(Integer rank) {
-            this.rank = rank;
-        }
-
     }
 
 }

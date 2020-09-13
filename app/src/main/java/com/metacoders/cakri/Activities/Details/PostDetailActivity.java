@@ -1,4 +1,4 @@
-package com.metacoders.cakri;
+package com.metacoders.cakri.Activities.Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.metacoders.cakri.Models.JobCircularReponseModel;
-import com.metacoders.cakri.Models.JobPrepModel;
+import com.metacoders.cakri.R;
 import com.metacoders.cakri.Utils.Constants;
 import com.metacoders.cakri.Utils.Utilities;
 import com.squareup.picasso.Picasso;

@@ -1,66 +1,107 @@
 package com.metacoders.cakri.Models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public  class qusizModel {
 
-    String qus , op1 , op2 , op3 , op4 , ans ;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("qustion_id")
+    @Expose
+    private String qustionId;
+    @SerializedName("title")
+    @Expose
+    private String title;
+    @SerializedName("option_one")
+    @Expose
+    private String optionOne;
+    @SerializedName("option_three")
+    @Expose
+    private String optionThree;
+    @SerializedName("option_four")
+    @Expose
+    private String optionFour;
+    @SerializedName("right_ans")
+    @Expose
+    private String rightAns;
+    @SerializedName("option_two")
+    @Expose
+    private String optionTwo;
+    @SerializedName("option_five")
+    @Expose
+    private String optionFive;
 
-    public qusizModel() {
+    public Integer getId() {
+        return id;
     }
 
-    public qusizModel(String qus, String op1, String op2, String op3, String op4, String ans) {
-        this.qus = qus;
-        this.op1 = op1;
-        this.op2 = op2;
-        this.op3 = op3;
-        this.op4 = op4;
-        this.ans = ans;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getQus() {
-        return qus;
+    public String getQustionId() {
+        return qustionId;
     }
 
-    public void setQus(String qus) {
-        this.qus = qus;
+    public void setQustionId(String qustionId) {
+        this.qustionId = qustionId;
     }
 
-    public String getOp1() {
-        return op1;
+    public String getTitle() {
+        return title;
     }
 
-    public void setOp1(String op1) {
-        this.op1 = op1;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getOp2() {
-        return op2;
+    public String getOptionOne() {
+        return optionOne;
     }
 
-    public void setOp2(String op2) {
-        this.op2 = op2;
+    public void setOptionOne(String optionOne) {
+        this.optionOne = optionOne;
     }
 
-    public String getOp3() {
-        return op3;
+    public String getOptionThree() {
+        return optionThree;
     }
 
-    public void setOp3(String op3) {
-        this.op3 = op3;
+    public void setOptionThree(String optionThree) {
+        this.optionThree = optionThree;
     }
 
-    public String getOp4() {
-        return op4;
+    public String getOptionFour() {
+        return optionFour;
     }
 
-    public void setOp4(String op4) {
-        this.op4 = op4;
+    public void setOptionFour(String optionFour) {
+        this.optionFour = optionFour;
     }
 
-    public String getAns() {
-        return ans;
+    public String getRightAns() {
+        return rightAns;
     }
 
-    public void setAns(String ans) {
-        this.ans = ans;
+    public void setRightAns(String rightAns) {
+        this.rightAns = rightAns;
+    }
+
+    public String getOptionTwo() {
+        return optionTwo;
+    }
+
+    public void setOptionTwo(String optionTwo) {
+        this.optionTwo = optionTwo;
+    }
+
+    public String getOptionFive() {
+        return optionFive;
+    }
+
+    public void setOptionFive(String optionFive) {
+        this.optionFive = optionFive;
     }
 }

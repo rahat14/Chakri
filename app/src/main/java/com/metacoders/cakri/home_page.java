@@ -14,13 +14,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.navigation.NavigationView;
+import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Adapter.listAdapter;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
-import com.metacoders.cakri.Models.JobPrepModel;
-import com.metacoders.cakri.Models.JobPrepResponseModel;
 import com.metacoders.cakri.Models.StartUpResponse;
+import com.metacoders.cakri.Utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -147,7 +146,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), modelTestCategory.class);
                 p.putExtra("TITLE", "বিসিএস মডেল টেস্ট");
-                p.putExtra("CAT_ID", "1");
+                p.putExtra("CAT_ID", Constants.MODEL_QUSTION_BCS_CATGORY);
                 startActivity(p);
 
             }
@@ -158,7 +157,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), modelTestCategory.class);
                 p.putExtra("TITLE", "ব্যাংক মডেল টেস্ট");
-                p.putExtra("CAT_ID", "2");
+                p.putExtra("CAT_ID", Constants.MODEL_QUSTION_BANK_CATGORY);
                 startActivity(p);
 
             }

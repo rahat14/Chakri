@@ -12,27 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Result_age_calculator"></activity>
+        <activity android:name=".Activities.Details.ModelQustionDetails"></activity>
+        <activity android:name=".Activities.lists.AllModelQusList" />
+        <activity android:name=".Result_age_calculator" />
         <activity android:name=".AgeCalculator" />
         <activity android:name=".Activities.lists.All_Job_Prep" />
         <activity android:name=".Activities.All_Circular_List" />
-        <activity android:name=".Quiz_Activity" />
+        <activity android:name=".Quiz_Activity">
+
+        </activity>
         <activity android:name=".BcsModelQusPrep" />
         <activity android:name=".BankModelQusPrep" />
         <activity android:name=".modelTestCategory" />
         <activity android:name=".jobCircularCategory" />
         <activity android:name=".allJobSolution" />
         <activity android:name=".bcsSpecialPage" />
-        <activity android:name=".PostDetailActivity" />
+        <activity android:name=".Activities.Details.PostDetailActivity" />
         <activity android:name=".Bank_job_special" />
         <activity android:name=".Master_List_Page" />
         <activity android:name=".Runinng_Exam_notice_and_result_page" />
         <activity android:name=".qus_bank_bcs_govt_list_page" />
-        <activity android:name=".home_page">
-
-        </activity>
+        <activity android:name=".home_page" />
         <activity android:name=".SplashScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -65,7 +65,8 @@ public class SplashScreen extends AppCompatActivity {
            @Override
            public void onFailure(Call<StartUpResponse> call, Throwable t) {
 
-               Toast.makeText(SplashScreen.this, "Something Went Wrong. Trying Again !!", Toast.LENGTH_SHORT).show();
+               Log.d("TAG", "onFailure: " + t.getMessage() );
+               Toast.makeText(SplashScreen.this, "Something Went Wrong. Trying Again !!"+ t.getMessage(), Toast.LENGTH_SHORT).show();
            }
        });
 

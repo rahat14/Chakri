@@ -12,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.metacoders.cakri.Adapter.qusAdapter;
 import com.metacoders.cakri.Models.qusizModel;
 import com.metacoders.cakri.Models.userAnsModel;
+import com.metacoders.cakri.Utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class Quiz_Activity extends AppCompatActivity {
         recyclerView = findViewById(R.id.list) ;
         floatingActionButton = findViewById(R.id.test) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.hasFixedSize() ;
 
         // create demo qus
 
@@ -61,21 +63,15 @@ public class Quiz_Activity extends AppCompatActivity {
             }
         });
 
-        for(int i = 1   ; i<=100 ; i++){
 
-            if(i%2==0){
-                qusList.add(new qusizModel("WHen is BD got Product  ?" , "Trigger no" ,"is it" , "1987" , "hell no" , "is it" )) ;
-
-            }//  String qus , op1 , op2 , op3 , op4 , ans ;
-            else qusList.add(new qusizModel("What is what ?" , "weell well" ,"is it" , "lol no" , "hell no" , "hell no" )) ;
-        }
-
+        /// need to generate this for answer sheet
         for(int i = 0 ; i<qusList.size() ; i++){
 
             userResPonseList.add(new userAnsModel(i , 0  , "nulll" , 0)) ;
         }
         Log.d("TAG", "onCreate: qus size =" + qusList.size() + "  response =" + userResPonseList.size());
-        adapter = new qusAdapter(this ,qusList , userResPonseList ) ;
+        // bcs = 1 , bank  =
+        adapter = new qusAdapter(this ,qusList , userResPonseList , Constants.QUS_TYPE_BANK) ;
         recyclerView.setAdapter(adapter);
 
 

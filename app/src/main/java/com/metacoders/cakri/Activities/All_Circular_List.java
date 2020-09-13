@@ -15,9 +15,10 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.metacoders.cakri.Activities.Details.ModelQustionDetails;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
-import com.metacoders.cakri.PostDetailActivity;
+import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.R;
 import com.metacoders.cakri.Service.RetrofitClient;
 import com.metacoders.cakri.Utils.Constants;
@@ -182,7 +183,8 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
 
     @Override
     public void onItemClick(JobCircularReponseModel.Job_Circular_Model model) {
-        Intent p = new Intent(getApplicationContext(), PostDetailActivity.class);
+
+        Intent p = new Intent(getApplicationContext(), ModelQustionDetails.class);
         p.putExtra("MODEL", model);
         startActivity(p);
 

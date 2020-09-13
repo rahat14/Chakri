@@ -16,9 +16,8 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
-import com.metacoders.cakri.Adapter.categorylistAdapter;
-import com.metacoders.cakri.Adapter.listAdapter;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Service.RetrofitClient;
 import com.metacoders.cakri.Utils.Constants;
