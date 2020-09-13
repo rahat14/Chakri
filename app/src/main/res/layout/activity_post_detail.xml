@@ -86,6 +86,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:orientation="horizontal">
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/downloadBtn"
                 android:layout_width="0dp"
                 android:layout_weight="0.6"
                 android:text="Download Image/Pdf"

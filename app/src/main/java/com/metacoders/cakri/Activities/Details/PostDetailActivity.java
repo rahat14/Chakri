@@ -1,11 +1,19 @@
 package com.metacoders.cakri.Activities.Details;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.AlertDialog;
+import android.app.DownloadManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -13,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.R;
@@ -22,6 +31,7 @@ import com.squareup.picasso.Picasso;
 
 public class PostDetailActivity extends AppCompatActivity {
 
+    private static final int PERMISSION_STORAGE_CODE = 1000;
     LinearLayout like  , textSize ;
     TextView descp ;
     AlertDialog alertDialog;
@@ -79,6 +89,12 @@ public class PostDetailActivity extends AppCompatActivity {
 
                 shareText(model.getShareText());
 
+            }
+        });
+        findViewById(R.id.downloadBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Start_dowload();
             }
         });
     }
@@ -161,5 +177,69 @@ public class PostDetailActivity extends AppCompatActivity {
 
     }
 
+    private  void Start_dowload( ){
 
+        if(model.getImage().equals("NULL") && model.getImage2().equals("NULL")&& model.getImage3().equals("NULL")&&model.getPdf().equals("NULL")){
+
+            Toast.makeText(getApplicationContext(), "There is NO Attachment For Download!!" , Toast.LENGTH_LONG)
+                    .show();
+
+        }
+        else {
+
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if (checkCallingOrSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                        PackageManager.PERMISSION_DENIED){
+                    // permission denied requet is
+                    String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE} ;
+                    requestPermissions(permissions, PERMISSION_STORAGE_CODE);
+                }
+                else {
+                    starDownloading();
+                }
+            }
+            else {
+                starDownloading() ;
+            }
+
+        }
+
+
+
+    }
+
+    private void starDownloading() {
+
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(Constants.IMAGE_URL+model.getImage())) ;
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE) ;
+        request.setTitle("Download") ;
+        request.setDescription("Downloading File") ;
+
+        request.allowScanningByMediaScanner();
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED) ;
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS , "" + System.currentTimeMillis()) ;
+
+
+        DownloadManager downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE) ;
+        downloadManager.enqueue(request) ;
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode){
+            case PERMISSION_STORAGE_CODE:{
+                if(grantResults.length>0 && grantResults[0]
+                == PackageManager.PERMISSION_GRANTED){
+                    starDownloading();
+                }
+                else {
+                    Toast.makeText(this , "Permission denied ....!" , Toast.LENGTH_LONG).show();
+                }
+            }
+
+
+        }
+    }
 }
