@@ -88,7 +88,7 @@ import retrofit2.Response;
 
 
          Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                 .getApi().GetJobCirCularViaCategory(SUB_CAT_ID  ,page);
+                 .getApi().GetBestJobCirCular(page);
 
 
          call.enqueue(new Callback<JobCircularReponseModel>() {

@@ -9,10 +9,71 @@
     android:background="@color/colorAppBackground"
     tools:context=".qus_bank_bcs_govt_list_page">
     <include layout="@layout/app_bar"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/colorAccent" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_actionBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="0dp"
+                android:scaleType="centerCrop"
+                app:lottie_renderMode="automatic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="1.00"
+                app:lottie_rawRes="@raw/loading_anim"
+                app:lottie_loop="true" />
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 </LinearLayout>

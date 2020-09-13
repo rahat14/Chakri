@@ -15,66 +15,43 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Adapter.listAdapter;
+import com.metacoders.cakri.Models.JobCircularReponseModel;
+import com.metacoders.cakri.Models.JobPrepModel;
+import com.metacoders.cakri.Models.JobPrepResponseModel;
+import com.metacoders.cakri.Models.StartUpResponse;
 
-public class home_page extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class home_page extends AppCompatActivity implements JobCircularAdaper.ItemClickLisnter {
 
 
-    RecyclerView latestUpdate , latestCircular , latestJobPrep ;
-    DrawerLayout drawerLayout ;
-    ImageView hamburger_Btn  ;
+    RecyclerView latestUpdate, latestCircular, latestJobPrep;
+    DrawerLayout drawerLayout;
+    ImageView hamburger_Btn;
     ActionBarDrawerToggle toggle;
-    MaterialToolbar toolbar ;
+    MaterialToolbar toolbar;
     listAdapter.ItemClickListenter itemClickListenter;
-
-
+    StartUpResponse startUpResponse = null;
+    List<JobCircularReponseModel.Job_Circular_Model> circularList = new ArrayList<>();
+    List<JobCircularReponseModel.Job_Circular_Model> prepList = new ArrayList<>();
+    listAdapter adapter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        latestCircular = findViewById(R.id.latestCircular) ;
-        drawerLayout = findViewById(R.id.drawer_layout) ;
-        toolbar = findViewById(R.id.toolbar) ;
-        hamburger_Btn = findViewById(R.id.hamburgerBtn);
-        latestJobPrep = findViewById(R.id.latestJobPrep) ;
-
-        itemClickListenter = new listAdapter.ItemClickListenter() {
-            @Override
-            public void onItemClick(View view, int pos) {
-
-                Intent p = new Intent(getApplicationContext() , PostDetailActivity.class);
-                startActivity(p);
-            }
-        };
-
-        latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
-//        latestUpdate.setLayoutManager(new LinearLayoutManager(this));
-        latestCircular.setLayoutManager(new LinearLayoutManager(this));
+        // recive the data
+        startUpResponse = (StartUpResponse) getIntent().getSerializableExtra("DATA");
 
 
-     //   latestUpdate.setAdapter(new listAdapter(this));
-        latestJobPrep.setAdapter(new listAdapter(this,itemClickListenter));
-        latestCircular.setAdapter(new listAdapter(this, itemClickListenter));
-//        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        setupUI(startUpResponse);
 
-//        drawerLayout.addDrawerListener(toggle);
-//
-//        toggle.syncState();
-//        toggle.setDrawerSlideAnimationEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//       toolbar.setNavigationIcon(R.drawable.hamburber_menu);
-//
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-//                    drawerLayout.closeDrawer(Gravity.LEFT);
-//                } else {
-//                    drawerLayout.openDrawer(Gravity.LEFT);
-//                }
-//            }
-//        });
+
+
+
         hamburger_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,14 +63,14 @@ public class home_page extends AppCompatActivity {
                 }
             }
         });
-
+      
         setUpSideBar();
 
         findViewById(R.id.job_category_id).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , jobCircularCategory.class);
+                Intent p = new Intent(getApplicationContext(), jobCircularCategory.class);
                 startActivity(p);
 
             }
@@ -103,7 +80,7 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , Job_prep_page.class);
+                Intent p = new Intent(getApplicationContext(), Job_prep_page.class);
                 startActivity(p);
 
             }
@@ -113,8 +90,11 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , Runinng_Exam_notice_and_result_page.class);
+                Intent p = new Intent(getApplicationContext(), Runinng_Exam_notice_and_result_page.class);
+                p.putExtra("cat_id", "19");
+                p.putExtra("sub_cat_id", "0");
                 startActivity(p);
+
 
             }
         });
@@ -123,28 +103,51 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , Master_List_Page.class);
+                Intent p = new Intent(getApplicationContext(), Master_List_Page.class);
+
                 startActivity(p);
+
 
             }
         });
     }
 
+    private void setupUI(StartUpResponse startUpResponse) {
+        latestCircular = findViewById(R.id.latestCircular);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar);
+        hamburger_Btn = findViewById(R.id.hamburgerBtn);
+        latestJobPrep = findViewById(R.id.latestJobPrep);
 
-    public  void setUpSideBar(){
+        // setting the list
+        prepList.addAll(startUpResponse.getPreparations());
+        circularList.addAll(startUpResponse.getCircular());
 
-        LinearLayout bcs_model_test , bank_model_test ;
+        //setting llm
+        latestJobPrep.setLayoutManager(new LinearLayoutManager(this));
+        latestCircular.setLayoutManager(new LinearLayoutManager(this));
+        //adapter
+        adapter = new listAdapter(home_page.this, itemClickListenter, prepList) ;
+        // setting adapter
+        latestJobPrep.setAdapter(adapter);
+        latestCircular.setAdapter(new JobCircularAdaper(getApplicationContext(), circularList, this));
+    }
 
-        bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test) ;
-        bank_model_test = drawerLayout.findViewById(R.id.bank_model_test) ;
+
+    public void setUpSideBar() {
+
+        LinearLayout bcs_model_test, bank_model_test;
+
+        bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
+        bank_model_test = drawerLayout.findViewById(R.id.bank_model_test);
 
 
         bcs_model_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(getApplicationContext() , modelTestCategory.class);
-                p.putExtra("TITLE" , "বিসিএস মডেল টেস্ট") ;
-                p.putExtra("CAT_ID" , "1") ;
+                Intent p = new Intent(getApplicationContext(), modelTestCategory.class);
+                p.putExtra("TITLE", "বিসিএস মডেল টেস্ট");
+                p.putExtra("CAT_ID", "1");
                 startActivity(p);
 
             }
@@ -153,13 +156,23 @@ public class home_page extends AppCompatActivity {
         bank_model_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(getApplicationContext() , modelTestCategory.class);
-                p.putExtra("TITLE" , "ব্যাংক মডেল টেস্ট") ;
-                p.putExtra("CAT_ID" , "2") ;
+                Intent p = new Intent(getApplicationContext(), modelTestCategory.class);
+                p.putExtra("TITLE", "ব্যাংক মডেল টেস্ট");
+                p.putExtra("CAT_ID", "2");
                 startActivity(p);
 
             }
         });
+
+
+    }
+
+    @Override
+    public void onItemClick(JobCircularReponseModel.Job_Circular_Model model) {
+
+        Intent p = new Intent(getApplicationContext(), PostDetailActivity.class);
+        p.putExtra("MODEL", model);
+        startActivity(p);
 
 
     }

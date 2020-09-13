@@ -3,9 +3,12 @@ package com.metacoders.cakri;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.metacoders.cakri.Activities.lists.All_Job_Prep;
 
 public class Bank_job_special extends AppCompatActivity implements View.OnClickListener {
 
@@ -46,30 +49,44 @@ public class Bank_job_special extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
 
 
+        // here in this  page category id is = 3
+        Intent p  = new Intent(getApplicationContext() , All_Job_Prep.class);
         switch (v.getId()) {
 
 
             case R.id.adviceBtn:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "12") ;
+                startActivity(p);
                 break;
 
             case R.id.banglaBtn:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "13") ;
+                startActivity(p);
                 break;
             case R.id.engBtn:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "14") ;
+                startActivity(p);
                 break;
             case R.id.gkBtn:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "15") ;
+                startActivity(p);
 
                 break;
             case R.id.math:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "16") ;
+                startActivity(p);
                 break;
 
 
             case R.id.ictBtn:
-
+                p.putExtra("cat_id" , "3" ) ;
+                p.putExtra("sub_cat_id" , "17") ;
+                startActivity(p);
 
                 break;
 

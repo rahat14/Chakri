@@ -2,6 +2,7 @@ package com.metacoders.cakri.Api;
 
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Models.JobPrepResponseModel;
+import com.metacoders.cakri.Models.StartUpResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -26,5 +27,15 @@ public interface ChakriApi {
             @Path("cat_id") String cat_id,
             @Query("page") int page
     );
+
+    // best job circular
+    @GET("job-circular/best")
+    Call<JobCircularReponseModel> GetBestJobCirCular(
+
+            @Query("page") int page
+    );
+// start up service
+    @GET("start-up")
+    Call<StartUpResponse> getInitialData();
 
 }
