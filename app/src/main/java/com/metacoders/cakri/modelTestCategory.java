@@ -66,12 +66,14 @@ public class modelTestCategory extends AppCompatActivity {
                     model_qus.putExtra("qus_type" , "whole");
                     model_qus.putExtra("cat_id" , Constants.MODEL_QUSTION_BCS_CATGORY) ;
                     model_qus.putExtra("sub_cat_id" , "0") ;
+                    model_qus.putExtra("qus_name" , 1) ;
                     startActivity(model_qus);
                 } else {
 
                     model_qus.putExtra("qus_type" , "whole");
                     model_qus.putExtra("cat_id" , Constants.MODEL_QUSTION_BANK_CATGORY ) ;
                     model_qus.putExtra("sub_cat_id" , "0") ;
+                    model_qus.putExtra("qus_name" , 0) ;
                     startActivity(model_qus);
                 }
 

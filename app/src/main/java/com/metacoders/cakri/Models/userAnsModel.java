@@ -1,6 +1,8 @@
 package com.metacoders.cakri.Models;
 
-public  class userAnsModel {
+import java.io.Serializable;
+
+public  class userAnsModel implements Serializable {
 
     int pos  ;
     double mark ;

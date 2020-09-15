@@ -46,6 +46,7 @@ public class AllModelQusList extends AppCompatActivity implements ModelQustionLi
     RelativeLayout loadingPanel;
     LottieAnimationView animationView;
     String cat_id, sub_cat_id, qus_type;
+    int qus_name ; // bank = 0  or bcs = 1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class AllModelQusList extends AppCompatActivity implements ModelQustionLi
         cat_id = getIntent().getStringExtra("cat_id");
         sub_cat_id = getIntent().getStringExtra("sub_cat_id");
         qus_type = getIntent().getStringExtra("qus_type");
-
+        qus_name = getIntent().getIntExtra("qus_name" , 0 ) ;
         manager = new LinearLayoutManager(this);
 
         recyclerView.setLayoutManager(manager);
@@ -234,6 +235,7 @@ public class AllModelQusList extends AppCompatActivity implements ModelQustionLi
     public void onItemClick(ModelQustionListResponse.singleModelQus model) {
         Intent p = new Intent(getApplicationContext(), ModelQustionDetails.class);
         p.putExtra("MODEL", model);
+        p.putExtra("qus_name" , qus_name) ;
         startActivity(p);
 
     }

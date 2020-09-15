@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -14,11 +18,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="te"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
             android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAppBackground"
+            android:layout_margin="@dimen/_5sdp"
             android:orientation="vertical">
 
             <CheckBox
@@ -56,4 +65,4 @@
     </LinearLayout>
 
 
-</androidx.cardview.widget.CardView>
+</LinearLayout>

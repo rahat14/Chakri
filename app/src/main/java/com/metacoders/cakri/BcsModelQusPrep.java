@@ -65,6 +65,7 @@ public class BcsModelQusPrep extends AppCompatActivity implements  View.OnClickL
         //TODO CHANGES WITH MODEL TEST LIST
         
         Intent p  = new Intent(getApplicationContext() , AllModelQusList.class);
+        p.putExtra("qus_name" , 1) ;
         switch (v.getId()) {
 
 

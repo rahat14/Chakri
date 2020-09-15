@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activities.Details.PostDetailActivity">
+    <include layout="@layout/app_bar_main" />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
             <LinearLayout
@@ -20,7 +21,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <include layout="@layout/app_bar_main" />
+
 
                 <TextView
                     android:id="@+id/title"
@@ -49,25 +50,65 @@
                     android:layout_margin="8dp"
                     android:fontFamily="@font/kalpurush"
                     android:justificationMode="inter_word"
+                    android:text="@string/demo_text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+                <RelativeLayout
+                    android:id="@+id/startModelTstContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="3dp"
+                        android:id="@+id/startDwld"
+                        android:text="Downloading Qustion "
+                        android:textSize="17sp" />
+
+                    <de.mustafagercek.library.LoadingButton
+                        android:id="@+id/loading_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:buttonText="Start Exam" />
+
+                </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:nestedScrollingEnabled="true" />
+                    android:nestedScrollingEnabled="true"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/goToOtherPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:maxImageSize="35dp"
             android:layout_marginEnd="@dimen/_35sdp"
-            android:layout_marginBottom="@dimen/_120sdp" />
+            android:layout_marginBottom="@dimen/_120sdp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:maxImageSize="35dp" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:text="12:00"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </FrameLayout>
 </LinearLayout>

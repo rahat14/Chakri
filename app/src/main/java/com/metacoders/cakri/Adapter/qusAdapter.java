@@ -1,6 +1,7 @@
 package com.metacoders.cakri.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +73,7 @@ public class qusAdapter extends RecyclerView.Adapter<qusAdapter.ViewHolder> {
             holder.op5.setVisibility(View.VISIBLE);
         }
 
-
+        Log.d("TAG", "onBindViewHolder: " + qusType);
         // now check for if the pos has been checked or not
 
         if (userResPonseList.get(position).getChoosePos() == 1) {

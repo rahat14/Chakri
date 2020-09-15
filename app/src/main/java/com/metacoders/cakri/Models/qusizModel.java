@@ -3,7 +3,9 @@ package com.metacoders.cakri.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public  class qusizModel {
+import java.io.Serializable;
+
+public  class qusizModel  implements Serializable {
 
     @SerializedName("id")
     @Expose

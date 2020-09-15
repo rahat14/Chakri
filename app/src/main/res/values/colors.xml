@@ -11,4 +11,5 @@
     <color name="grey">#808080</color>
     <color name="whiteTrans">#80ffffff</color>
     <color name="background">#dddddd</color>
+    <color name="red">#E53935</color>
 </resources>

@@ -54,6 +54,8 @@ public  class BankModelQusPrep extends AppCompatActivity  implements  View.OnCli
         // here in this  page category id is = 3
         // here go to the model qustion list
         Intent p  = new Intent(getApplicationContext() , AllModelQusList.class);
+        p.putExtra("qus_name" , 0) ;
+
         switch (v.getId()) {
 
 
