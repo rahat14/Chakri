@@ -43,6 +43,14 @@ public  class  JobPrepModel implements Serializable {
     @SerializedName("share_text")
     @Expose
     private String shareText;
+    @SerializedName("post_type")
+    @Expose
+    private Integer post_type;
+
+    public Integer getPost_type() {
+        return post_type;
+    }
+
 
     public Integer getId() {
         return id;

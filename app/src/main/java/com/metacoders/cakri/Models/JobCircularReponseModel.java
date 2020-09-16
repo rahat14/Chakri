@@ -181,7 +181,17 @@ public class JobCircularReponseModel implements Serializable {
         @SerializedName("share_text")
         @Expose
         private String shareText;
+        @SerializedName("post_type")
+        @Expose
+        private Integer post_type;
 
+        public Integer getPost_type() {
+            return post_type;
+        }
+
+        public void setPost_type(Integer post_type) {
+            this.post_type = post_type;
+        }
 
         public String getShareText() {
             return shareText;

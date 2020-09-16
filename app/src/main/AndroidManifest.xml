@@ -14,13 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.lists.NotificaitonList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activities.lists.NotificaitonList"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Activities.ModelTestSummery" />
         <activity android:name=".Activities.Details.ModelQustionDetails" />
         <activity android:name=".Activities.lists.AllModelQusList" />
@@ -44,6 +39,11 @@
         <activity android:name=".SplashScreen">
 
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
         </activity>

@@ -16,10 +16,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,6 +57,8 @@ public class PostDetailActivity extends AppCompatActivity {
     TextView title, date;
     CommentListAdapter adapter;
     RecyclerView comment_list;
+    EditText commentEditText;
+    Button send;
 
     List<CommentResponse.CommentModel> commentList = new ArrayList<>();
 
@@ -76,6 +81,9 @@ public class PostDetailActivity extends AppCompatActivity {
         like.setVisibility(View.GONE);
         comment_list = findViewById(R.id.commentList);
         textSize.setVisibility(View.VISIBLE);
+        send = findViewById(R.id.btnSend);
+        commentEditText = findViewById(R.id.editText);
+
         comment_list.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -91,6 +99,20 @@ public class PostDetailActivity extends AppCompatActivity {
             setUpView(model);
         }
 
+        send.setOnClickListener(v -> {
+            String comment = commentEditText.getText().toString();
+
+            if (TextUtils.isEmpty(comment)) {
+                Toast.makeText(getApplicationContext(), "Please Fill The Comment!!!", Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+               sendComment(comment);
+
+//                Toast.makeText(getApplicationContext(), "P"+ Utilities.getTodayDate(), Toast.LENGTH_SHORT)
+//                        .show();
+            }
+
+        });
 
         // click listener
         textSize.setOnClickListener(new View.OnClickListener() {
@@ -163,8 +185,8 @@ public class PostDetailActivity extends AppCompatActivity {
         date.setText("Date : " + Utilities.getDateFormated(model.getDate() + ""));
         descp.setText(model.getDescription() + "");
 
-        sendComment("this is a commnet from the app ");
-        loadCommentList("3");
+        // sendComment("this is a commnet from the app ");
+        //loadCommentList("3");
     }
 
     private void resizeTheFont() {
@@ -318,24 +340,25 @@ public class PostDetailActivity extends AppCompatActivity {
                         comment,
                         "user_name",
                         1,
-                        Utilities.getTodayDate() + ""
+                          Utilities.getTodayDate()+""
                 );
 
         CreateCall.enqueue(new Callback<MsgModel>() {
             @Override
             public void onResponse(Call<MsgModel> call, Response<MsgModel> response) {
                 if (response.code() == 200) {
-                        if(response.body().getError()){
-                          // eror happend
-                            Toast.makeText(getApplicationContext(), "Something Went Wrong Try Again", Toast.LENGTH_SHORT).show();
+                    if (response.body().getError()) {
+                        // eror happend
+                        Toast.makeText(getApplicationContext(), "Something Went Wrong Try Again", Toast.LENGTH_SHORT).show();
 
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Comment Posted", Toast.LENGTH_SHORT).show();
+                    } else {
 
-                        }
+                        Toast.makeText(getApplicationContext(), "Comment Posted", Toast.LENGTH_SHORT).show();
+
+                        commentEditText.setText("");
+                    }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Something Went Wrong Try Again "+ response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Something Went Wrong Try Again " + response.code(), Toast.LENGTH_SHORT).show();
                     Log.d("TAG", "onResponse: " + response.raw());
                 }
             }

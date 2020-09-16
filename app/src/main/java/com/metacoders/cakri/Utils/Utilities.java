@@ -21,7 +21,7 @@ public class Utilities {
 
     public static String getTodayDate() {
         Date d = new Date();
-        CharSequence s = android.text.format.DateFormat.format("yyyy-mm-d", d.getTime());
+        CharSequence s = android.text.format.DateFormat.format("yyyy-MM-dd", d.getTime());
         //Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show();
 
         String date = s.toString();
