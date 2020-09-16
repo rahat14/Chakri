@@ -136,11 +136,46 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
     public void setUpSideBar() {
 
         // TODO TOMA STart HERE .......
-        LinearLayout bcs_model_test, bank_model_test;
+        LinearLayout bcs_model_test, bank_model_test , daily_news,bcs_preparation,bank_preparation,teacher_preparation,current_qus_sol,all_job_sol
+                        ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi;
 
+        
+        daily_news = drawerLayout.findViewById(R.id.daily_news);
+        bcs_preparation = drawerLayout.findViewById(R.id.bcs_preparation);
         bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
+        bank_preparation = drawerLayout.findViewById(R.id.bank_preparation);
         bank_model_test = drawerLayout.findViewById(R.id.bank_model_test);
+        teacher_preparation = drawerLayout.findViewById(R.id.teacher_preparation);
+        current_qus_sol = drawerLayout.findViewById(R.id.current_qus_sol);
+        all_job_sol = drawerLayout.findViewById(R.id.all_job_sol);
+        viva_expi = drawerLayout.findViewById(R.id.viva_expi);
+        interview_tip = drawerLayout.findViewById(R.id.interview_tip);
+        application_cv = drawerLayout.findViewById(R.id.application_cv);
+        job_qus = drawerLayout.findViewById(R.id.job_qus);
+        inspratn = drawerLayout.findViewById(R.id.inspratn);
+        age_cal = drawerLayout.findViewById(R.id.age_cal);
+        prblms_update = drawerLayout.findViewById(R.id.prblms_update);
+        notifi = drawerLayout.findViewById(R.id.notifi);
 
+
+
+
+
+        //set click listener
+
+        daily_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        bcs_preparation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         bcs_model_test.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +188,13 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             }
         });
 
+        bank_preparation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         bank_model_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,6 +202,84 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
                 p.putExtra("TITLE", "ব্যাংক মডেল টেস্ট");
                 p.putExtra("CAT_ID", Constants.MODEL_QUSTION_BANK_CATGORY);
                 startActivity(p);
+
+            }
+        });
+
+
+        teacher_preparation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        current_qus_sol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        all_job_sol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        viva_expi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        interview_tip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        application_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        job_qus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        inspratn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        age_cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        prblms_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        notifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });

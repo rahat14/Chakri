@@ -27,6 +27,7 @@
                 >
                 <include layout="@layout/nav_header_home" />
                 <LinearLayout
+                    android:id="@+id/daily_news"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -59,6 +60,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/bcs_preparation"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -123,7 +125,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
-                <LinearLayout
+                 <LinearLayout
+                    android:id="@+id/bank_preparation"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -189,6 +192,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/teacher_preparation"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -221,6 +225,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/current_qus_sol"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -253,6 +258,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/all_job_sol"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -285,6 +291,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/viva_expi"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -318,6 +325,7 @@
                     android:background="#718FA2"/>
 
                 <LinearLayout
+                    android:id="@+id/interview_tip"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -351,6 +359,7 @@
                     android:background="#718FA2"/>
 
                 <LinearLayout
+                    android:id="@+id/application_cv"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -383,6 +392,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/job_qus"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -415,6 +425,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/inspratn"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -447,6 +458,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/age_cal"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -479,6 +491,7 @@
                     android:layout_height="0.8dp"
                     android:background="#718FA2"/>
                 <LinearLayout
+                    android:id="@+id/prblms_update"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -512,6 +525,7 @@
                     android:background="#718FA2"/>
 
                 <LinearLayout
+                    android:id="@+id/notifi"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
