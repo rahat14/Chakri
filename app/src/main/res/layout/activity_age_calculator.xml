@@ -29,156 +29,282 @@
                 />
 
 
-            <TextView
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:text="DATE OF BIRTH"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textSize="@dimen/_14sdp"
-                android:fontFamily="@font/kalpurush"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:background="@drawable/square"/>
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/inputLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="DATE OF BIRTH"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/kalpurush"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/square"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:orientation="horizontal"
+            >
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="1.0"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_weight=".3"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:text="DATE"
-                        android:layout_marginLeft="@dimen/_5sdp"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/_14sdp"
-                        android:fontFamily="@font/kalpurush"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:background="@drawable/white_square"
-                        android:drawablePadding="@dimen/_5sdp"
-                        android:drawableRight="@drawable/dropdpwn_icon"/>
-                    <TextView
-                        android:layout_weight=".3"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:text="Month"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/_14sdp"
-                        android:fontFamily="@font/kalpurush"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:background="@drawable/white_square"
-                        android:drawablePadding="@dimen/_5sdp"
-                        android:drawableRight="@drawable/dropdpwn_icon"/>
-                    <TextView
-                        android:layout_weight=".3"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:text="Year"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/_14sdp"
-                        android:fontFamily="@font/kalpurush"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:background="@drawable/white_square"
-                        android:drawablePadding="@dimen/_5sdp"
-                        android:drawableRight="@drawable/dropdpwn_icon"/>
-
-                </LinearLayout>
-            <TextView
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:text="DATE OF BIRTH"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textSize="@dimen/_14sdp"
-                android:fontFamily="@font/kalpurush"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:background="@drawable/square"/>
-
-            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/startdate"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1.0"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_weight=".3"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:text="DATE"
-                    android:layout_marginLeft="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_14sdp"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Birth Date : "
                     android:fontFamily="@font/kalpurush"
                     android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:background="@drawable/white_square"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:drawableRight="@drawable/dropdpwn_icon"/>
+                    android:textColor="@color/colorBlack"
+                    android:layout_height="wrap_content"/>
+
                 <TextView
-                    android:layout_weight=".3"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:text="Month"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_14sdp"
+                    android:id="@+id/startDateTv"
                     android:fontFamily="@font/kalpurush"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:background="@drawable/white_square"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:drawableRight="@drawable/dropdpwn_icon"/>
-                <TextView
-                    android:layout_weight=".3"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:text="Year"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_14sdp"
-                    android:fontFamily="@font/kalpurush"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:background="@drawable/white_square"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:drawableRight="@drawable/dropdpwn_icon"/>
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:text="12,Sept,2020"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:drawableTint="@color/colorPrimary"/>
 
             </LinearLayout>
 
 
+            <!--            <TextView-->
+<!--                android:id="@+id/date"-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="DATE"-->
+<!--                android:layout_marginLeft="@dimen/_5sdp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/month"-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="Month"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/year"-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="Year"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
 
 
 
+        </LinearLayout>
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Age Of The Date Of"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/kalpurush"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/square"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/endDate"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:text="End Date : "
+                    android:textStyle="bold"
+                    android:fontFamily="@font/kalpurush"
+                    android:textColor="@color/colorBlack"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/endDateTv"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:text="12,Sept,2020"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/kalpurush"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:drawableTint="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+<!--            <TextView-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="DATE"-->
+<!--                android:layout_marginLeft="@dimen/_5sdp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
+<!--            <TextView-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="Month"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
+<!--            <TextView-->
+<!--                android:layout_weight=".3"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:text="Year"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="@dimen/_14sdp"-->
+<!--                android:fontFamily="@font/kalpurush"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginRight="@dimen/_10sdp"-->
+<!--                android:background="@drawable/white_square"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:drawableRight="@drawable/dropdpwn_icon"/>-->
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"/>
+
+
+    </LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/resultLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:orientation="vertical"
+>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:text="Result"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/kalpurush"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:background="@drawable/square"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_weight=".3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:text="27 Years 07 Months 25 Days"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/kalpurush"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/white_square"
+        android:drawablePadding="@dimen/_5sdp"
+        />
+
+
+
+</LinearLayout>
 
         </LinearLayout>
 
@@ -200,6 +326,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/calculateBtn"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="@dimen/_35sdp"
             android:text="CALCULATE"

@@ -135,6 +135,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
     public void setUpSideBar() {
 
+        // TODO TOMA STart HERE .......
         LinearLayout bcs_model_test, bank_model_test;
 
         bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
