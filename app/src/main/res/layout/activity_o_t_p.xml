@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Activities.OTPActivity">
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="54dp"
+        android:fontFamily="@font/kalpurush"
+        android:textColor="@color/black"
+        android:text="Enter 6 Digit Code that sent  to your phone"
+        android:textSize="22sp" />
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:height="45dp"
+        app:width="40dp"
+
+        app:bar_enabled="false"
+        app:bar_height="2dp"
+        app:length="6"
+        app:otp_box_background="@drawable/otp_box_active"
+        app:otp=""
+        app:bar_margin_left="5dp"
+        app:bar_active_color="@color/colorPrimary"
+        app:otp_text_size="24dp"/>
+
+    <Button
+        android:id="@+id/signUPBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sign Up" />
+
+
+</LinearLayout>

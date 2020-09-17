@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +21,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.metacoders.cakri.Adapter.CommentListAdapter;
+import com.metacoders.cakri.AgeCalculator;
 import com.metacoders.cakri.Models.CommentResponse;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Models.MsgModel;
@@ -59,9 +62,12 @@ public class PostDetailActivity extends AppCompatActivity {
     RecyclerView comment_list;
     EditText commentEditText;
     Button send;
+    Button imaged1, imaged2, imaged3, pdfd;
 
     List<CommentResponse.CommentModel> commentList = new ArrayList<>();
-
+    String UNIVERSAL_LINK = "";
+    LinearLayout commentBox, LoginBox;
+    Utilities utilities = new Utilities();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +89,8 @@ public class PostDetailActivity extends AppCompatActivity {
         textSize.setVisibility(View.VISIBLE);
         send = findViewById(R.id.btnSend);
         commentEditText = findViewById(R.id.editText);
-
+        commentBox = findViewById(R.id.commentContainer);
+        LoginBox = findViewById(R.id.LoginContainer);
         comment_list.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -106,7 +113,14 @@ public class PostDetailActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Please Fill The Comment!!!", Toast.LENGTH_SHORT)
                         .show();
             } else {
-               sendComment(comment);
+                Utilities ut = new Utilities();
+                if (ut.isUserSignedIn(getApplicationContext()) == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Log IN!!!", Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    sendComment(comment, ut.isUserSignedIn(getApplicationContext()));
+                }
+
 
 //                Toast.makeText(getApplicationContext(), "P"+ Utilities.getTodayDate(), Toast.LENGTH_SHORT)
 //                        .show();
@@ -134,7 +148,67 @@ public class PostDetailActivity extends AppCompatActivity {
         findViewById(R.id.downloadBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Start_dowload();
+                Dialog dialog = new Dialog(PostDetailActivity.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.dwld_dialouge_ayout);
+
+                imaged1 = dialog.findViewById(R.id.image1_Button);
+                imaged2 = dialog.findViewById(R.id.image2_Button);
+                imaged3 = dialog.findViewById(R.id.image3_Button);
+                pdfd = dialog.findViewById(R.id.pdf_Button);
+
+                if (model.getImage().equals("NULL")) {
+
+
+                    imaged1.setVisibility(View.GONE);
+                }
+                if (model.getImage2().equals("NULL")) {
+                    imaged2.setVisibility(View.GONE);
+                }
+                if (model.getImage3().equals("NULL")) {
+                    imaged3.setVisibility(View.GONE);
+                }
+                if (model.getPdf().equals("NULL")) {
+                    pdfd.setVisibility(View.GONE);
+                }
+
+                imaged1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UNIVERSAL_LINK = Constants.IMAGE_URL + model.getImage();
+                        dialog.dismiss();
+                        Start_dowload(Constants.IMAGE_URL + model.getImage());
+                    }
+                });
+                imaged2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UNIVERSAL_LINK = Constants.IMAGE_URL + model.getImage2();
+                        dialog.dismiss();
+                        Start_dowload(Constants.IMAGE_URL + model.getImage2());
+                    }
+                });
+                imaged3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UNIVERSAL_LINK = Constants.IMAGE_URL + model.getImage3();
+                        dialog.dismiss();
+                        Start_dowload(Constants.IMAGE_URL + model.getImage3());
+                    }
+                });
+                pdfd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UNIVERSAL_LINK = Constants.IMAGE_URL + model.getPdf();
+                        dialog.dismiss();
+                        Start_dowload(Constants.IMAGE_URL + model.getPdf());
+                    }
+                });
+
+
+                dialog.show();
+
+
             }
         });
     }
@@ -177,7 +251,9 @@ public class PostDetailActivity extends AppCompatActivity {
                     .into(image3);
         }
         // load comment list
-        loadCommentList("3");
+
+
+        loadCommentList(model.getId() + "");
 
 
         // setting  texts
@@ -220,36 +296,28 @@ public class PostDetailActivity extends AppCompatActivity {
 
     }
 
-    private void Start_dowload() {
+    private void Start_dowload(String link) {
 
-        if (model.getImage().equals("NULL") && model.getImage2().equals("NULL") && model.getImage3().equals("NULL") && model.getPdf().equals("NULL")) {
 
-            Toast.makeText(getApplicationContext(), "There is NO Attachment For Download!!", Toast.LENGTH_LONG)
-                    .show();
-
-        } else {
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkCallingOrSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_DENIED) {
-                    // permission denied requet is
-                    String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                    requestPermissions(permissions, PERMISSION_STORAGE_CODE);
-                } else {
-                    starDownloading();
-                }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkCallingOrSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                    PackageManager.PERMISSION_DENIED) {
+                // permission denied requet is
+                String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                requestPermissions(permissions, PERMISSION_STORAGE_CODE);
             } else {
-                starDownloading();
+                starDownloading(link);
             }
-
+        } else {
+            starDownloading(link);
         }
 
 
     }
 
-    private void starDownloading() {
+    private void starDownloading(String link) {
 
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(Constants.IMAGE_URL + model.getImage()));
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(link));
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
         request.setTitle("Download");
         request.setDescription("Downloading File");
@@ -263,6 +331,22 @@ public class PostDetailActivity extends AppCompatActivity {
         downloadManager.enqueue(request);
     }
 
+    public void commnetBoxFunc() {
+
+        int id = utilities.isUserSignedIn(getApplicationContext());
+        if (id == 0) {
+            // user not logged in
+            commentBox.setVisibility(View.GONE);
+            LoginBox.setVisibility(View.VISIBLE);
+
+        } else {
+
+            commentBox.setVisibility(View.VISIBLE);
+            LoginBox.setVisibility(View.GONE);
+        }
+
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -271,7 +355,7 @@ public class PostDetailActivity extends AppCompatActivity {
             case PERMISSION_STORAGE_CODE: {
                 if (grantResults.length > 0 && grantResults[0]
                         == PackageManager.PERMISSION_GRANTED) {
-                    starDownloading();
+                    starDownloading(UNIVERSAL_LINK);
                 } else {
                     Toast.makeText(this, "Permission denied ....!", Toast.LENGTH_LONG).show();
                 }
@@ -323,7 +407,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
     }
 
-    public void sendComment(String comment) {
+    public void sendComment(String comment, int id) {
         // get user data  , user_ id , user _ name
 
         //create the comment
@@ -335,12 +419,12 @@ public class PostDetailActivity extends AppCompatActivity {
 //        @Field("date") String date
         Call<MsgModel> CreateCall = RetrofitClient.getInstance().getApi()
                 .PostAComment(
-                        3,
+                        model.getId(),
                         3, //post type
-                        comment,
-                        "user_name",
-                        1,
-                          Utilities.getTodayDate()+""
+                        comment, utilities.getSavedName(getApplicationContext())
+                        ,
+                        id,
+                        Utilities.getTodayDate() + ""
                 );
 
         CreateCall.enqueue(new Callback<MsgModel>() {
@@ -356,6 +440,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Comment Posted", Toast.LENGTH_SHORT).show();
 
                         commentEditText.setText("");
+                        loadCommentList(model.getId() + "");
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Something Went Wrong Try Again " + response.code(), Toast.LENGTH_SHORT).show();
@@ -371,5 +456,11 @@ public class PostDetailActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        commnetBoxFunc();
     }
 }

@@ -36,7 +36,7 @@ public class NotificaitonAdapter extends RecyclerView.Adapter<NotificaitonAdapte
     public NotificaitonAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         view = LayoutInflater
-                .from(parent.getContext()).inflate(R.layout.row_post, parent, false);
+                .from(parent.getContext()).inflate(R.layout.row_nottificaiion, parent, false);
         return new ViewHolder(view, itemClickListenter);
     }
 
@@ -45,6 +45,7 @@ public class NotificaitonAdapter extends RecyclerView.Adapter<NotificaitonAdapte
     public void onBindViewHolder(NotificaitonAdapter.ViewHolder holder, final int position) {
 
         holder.title.setText(list.get(position).getTitle());
+        holder.details.setText(list.get(position).getDescription());
     }
 
     @Override
@@ -54,7 +55,7 @@ public class NotificaitonAdapter extends RecyclerView.Adapter<NotificaitonAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder  implements  View.OnClickListener{
 
-        TextView title ;
+        TextView title  , details;
 
         ItemClickListenter itemClickListenter;
 
@@ -62,6 +63,7 @@ public class NotificaitonAdapter extends RecyclerView.Adapter<NotificaitonAdapte
             super(itemView);
             itemView.setOnClickListener(this );
             title = itemView.findViewById(R.id.heading_text);
+            details = itemView.findViewById(R.id.heading_desp) ;
             this.itemClickListenter = itemClickListenter;
         }
 

@@ -2,16 +2,13 @@ package com.metacoders.cakri;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.metacoders.cakri.Activities.All_Circular_List;
-import com.metacoders.cakri.Adapter.categorylistAdapter;
+import com.metacoders.cakri.Activities.lists.All_Circular_List;
 
 
 public class jobCircularCategory extends AppCompatActivity implements View.OnClickListener {

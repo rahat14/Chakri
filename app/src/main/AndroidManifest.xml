@@ -14,18 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.lists.NotificaitonList"/>
+        <activity android:name=".Activities.Profile_Activity">
 
+
+        </activity>
+        <activity android:name=".Activities.OTPActivity" />
+        <activity android:name=".Activities.SignupActivity" />
+        <activity android:name=".Activities.login_activity">
+
+        </activity>
+        <activity android:name=".Activities.lists.NotificaitonList" />
         <activity android:name=".Activities.ModelTestSummery" />
         <activity android:name=".Activities.Details.ModelQustionDetails" />
         <activity android:name=".Activities.lists.AllModelQusList" />
         <activity android:name=".Result_age_calculator" />
-        <activity android:name=".AgeCalculator" >
-
-
-        </activity>
+        <activity android:name=".AgeCalculator" />
         <activity android:name=".Activities.lists.All_Job_Prep" />
-        <activity android:name=".Activities.All_Circular_List" />
+        <activity android:name=".Activities.lists.All_Circular_List" />
         <activity android:name=".Quiz_Activity" />
         <activity android:name=".BcsModelQusPrep" />
         <activity android:name=".BankModelQusPrep" />
@@ -40,15 +45,11 @@
         <activity android:name=".qus_bank_bcs_govt_list_page" />
         <activity android:name=".home_page" />
         <activity android:name=".SplashScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
         </activity>
         <activity android:name=".Job_prep_page" />
     </application>

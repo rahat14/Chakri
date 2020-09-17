@@ -153,6 +153,20 @@ public class NotificaitonResponse implements Serializable {
         @SerializedName("date")
         @Expose
         private String date;
+        @SerializedName("post_type")
+        @Expose
+        private String post_type;
+        @SerializedName("post_id")
+        @Expose
+        private String post_id;
+
+        public String getPost_type() {
+            return post_type;
+        }
+
+        public void setPost_type(String post_type) {
+            this.post_type = post_type;
+        }
 
         public Integer getId() {
             return id;

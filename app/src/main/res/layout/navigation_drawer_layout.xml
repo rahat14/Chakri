@@ -493,6 +493,7 @@
                 <LinearLayout
                     android:id="@+id/prblms_update"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#80ffffff"
@@ -525,7 +526,7 @@
                     android:background="#718FA2"/>
 
                 <LinearLayout
-                    android:id="@+id/notifi"
+
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
@@ -559,6 +560,7 @@
                     android:background="#718FA2"/>
 
                 <LinearLayout
+                    android:id="@+id/notifi"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"

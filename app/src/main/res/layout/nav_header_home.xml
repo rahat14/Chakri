@@ -32,7 +32,6 @@
         />
     <TextView
         android:id="@+id/ph_on_header"
-
         android:textSize="14sp"
         android:layout_toEndOf="@+id/image_on_header"
         android:layout_width="wrap_content"

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378481039816",
+    "firebase_url": "https://chakri-990de.firebaseio.com",
+    "project_id": "chakri-990de",
+    "storage_bucket": "chakri-990de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378481039816:android:02559a221c3b48593c48fd",
+        "android_client_info": {
+          "package_name": "com.metacoders.cakri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378481039816-i62e7clh37ekt2q2sjihrg8b2q454hei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metacoders.cakri",
+            "certificate_hash": "e7134e9e771c4552820851631487affe4d0ba29b"
+          }
+        },
+        {
+          "client_id": "378481039816-dsq67ijukbgv1vvmotne2bfp50l26ufs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPw4VK5KRlptXfBo-ATwwv0o0G4Sfcezk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378481039816-dsq67ijukbgv1vvmotne2bfp50l26ufs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

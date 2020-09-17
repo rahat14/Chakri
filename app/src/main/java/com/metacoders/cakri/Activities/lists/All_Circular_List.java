@@ -1,4 +1,4 @@
-package com.metacoders.cakri.Activities;
+package com.metacoders.cakri.Activities.lists;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

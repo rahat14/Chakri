@@ -2,7 +2,7 @@ package com.metacoders.cakri.Api;
 
 import com.metacoders.cakri.Models.CommentResponse;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
-import com.metacoders.cakri.Models.JobPrepResponseModel;
+import com.metacoders.cakri.Models.Response_login;
 import com.metacoders.cakri.Models.ModelQustionListResponse;
 import com.metacoders.cakri.Models.MsgModel;
 import com.metacoders.cakri.Models.NotificaitonResponse;
@@ -72,15 +72,21 @@ public interface ChakriApi {
     // start up service
     @GET("start-up")
     Call<StartUpResponse> getInitialData();
+
     // nottificaiton  service
     @GET("notifications")
     Call<NotificaitonResponse> getNotificaiton(
             @Query("page") int page
     );
 
+    @GET("check/phone/{ph}")
+    Call<MsgModel> checkPhone(@Path("ph") String ph);
+
     //comment list
     @GET("comments/{id}")
     Call<CommentResponse> getCommentList(@Path("id") String id);
+    @GET("login/{ph}/{pass}")
+    Call<Response_login> login(@Path("ph") String ph   , @Path("pass") String pass  );
 
     // create
 
@@ -95,14 +101,25 @@ public interface ChakriApi {
     @FormUrlEncoded
     @POST("create/comment")
     Call<MsgModel> PostAComment(
-            @Field("post_id") int  post_id,
+            @Field("post_id") int post_id,
             @Field("post_type") int post_type,
             @Field("content") String content,
             @Field("user_name") String user_name,
             @Field("user_id") int user_id,
             @Field("date") String date
-            );
+    );
 
+    @FormUrlEncoded
+    @POST("create/user")
+    Call<MsgModel> CreateAUser(
+            @Field("full_name") String full_name,
+            @Field("password") String password,
+            @Field("adress") String adress,
+            @Field("user_name") String user_name,
+            @Field("phone") String phone,
+            @Field("email") String email
+
+    );
 
 
 }

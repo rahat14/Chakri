@@ -12,14 +12,21 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.navigation.NavigationView;
 import com.metacoders.cakri.Activities.Details.PostDetailActivity;
+import com.metacoders.cakri.Activities.Profile_Activity;
+import com.metacoders.cakri.Activities.lists.All_Job_Prep;
+import com.metacoders.cakri.Activities.lists.NotificaitonList;
+import com.metacoders.cakri.Activities.login_activity;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Adapter.listAdapter;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Models.StartUpResponse;
 import com.metacoders.cakri.Utils.Constants;
+import com.metacoders.cakri.Utils.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +35,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
 
     RecyclerView latestUpdate, latestCircular, latestJobPrep;
-    DrawerLayout drawerLayout;
+
     ImageView hamburger_Btn;
     ActionBarDrawerToggle toggle;
     MaterialToolbar toolbar;
@@ -51,18 +58,6 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
 
 
-        hamburger_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    drawerLayout.closeDrawer(Gravity.LEFT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.LEFT);
-                }
-            }
-        });
-      
         setUpSideBar();
 
         findViewById(R.id.job_category_id).setOnClickListener(new View.OnClickListener() {
@@ -113,7 +108,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
     private void setupUI(StartUpResponse startUpResponse) {
         latestCircular = findViewById(R.id.latestCircular);
-        drawerLayout = findViewById(R.id.drawer_layout);
+
         toolbar = findViewById(R.id.toolbar);
         hamburger_Btn = findViewById(R.id.hamburgerBtn);
         latestJobPrep = findViewById(R.id.latestJobPrep);
@@ -134,12 +129,15 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
 
     public void setUpSideBar() {
+        NavigationView navigationView ;
+        DrawerLayout drawerLayout;
+        TextView name , phone ;
 
-        // TODO TOMA STart HERE .......
         LinearLayout bcs_model_test, bank_model_test , daily_news,bcs_preparation,bank_preparation,teacher_preparation,current_qus_sol,all_job_sol
                         ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi;
 
-        
+
+        drawerLayout = findViewById(R.id.drawer_layout);
         daily_news = drawerLayout.findViewById(R.id.daily_news);
         bcs_preparation = drawerLayout.findViewById(R.id.bcs_preparation);
         bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
@@ -156,8 +154,60 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         age_cal = drawerLayout.findViewById(R.id.age_cal);
         prblms_update = drawerLayout.findViewById(R.id.prblms_update);
         notifi = drawerLayout.findViewById(R.id.notifi);
+        navigationView=findViewById(R.id.nav_view);
 
 
+
+        name = drawerLayout.findViewById(R.id.name_on_header) ;
+        phone = drawerLayout.findViewById(R.id.ph_on_header);
+
+        Utilities utilities = new Utilities() ;
+
+        int id  =0 ;
+
+       id =  utilities.isUserSignedIn(getApplicationContext()) ;
+       if(id == 0 ){
+           name.setText("Login");
+
+           phone.setText("");
+       }
+       else {
+           name.setText(utilities.getSavedName(getApplicationContext()));
+           phone.setText(utilities.getSavedContacts(getApplicationContext()));
+       }
+
+    name.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+             int id =  utilities.isUserSignedIn(getApplicationContext()) ;
+            if(id==0){
+                Intent p = new Intent(getApplicationContext(), login_activity.class) ;
+                startActivity(p);
+
+            }
+            else {
+
+                Intent p = new Intent(getApplicationContext(), Profile_Activity.class) ;
+                startActivity(p);
+
+            }
+
+        }
+    });
+
+
+
+        hamburger_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                }
+            }
+        });
 
 
 
@@ -167,6 +217,10 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
 
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "4");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
             }
         });
 
@@ -174,6 +228,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
 
+              Intent  nextPage = new Intent(getApplicationContext(), bcsSpecialPage.class);
+                startActivity(nextPage);
             }
         });
 
@@ -191,6 +247,9 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         bank_preparation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               Intent nextPage = new Intent(getApplicationContext(), Bank_job_special.class);
+                startActivity(nextPage);
+
 
             }
         });
@@ -210,13 +269,20 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         teacher_preparation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "6");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
             }
         });
 
         current_qus_sol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "7");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
 
             }
         });
@@ -224,21 +290,28 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         all_job_sol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent nextPage = new Intent(getApplicationContext(), allJobSolution.class);
+                startActivity(nextPage);
             }
         });
 
         viva_expi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "0");
+                p.putExtra("sub_cat_id", "14");
+                startActivity(p);
             }
         });
 
         interview_tip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "15");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
             }
         });
 
@@ -246,6 +319,10 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
 
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "22");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
             }
         });
 
@@ -259,14 +336,18 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         inspratn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
+                p.putExtra("cat_id", "13");
+                p.putExtra("sub_cat_id", "0");
+                startActivity(p);
             }
         });
 
         age_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent p = new Intent(getApplicationContext(), AgeCalculator.class);
+                startActivity(p);
             }
         });
 
@@ -281,6 +362,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
 
+                Intent p = new Intent(getApplicationContext() , NotificaitonList.class) ;
+                startActivity(p);
             }
         });
 
@@ -295,5 +378,11 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         startActivity(p);
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setUpSideBar();
     }
 }
