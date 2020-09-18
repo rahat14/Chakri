@@ -148,8 +148,8 @@ public interface ChakriApi {
     @POST("create/faq")
     Call<MsgModel> CreateFAQ(
             @Field("user_id") int user_id,
-            @Field("qus") int qus,
-            @Field("ans") double ans
+            @Field("qus") String qus,
+            @Field("ans") String ans
 
 
     );
