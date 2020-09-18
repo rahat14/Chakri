@@ -2,6 +2,7 @@ package com.metacoders.cakri;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,9 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Activities.Profile_Activity;
+import com.metacoders.cakri.Activities.Search;
 import com.metacoders.cakri.Activities.lists.All_Job_Prep;
+import com.metacoders.cakri.Activities.lists.FaqList;
 import com.metacoders.cakri.Activities.lists.NotificaitonList;
 import com.metacoders.cakri.Activities.login_activity;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
@@ -160,6 +163,25 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
         name = drawerLayout.findViewById(R.id.name_on_header) ;
         phone = drawerLayout.findViewById(R.id.ph_on_header);
+
+        SearchView searchView = findViewById(R.id.search_ed) ;
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                Intent p = new Intent(getApplicationContext() , Search.class);
+                p.putExtra("search" , query) ;
+                startActivity(p);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
         Utilities utilities = new Utilities() ;
 
@@ -329,7 +351,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         job_qus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent nextPage = new Intent(getApplicationContext(), FaqList.class);
+                startActivity(nextPage);
             }
         });
 

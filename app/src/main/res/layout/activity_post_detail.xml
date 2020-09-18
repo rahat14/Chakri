@@ -45,7 +45,7 @@
             android:justificationMode="inter_word"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <ImageView
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/imag1"
             android:layout_width="match_parent"
             android:src="@drawable/placeholder"
@@ -54,8 +54,8 @@
             android:layout_marginEnd="16dp"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"
-            android:layout_height="220dp"/>
-        <ImageView
+            android:layout_height="wrap_content"/>
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/image2"
             android:layout_width="match_parent"
             android:src="@drawable/placeholder"
@@ -65,8 +65,8 @@
             android:scaleType="centerCrop"
             android:visibility="gone"
             android:layout_gravity="center_horizontal"
-            android:layout_height="220dp"/>
-        <ImageView
+            android:layout_height="wrap_content"/>
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/image3"
             android:layout_width="match_parent"
             android:src="@drawable/placeholder"
@@ -76,7 +76,7 @@
             android:visibility="gone"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"
-            android:layout_height="220dp"/>
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
                 android:id="@+id/downloadBtn"
                 android:layout_width="0dp"
                 android:layout_weight="0.6"
-                android:text="Download Image/Pdf"
+                android:text="Download"
                 android:layout_margin="3dp"
                 android:layout_height="wrap_content"/>
 
@@ -121,15 +121,15 @@
             android:layout_height="@dimen/_60sdp">
 
 
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/white"
                 android:text="@string/you_have_to_be_registerd_user_to_comment"/>
 
 

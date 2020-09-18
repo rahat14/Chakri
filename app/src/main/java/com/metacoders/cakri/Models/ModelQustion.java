@@ -8,10 +8,31 @@ public  class ModelQustion implements Serializable {
 
     private List<userAnsModel>  userAnsList = new ArrayList<>();
     private  List<qusizModel> qusList = new ArrayList<>() ;
+    private  int id  ;
+    private  int qusType  ;
 
-    public ModelQustion(List<userAnsModel> userAnsList, List<qusizModel> qusList) {
+
+    public ModelQustion(List<userAnsModel> userAnsList, List<qusizModel> qusList, int id, int qusType) {
         this.userAnsList = userAnsList;
         this.qusList = qusList;
+        this.id = id;
+        this.qusType = qusType;
+    }
+
+    public int getQusType() {
+        return qusType;
+    }
+
+    public void setQusType(int qusType) {
+        this.qusType = qusType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<userAnsModel> getUserAnsList() {

@@ -30,6 +30,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.metacoders.cakri.Activities.login_activity;
 import com.metacoders.cakri.Adapter.CommentListAdapter;
 import com.metacoders.cakri.AgeCalculator;
 import com.metacoders.cakri.Models.CommentResponse;
@@ -56,13 +58,14 @@ public class PostDetailActivity extends AppCompatActivity {
     TextView descp;
     AlertDialog alertDialog;
     JobCircularReponseModel.Job_Circular_Model model;
-    ImageView image1, image2, image3;
+    PhotoView image1, image2, image3;
     TextView title, date;
     CommentListAdapter adapter;
     RecyclerView comment_list;
     EditText commentEditText;
     Button send;
-    Button imaged1, imaged2, imaged3, pdfd;
+    Button imaged1, imaged2, imaged3, pdfd ,  loginBtn  ;
+            ;
 
     List<CommentResponse.CommentModel> commentList = new ArrayList<>();
     String UNIVERSAL_LINK = "";
@@ -73,8 +76,8 @@ public class PostDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-                WindowManager.LayoutParams.FLAG_SECURE);
+
+
 
         like = findViewById(R.id.likesLayout);
         textSize = findViewById(R.id.sizeLayout);
@@ -91,6 +94,7 @@ public class PostDetailActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.editText);
         commentBox = findViewById(R.id.commentContainer);
         LoginBox = findViewById(R.id.LoginContainer);
+        loginBtn = findViewById(R.id.loginBtn) ;
         comment_list.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -102,8 +106,13 @@ public class PostDetailActivity extends AppCompatActivity {
 
         if (model != null) {
 
+            if(model.getPost_type()!= 555){
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                        WindowManager.LayoutParams.FLAG_SECURE);
+            }
             Log.d("TAG", "onCreate: " + model.getTitle());
             setUpView(model);
+
         }
 
         send.setOnClickListener(v -> {
@@ -126,6 +135,14 @@ public class PostDetailActivity extends AppCompatActivity {
 //                        .show();
             }
 
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p  = new Intent(getApplicationContext() , login_activity.class) ;
+                startActivity(p);
+            }
         });
 
         // click listener
@@ -199,9 +216,9 @@ public class PostDetailActivity extends AppCompatActivity {
                 pdfd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UNIVERSAL_LINK = Constants.IMAGE_URL + model.getPdf();
+                        UNIVERSAL_LINK = Constants.PDF_URL + model.getPdf();
                         dialog.dismiss();
-                        Start_dowload(Constants.IMAGE_URL + model.getPdf());
+                        Start_dowload(Constants.PDF_URL + model.getPdf());
                     }
                 });
 
@@ -315,7 +332,8 @@ public class PostDetailActivity extends AppCompatActivity {
 
     }
 
-    private void starDownloading(String link) {
+    private void starDownloading(String link  ) {
+// 0 means pdf
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(link));
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
@@ -332,6 +350,7 @@ public class PostDetailActivity extends AppCompatActivity {
     }
 
     public void commnetBoxFunc() {
+
 
         int id = utilities.isUserSignedIn(getApplicationContext());
         if (id == 0) {

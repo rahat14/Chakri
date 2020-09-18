@@ -184,7 +184,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
     @Override
     public void onItemClick(JobCircularReponseModel.Job_Circular_Model model) {
 
-        Intent p = new Intent(getApplicationContext(), ModelQustionDetails.class);
+        Intent p = new Intent(getApplicationContext(), PostDetailActivity.class);
         p.putExtra("MODEL", model);
         startActivity(p);
 

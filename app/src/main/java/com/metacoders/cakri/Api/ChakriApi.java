@@ -2,10 +2,12 @@ package com.metacoders.cakri.Api;
 
 import com.metacoders.cakri.Models.CommentResponse;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
+import com.metacoders.cakri.Models.LeaderBoardModel;
 import com.metacoders.cakri.Models.Response_login;
 import com.metacoders.cakri.Models.ModelQustionListResponse;
 import com.metacoders.cakri.Models.MsgModel;
 import com.metacoders.cakri.Models.NotificaitonResponse;
+import com.metacoders.cakri.Models.SearchResponse;
 import com.metacoders.cakri.Models.StartUpResponse;
 import com.metacoders.cakri.Models.qusizModel;
 
@@ -82,6 +84,14 @@ public interface ChakriApi {
     @GET("check/phone/{ph}")
     Call<MsgModel> checkPhone(@Path("ph") String ph);
 
+
+    @GET("model_qus_rank/{id}")
+    Call<List<LeaderBoardModel>> getRank(@Path("id") String is);
+
+    //search list
+    @GET("search")
+    Call<SearchResponse> getSearch();
+
     //comment list
     @GET("comments/{id}")
     Call<CommentResponse> getCommentList(@Path("id") String id);
@@ -118,6 +128,29 @@ public interface ChakriApi {
             @Field("user_name") String user_name,
             @Field("phone") String phone,
             @Field("email") String email
+
+    );
+
+
+    @FormUrlEncoded
+    @POST("create/marksheet")
+    Call<MsgModel> CreateMarksheet(
+            @Field("user_id") int user_id,
+            @Field("qus_id") int qus_id,
+            @Field("score") double score,
+            @Field("mark_sheet") String mark_sheet ,
+            @Field("user_name") String user_name
+
+
+    );
+
+    @FormUrlEncoded
+    @POST("create/faq")
+    Call<MsgModel> CreateFAQ(
+            @Field("user_id") int user_id,
+            @Field("qus") int qus,
+            @Field("ans") double ans
+
 
     );
 

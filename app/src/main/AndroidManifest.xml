@@ -14,15 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.Profile_Activity">
-
-
-        </activity>
+        <activity android:name=".Activities.lists.FaqList"></activity>
+        <activity android:name=".Activities.Search"></activity>
+        <activity android:name=".Activities.RankPage" />
+        <activity android:name=".Activities.Profile_Activity" />
         <activity android:name=".Activities.OTPActivity" />
         <activity android:name=".Activities.SignupActivity" />
-        <activity android:name=".Activities.login_activity">
-
-        </activity>
+        <activity android:name=".Activities.login_activity" />
         <activity android:name=".Activities.lists.NotificaitonList" />
         <activity android:name=".Activities.ModelTestSummery" />
         <activity android:name=".Activities.Details.ModelQustionDetails" />

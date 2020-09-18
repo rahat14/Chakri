@@ -112,6 +112,19 @@ public class ModelQustionDetails extends AppCompatActivity {
     }
 
     private void startTimer() {
+        if(model.getSubCatId().equals("0")){
+// full qustion
+            if(model.getId().equals("2")){
+                // bcs fulll
+                EXAM_MAX_TIME = Constants.BCS_FULL_TIME ;
+
+            }
+            else EXAM_MAX_TIME =Constants.BANK_FULL_TIME ;
+
+        }
+        else {
+            EXAM_MAX_TIME = Constants.BANK_HALF_TIME ;
+        }
         countDownTimer  =   new CountDownTimer(EXAM_MAX_TIME, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -129,7 +142,30 @@ public class ModelQustionDetails extends AppCompatActivity {
             public void onFinish() {
                 timer.setText("Time Up!");
                 // TODO show A dialouge that times up
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ModelQustionDetails.this);
+                dialogBuilder.setTitle("Times Up!!!");
+                dialogBuilder.setMessage("Are You Sure You Want To Submit ?");
+                dialogBuilder.setCancelable(false);
+                dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // go to other acitivty
+                        countDownTimer.cancel();
+                        Intent p = new Intent(getApplicationContext() , ModelTestSummery.class) ;
+                        ModelQustion qustion  = new ModelQustion( userResPonseList , qusList  , model.getId() ,qus_name) ;
+                        p.putExtra("MODEL" , qustion) ;
+                        startActivity(p);
 
+                    }
+                });
+                dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialogBuilder.create().show();
             }
         }.start();
 
@@ -190,13 +226,13 @@ public class ModelQustionDetails extends AppCompatActivity {
             public void onFailure(Call<List<qusizModel>> call, Throwable t) {
 
                 Toast.makeText(getApplicationContext(), "Something Went Worng !!! ", Toast.LENGTH_SHORT).show();
-                ;
+
             }
         });
     }
 
     private void TriggerDialouge() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ModelQustionDetails.this);
         dialogBuilder.setTitle("Submit Answers");
         dialogBuilder.setMessage("Are You Sure You Want To Submit ?");
         dialogBuilder.setCancelable(false);
@@ -206,7 +242,7 @@ public class ModelQustionDetails extends AppCompatActivity {
                // go to other acitivty
                 countDownTimer.cancel();
                 Intent p = new Intent(getApplicationContext() , ModelTestSummery.class) ;
-                ModelQustion qustion  = new ModelQustion( userResPonseList , qusList) ;
+                ModelQustion qustion  = new ModelQustion( userResPonseList , qusList  , model.getId() ,qus_name) ;
                 p.putExtra("MODEL" , qustion) ;
                 startActivity(p);
 

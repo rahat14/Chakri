@@ -266,8 +266,9 @@ public class OTPActivity extends AppCompatActivity {
 
         Log.d("TAG", "saveUserForOffline: " + utilities.isUserSignedIn(getApplicationContext()));
         // then go to Main aactivitu
-        Intent p = new Intent(getApplicationContext() , home_page.class) ;
+        Intent p = new Intent(getApplicationContext() , login_activity.class) ;
         startActivity(p);
+        finish();
 
     }
 
