@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/kalpurush"
-            android:text="Ask Us Anything"
+            android:hint="Ask Us Anything"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:gravity="center_vertical"

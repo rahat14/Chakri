@@ -1,7 +1,10 @@
 package com.metacoders.cakri.Api;
 
+import com.metacoders.cakri.Models.BookmarkModel;
 import com.metacoders.cakri.Models.CommentResponse;
+import com.metacoders.cakri.Models.FaqModel;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
+import com.metacoders.cakri.Models.JobPrepModel;
 import com.metacoders.cakri.Models.LeaderBoardModel;
 import com.metacoders.cakri.Models.Response_login;
 import com.metacoders.cakri.Models.ModelQustionListResponse;
@@ -75,11 +78,33 @@ public interface ChakriApi {
     @GET("start-up")
     Call<StartUpResponse> getInitialData();
 
+
+    @GET("get-bookmark/{uid}")
+    Call<List<BookmarkModel>> getBookMark(
+            @Path("uid")int uid
+    );
+//$u_id , $p_id , $type ,$title
+    @FormUrlEncoded
+    @POST("save-bookmark")
+    Call<MsgModel> insertBookMark(
+            @Field("user_id") int uid,
+            @Field("post_id")int p_id,
+            @Field("post_type")int type,
+            @Field("title")String title
+    );
+
+
     // nottificaiton  service
     @GET("notifications")
     Call<NotificaitonResponse> getNotificaiton(
             @Query("page") int page
     );
+    @GET("single/{type}/{id}")
+    Call<JobPrepModel> getSingle(
+            @Path("type") String type ,
+            @Path("id") String id
+    );
+
 
     @GET("check/phone/{ph}")
     Call<MsgModel> checkPhone(@Path("ph") String ph);
@@ -91,7 +116,8 @@ public interface ChakriApi {
     //search list
     @GET("search")
     Call<SearchResponse> getSearch();
-
+    @GET("faq/{id}")
+    Call<List<FaqModel>> getFaqList(@Path("id") int id);
     //comment list
     @GET("comments/{id}")
     Call<CommentResponse> getCommentList(@Path("id") String id);

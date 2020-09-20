@@ -1,6 +1,8 @@
 package com.metacoders.cakri.Activities.lists;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -12,12 +14,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.metacoders.cakri.Adapter.FaqListAdapter;
+import com.metacoders.cakri.Models.FaqModel;
 import com.metacoders.cakri.Models.MsgModel;
 import com.metacoders.cakri.R;
 import com.metacoders.cakri.Service.RetrofitClient;
 import com.metacoders.cakri.Utils.Utilities;
 
 import java.time.temporal.ValueRange;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,12 +31,19 @@ import retrofit2.Response;
 public class FaqList extends AppCompatActivity {
 
     FloatingActionButton floatingActionButton  ;
+    RecyclerView recyclerView;
+    Utilities utilities = new Utilities();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq_list);
         floatingActionButton= findViewById(R.id.adQus)  ;
+        recyclerView = findViewById(R.id.list) ;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        loadFaq();
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +74,7 @@ public class FaqList extends AppCompatActivity {
 
                 String qus = qusEdit.getText().toString() ;
                 if(TextUtils.isEmpty(qus) ){
-                    Toast.makeText(getApplicationContext(), "Please Enter Your Qustion" , Toast.LENGTH_LONG)
+                    Toast.makeText(getApplicationContext(), "Please Enter Your Question" , Toast.LENGTH_LONG)
                             .show();
                 }
                 else
@@ -78,7 +90,7 @@ public class FaqList extends AppCompatActivity {
 
                         Call<MsgModel>call = RetrofitClient.getInstance()
                                 .getApi()
-                                .CreateFAQ(userid , qus , " ")  ;
+                                .CreateFAQ(userid , qus , "")  ;
 
                         call.enqueue(new Callback<MsgModel>() {
                             @Override
@@ -111,11 +123,36 @@ public class FaqList extends AppCompatActivity {
         });
 
 
+        dialog.show();
     }
 
     private void loadFaq() {
 
+            Call<List<FaqModel>>list = RetrofitClient.getInstance().getApi()
+                    .getFaqList(utilities.isUserSignedIn(getApplicationContext())) ;
 
+
+            list.enqueue(new Callback<List<FaqModel>>() {
+                @Override
+                public void onResponse(Call<List<FaqModel>> call, Response<List<FaqModel>> response) {
+
+
+                    if(response.code()== 200){
+                        List<FaqModel> list1 = response.body() ;
+
+                        recyclerView.setAdapter(new FaqListAdapter(getApplicationContext() ,list1 ));
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext() , "Something Went Wrong" + response.code() , Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<FaqModel>> call, Throwable t) {
+
+                    Toast.makeText(getApplicationContext() , "Something Went Wrong" , Toast.LENGTH_LONG).show();
+                }
+            });
 
 
     }

@@ -41,7 +41,18 @@ public class Bank_job_special extends AppCompatActivity implements View.OnClickL
 
 
 
-        bottomText.setText("★ব্যাংক লিখিত প্রস্তুতির সাজেশন দেখুন★");
+        bottomText.setText("⭐ব্যাংক লিখিত প্রস্তুতির সাজেশন দেখুন⭐");
+        findViewById(R.id.bottomContainer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent p = new Intent(getApplicationContext() , All_Job_Prep.class) ;
+                p.putExtra("cat_id" , "21" ) ;
+                p.putExtra("sub_cat_id" , "0") ;
+                startActivity(p);
+
+            }
+        });
     }
 
 

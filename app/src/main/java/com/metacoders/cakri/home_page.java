@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +22,9 @@ import com.google.android.material.navigation.NavigationView;
 import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Activities.Profile_Activity;
 import com.metacoders.cakri.Activities.Search;
+import com.metacoders.cakri.Activities.SinglePostDownloadArea;
 import com.metacoders.cakri.Activities.lists.All_Job_Prep;
+import com.metacoders.cakri.Activities.lists.Book_Mark_List;
 import com.metacoders.cakri.Activities.lists.FaqList;
 import com.metacoders.cakri.Activities.lists.NotificaitonList;
 import com.metacoders.cakri.Activities.login_activity;
@@ -30,6 +34,11 @@ import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Models.StartUpResponse;
 import com.metacoders.cakri.Utils.Constants;
 import com.metacoders.cakri.Utils.Utilities;
+import com.onesignal.OSNotificationAction;
+import com.onesignal.OSNotificationOpenResult;
+import com.onesignal.OneSignal;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +60,11 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .setNotificationOpenedHandler(new notificationOpenHandler())
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
         // recive the data
         startUpResponse = (StartUpResponse) getIntent().getSerializableExtra("DATA");
 
@@ -137,7 +150,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         TextView name , phone ;
 
         LinearLayout bcs_model_test, bank_model_test , daily_news,bcs_preparation,bank_preparation,teacher_preparation,current_qus_sol,all_job_sol
-                        ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi;
+                        ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi
+                , love , share , bookmark ;
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -158,6 +172,10 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         prblms_update = drawerLayout.findViewById(R.id.prblms_update);
         notifi = drawerLayout.findViewById(R.id.notifi);
         navigationView=findViewById(R.id.nav_view);
+        love = findViewById(R.id.heart) ;
+        bookmark = findViewById(R.id.bookmark) ;
+        share = findViewById(R.id.share) ;
+
 
 
 
@@ -197,6 +215,18 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
            name.setText(utilities.getSavedName(getApplicationContext()));
            phone.setText(utilities.getSavedContacts(getApplicationContext()));
        }
+
+       // app bar section
+        bookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext() , Book_Mark_List.class);
+                startActivity(p);
+            }
+        });
+
+
+
 
     name.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -407,5 +437,54 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
     protected void onResume() {
         super.onResume();
         setUpSideBar();
+    }
+
+
+    public class notificationOpenHandler implements OneSignal.NotificationOpenedHandler {
+        @Override
+        public void notificationOpened(OSNotificationOpenResult result) {
+            //   String title = result.notification.payload.title;
+            String desc = result.notification.payload.body;
+            //  String f = result.notification.payload.groupKey
+
+           // Intent intent = new Intent(getApplicationContext(), NottificationPage.class);
+          //  intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+          //  startActivity(intent);
+            OSNotificationAction.ActionType actionType = result.action.type;
+            JSONObject data = result.notification.payload.additionalData;
+            String post_type  , id ;
+            Log.d("TAG", "opended");
+
+            Log.d("TAG", "result.notification.payload.toJSONObject().toString(): " + result.notification.payload.toJSONObject().toString());
+
+            if (data != null) {
+                post_type = data.optString("post_type", null);
+                id = data.optString("id" , null) ;
+                if (!post_type.equals("000"))
+                {
+                    Log.d("TAG", "key set with value: " + post_type);
+                    Log.d("TAG", "key set with value: " + id);
+                    Intent intent = new Intent(getApplicationContext(), SinglePostDownloadArea.class);
+                    intent.putExtra("POST_TYPE" , post_type) ;
+                    intent.putExtra("ID" , id ) ;
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+                else {
+
+                    //Log.d("TAG", "key set with value: " + post_type);
+                    Intent intent = new Intent(getApplicationContext(), NotificaitonList.class);
+                    startActivity(intent);
+                }
+
+
+
+            }
+
+
+
+
+        }
+
     }
 }

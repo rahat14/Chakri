@@ -1,4 +1,4 @@
-package com.metacoders.cakri.Activities.Details;
+package com.metacoders.cakri.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,21 +22,18 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
-import com.google.android.material.button.MaterialButton;
-import com.metacoders.cakri.Activities.login_activity;
+import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Adapter.CommentListAdapter;
-import com.metacoders.cakri.AgeCalculator;
 import com.metacoders.cakri.Models.CommentResponse;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
+import com.metacoders.cakri.Models.JobPrepModel;
 import com.metacoders.cakri.Models.MsgModel;
 import com.metacoders.cakri.R;
 import com.metacoders.cakri.Service.RetrofitClient;
@@ -50,11 +47,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Field;
 
-public class PostDetailActivity extends AppCompatActivity {
-
-    private static final int PERMISSION_STORAGE_CODE = 1000;
+public class SinglePostDownloadArea extends AppCompatActivity {
     LinearLayout like, textSize;
     TextView descp;
     AlertDialog alertDialog;
@@ -65,10 +59,9 @@ public class PostDetailActivity extends AppCompatActivity {
     RecyclerView comment_list;
     EditText commentEditText;
     Button send;
-    Button imaged1, imaged2, imaged3, pdfd ,  loginBtn  ;
-            ;
-    MaterialButton BookmarkBtn ;
+    Button imaged1, imaged2, imaged3, pdfd, loginBtn;
 
+    private static final int PERMISSION_STORAGE_CODE = 1000;
     List<CommentResponse.CommentModel> commentList = new ArrayList<>();
     String UNIVERSAL_LINK = "";
     LinearLayout commentBox, LoginBox;
@@ -77,10 +70,7 @@ public class PostDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_detail);
-
-        BookmarkBtn =  findViewById(R.id.addToBookMark) ;
-        like = findViewById(R.id.heart);
+        setContentView(R.layout.activity_single_post_download_area);
         textSize = findViewById(R.id.sizeLayout);
         descp = findViewById(R.id.desc);
         image1 = findViewById(R.id.imag1);
@@ -88,6 +78,7 @@ public class PostDetailActivity extends AppCompatActivity {
         image3 = findViewById(R.id.image3);
         title = findViewById(R.id.title);
         date = findViewById(R.id.date);
+        like = findViewById(R.id.heart) ;
         like.setVisibility(View.GONE);
         comment_list = findViewById(R.id.commentList);
         textSize.setVisibility(View.VISIBLE);
@@ -95,29 +86,57 @@ public class PostDetailActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.editText);
         commentBox = findViewById(R.id.commentContainer);
         LoginBox = findViewById(R.id.LoginContainer);
-        loginBtn = findViewById(R.id.loginBtn) ;
+        loginBtn = findViewById(R.id.loginBtn);
         comment_list.setLayoutManager(new LinearLayoutManager(this));
 
 
-        // getting the model
-        Intent i = getIntent();
+        // gettting the data
+        String postType = getIntent().getStringExtra("POST_TYPE") ;
+        String id = getIntent().getStringExtra("ID") ;
 
-        model = (JobCircularReponseModel.Job_Circular_Model) i.getSerializableExtra("MODEL");
+        Log.d("TAG", "onCreate: " + postType + id );
+        // now make call accord
+
+        Call<JobPrepModel> call = RetrofitClient.getInstance().getApi()
+                .getSingle(postType ,id ) ;
+
+        call.enqueue(new Callback<JobPrepModel>() {
+            @Override
+            public void onResponse(Call<JobPrepModel> call, Response<JobPrepModel> response) {
+                if(response.code()== 200) {
+                    JobPrepModel model = response.body() ;
+                    try {
+                        if(model!= null) {
+                            setUpView(model);
+                        }
+                    }
+                    catch (Exception e ) {
+
+                        Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" , Toast.LENGTH_LONG)
+                                .show();
+                    }
 
 
-        if (model != null) {
-
-            if(model.getPost_type()!= Constants.JOB_PREP_TYPE){
-                getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-                        WindowManager.LayoutParams.FLAG_SECURE);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + response.code() , Toast.LENGTH_LONG)
+                            .show();
+                }
             }
-            Log.d("TAG", "onCreate: " + model.getTitle());
-            setUpView(model);
 
-        }
+            @Override
+            public void onFailure(Call<JobPrepModel> call, Throwable t) {
+
+                Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + t.getMessage() , Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+
+
 
         send.setOnClickListener(v -> {
             String comment = commentEditText.getText().toString();
+
 
             if (TextUtils.isEmpty(comment)) {
                 Toast.makeText(getApplicationContext(), "Please Fill The Comment!!!", Toast.LENGTH_SHORT)
@@ -141,7 +160,7 @@ public class PostDetailActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p  = new Intent(getApplicationContext() , login_activity.class) ;
+                Intent p = new Intent(getApplicationContext(), login_activity.class);
                 startActivity(p);
             }
         });
@@ -151,23 +170,6 @@ public class PostDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 resizeTheFont();
-            }
-        });
-
-        // add to book mark
-        BookmarkBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                int id =  utilities.isUserSignedIn(getApplicationContext());
-                if(id==0){
-                    Toast.makeText(getApplicationContext(), "Please Login " , Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    addToBookMark(id) ;
-                }
-
             }
         });
 
@@ -183,7 +185,7 @@ public class PostDetailActivity extends AppCompatActivity {
         findViewById(R.id.downloadBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(PostDetailActivity.this);
+                Dialog dialog = new Dialog(SinglePostDownloadArea.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dwld_dialouge_ayout);
 
@@ -248,36 +250,6 @@ public class PostDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void addToBookMark(int id ) {
-        ////$u_id , $p_id , $type ,$title
-        Call<MsgModel> all = RetrofitClient.getInstance().getApi()
-                .insertBookMark(id,model.getId() , model.getPost_type() , model.getTitle()+" ") ;
-
-        all.enqueue(new Callback<MsgModel>() {
-            @Override
-            public void onResponse(Call<MsgModel> call, Response<MsgModel> response) {
-                if(response.code()==200){
-                    if(response.body().getError()){
-                        Toast.makeText(getApplicationContext() , "All ready BookMarked!!" , Toast.LENGTH_LONG)
-                                .show();
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext() , "Post BookMarked!!" , Toast.LENGTH_LONG)
-                                .show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext() , "Something Went Wrong " +response.code() , Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MsgModel> call, Throwable t) {
-            Toast.makeText(getApplicationContext() , "Something Went Wrong " + t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
     private void shareText(String shareText) {
 
         String s = shareText;
@@ -288,7 +260,7 @@ public class PostDetailActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(shareIntent, "Share Via"));
     }
 
-    private void setUpView(JobCircularReponseModel.Job_Circular_Model model) {
+    private void setUpView(JobPrepModel model) {
         //checking the image
         if (model.getImage().equals("NULL") || model.getImage().isEmpty()) {
             image1.setVisibility(View.GONE);
@@ -336,7 +308,7 @@ public class PostDetailActivity extends AppCompatActivity {
         // Toast.makeText(getApplicationContext() , "CLOCKED" , Toast.LENGTH_SHORT).show();
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(PostDetailActivity.this, R.style.DialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SinglePostDownloadArea.this, R.style.DialogTheme);
         builder.setTitle("Select Text Size");
         builder.setSingleChoiceItems(textSize, -1, new DialogInterface.OnClickListener() {
             @Override
@@ -380,7 +352,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
     }
 
-    private void starDownloading(String link  ) {
+    private void starDownloading(String link) {
 // 0 means pdf
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(link));
@@ -529,6 +501,5 @@ public class PostDetailActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         commnetBoxFunc();
-
     }
 }

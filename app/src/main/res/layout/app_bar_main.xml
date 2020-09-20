@@ -70,7 +70,7 @@
                     android:layout_width="30dp"
                     android:layout_marginStart="8dp"
                     android:padding="3dp"
-                    android:id="@+id/likesLayout"
+                    android:id="@+id/heart"
                     android:background="@drawable/rounded_square"
                     android:layout_height="32dp">
                     <ImageView
@@ -98,6 +98,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/bookmark"
                     android:layout_width="30dp"
                     android:layout_marginStart="5dp"
                     android:padding="3dp"
@@ -112,6 +113,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/share"
                     android:layout_width="30dp"
                     android:layout_marginStart="5dp"
                     android:padding="3dp"

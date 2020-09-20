@@ -14,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.lists.FaqList"></activity>
-        <activity android:name=".Activities.Search"></activity>
+        <activity android:name=".Activities.lists.Book_Mark_List"></activity>
+        <activity android:name=".Activities.SinglePostDownloadArea"></activity>
+        <activity android:name=".Activities.lists.FaqList" />
+        <activity android:name=".Activities.Search" />
         <activity android:name=".Activities.RankPage" />
         <activity android:name=".Activities.Profile_Activity" />
         <activity android:name=".Activities.OTPActivity" />
@@ -30,6 +32,12 @@
         <activity android:name=".Activities.lists.All_Job_Prep" />
         <activity android:name=".Activities.lists.All_Circular_List" />
         <activity android:name=".Quiz_Activity" />
+
+        <service
+            android:name=".Service.persistant_service"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".BcsModelQusPrep" />
         <activity android:name=".BankModelQusPrep" />
         <activity android:name=".modelTestCategory" />
@@ -50,6 +58,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Job_prep_page" />
+
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" />
     </application>
 
 </manifest>
