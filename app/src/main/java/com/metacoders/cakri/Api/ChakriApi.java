@@ -105,6 +105,18 @@ public interface ChakriApi {
             @Path("id") String id
     );
 
+    //delete the bookmark
+    @GET("delete-bookmark/{u_id}/{p_id}")
+    Call<MsgModel>deleteBookmark(
+            @Path("u_id") int u_id ,
+            @Path("p_id") String p_id
+    ) ;
+
+    //all all/666
+    @GET("all/{type}")
+    Call<JobCircularReponseModel> getAll(
+            @Path("type") String type,@Query("page") int page  );
+
 
     @GET("check/phone/{ph}")
     Call<MsgModel> checkPhone(@Path("ph") String ph);

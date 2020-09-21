@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.metacoders.cakri.Activities.lists.All_Circular_List;
 import com.metacoders.cakri.Activities.lists.All_Job_Prep;
 
 public class Job_prep_page extends AppCompatActivity implements View.OnClickListener {
@@ -182,9 +183,10 @@ public class Job_prep_page extends AppCompatActivity implements View.OnClickList
                 startActivity(p);
                 break;
             case R.id.important_news: // Important News  card view
-                p.putExtra("cat_id", "16");
-                p.putExtra("sub_cat_id", "0");
-                startActivity(p);
+                Intent i = new Intent( getApplicationContext() , All_Circular_List.class) ;
+                i.putExtra("cat_id", "16");
+                i.putExtra("sub_cat_id", "0");
+                startActivity(i);
                 break;
             case R.id.dwnld_zn: // Download Zone  card view
                 p.putExtra("cat_id", "18");

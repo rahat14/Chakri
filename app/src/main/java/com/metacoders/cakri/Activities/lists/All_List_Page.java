@@ -1,9 +1,5 @@
 package com.metacoders.cakri.Activities.lists;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,11 +9,15 @@ import android.widget.AbsListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
-import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.R;
 import com.metacoders.cakri.Service.RetrofitClient;
 import com.metacoders.cakri.Utils.Constants;
@@ -29,7 +29,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper.ItemClickLisnter {
+public  class All_List_Page extends AppCompatActivity implements JobCircularAdaper.ItemClickLisnter {
+
     RecyclerView recyclerView;
     int currentPage = 1;
     int totalPage = 1;
@@ -43,22 +44,22 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
     SpinKitView progress;
     RelativeLayout loadingPanel;
     LottieAnimationView animationView;
-    String cat_id , sub_cat_id ;
-
+    String SUB_CAT_ID = "1" ;
+    String Type  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all__job__prep);
+        setContentView(R.layout.activity_all__circular__list);
         recyclerView = findViewById(R.id.recyclerView);
         progress = (SpinKitView) findViewById(R.id.spin_kit);
         loadingPanel = findViewById(R.id.loadingPanel);
         animationView = findViewById(R.id.lav_actionBar);
 
-        // getting  the data
-        cat_id = getIntent().getStringExtra("cat_id") ;
-        sub_cat_id = getIntent().getStringExtra("sub_cat_id") ;
 
+
+        // get data
+        Type = getIntent().getStringExtra("TYPE");
 
         manager = new LinearLayoutManager(this);
 
@@ -71,6 +72,8 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
         loadList(currentPage);
 
         initScrollListener();
+
+
     }
 
     private void loadList(int page) {
@@ -80,15 +83,15 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().getPrepList(cat_id, sub_cat_id, "" + page);
+                .getApi().getAll(SUB_CAT_ID  ,page);
 
 
         call.enqueue(new Callback<JobCircularReponseModel>() {
             @Override
             public void onResponse(Call<JobCircularReponseModel> call, Response<JobCircularReponseModel> response) {
 
-                Log.d(Constants.TAG, "onResponse: " + response.raw());
                 if (response.code() == 200) {
+
 
                     currentPage = response.body().getCurrentPage();
                     totalPage = response.body().getLastPage();
@@ -103,12 +106,15 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
 
 
                     Handler handler = new Handler();
-                    handler.postDelayed(() -> {
-                        if (currentPage == 1) {
-                            //shimmerFrameLayout.setVisibility(View.GONE);
-                            animationView.pauseAnimation();
-                            loadingPanel.setVisibility(View.GONE);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (currentPage == 1) {
+                                //shimmerFrameLayout.setVisibility(View.GONE);
+                                animationView.pauseAnimation();
+                                loadingPanel.setVisibility(View.GONE);
 
+                            }
                         }
                     }, 500);
 
@@ -116,6 +122,8 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
                 } else {
                     Log.d(Constants.TAG, response.code() + "");
                 }
+
+
             }
 
             @Override
@@ -174,6 +182,7 @@ public class All_Job_Prep extends AppCompatActivity implements JobCircularAdaper
 
     @Override
     public void onItemClick(JobCircularReponseModel.Job_Circular_Model model) {
+
         Intent p = new Intent(getApplicationContext(), PostDetailActivity.class);
         p.putExtra("MODEL", model);
         startActivity(p);

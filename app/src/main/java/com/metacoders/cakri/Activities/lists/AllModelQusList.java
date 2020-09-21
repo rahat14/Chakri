@@ -224,7 +224,7 @@ public class AllModelQusList extends AppCompatActivity implements ModelQustionLi
 
         } else {
             isScrolling = false;
-            Toast.makeText(getApplicationContext(), "You Are At The Last PAge", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "You Are At The Last Page", Toast.LENGTH_LONG).show();
         }
 
 

@@ -60,7 +60,7 @@ import retrofit2.Response;
         animationView = findViewById(R.id.lav_actionBar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        headerTitle.setText("বাছাইকৃত বেষ্ট ২০০০+ পদে চাকরির বিজ্ঞপ্তি দেখুন");
+        headerTitle.setText("⭐ বাছাইকৃত বেষ্ট ২০০০+ পদে চাকরির বিজ্ঞপ্তি দেখুন ⭐");
         headerTitle.setSelected(true);
         // get data
         SUB_CAT_ID = getIntent().getStringExtra("SUB_CAT_ID");

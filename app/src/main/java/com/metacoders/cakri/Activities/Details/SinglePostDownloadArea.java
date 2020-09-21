@@ -1,4 +1,4 @@
-package com.metacoders.cakri.Activities;
+package com.metacoders.cakri.Activities.Details;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
-import com.metacoders.cakri.Activities.Details.PostDetailActivity;
+import com.metacoders.cakri.Activities.login_activity;
 import com.metacoders.cakri.Adapter.CommentListAdapter;
 import com.metacoders.cakri.Models.CommentResponse;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
@@ -59,14 +59,14 @@ public class SinglePostDownloadArea extends AppCompatActivity {
     RecyclerView comment_list;
     EditText commentEditText;
     Button send;
-    Button imaged1, imaged2, imaged3, pdfd, loginBtn;
+    Button imaged1, imaged2, imaged3, pdfd, loginBtn, removeFromList;
 
     private static final int PERMISSION_STORAGE_CODE = 1000;
     List<CommentResponse.CommentModel> commentList = new ArrayList<>();
     String UNIVERSAL_LINK = "";
     LinearLayout commentBox, LoginBox;
     Utilities utilities = new Utilities();
-
+    String id ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +78,7 @@ public class SinglePostDownloadArea extends AppCompatActivity {
         image3 = findViewById(R.id.image3);
         title = findViewById(R.id.title);
         date = findViewById(R.id.date);
-        like = findViewById(R.id.heart) ;
+        like = findViewById(R.id.heart);
         like.setVisibility(View.GONE);
         comment_list = findViewById(R.id.commentList);
         textSize.setVisibility(View.VISIBLE);
@@ -88,38 +88,36 @@ public class SinglePostDownloadArea extends AppCompatActivity {
         LoginBox = findViewById(R.id.LoginContainer);
         loginBtn = findViewById(R.id.loginBtn);
         comment_list.setLayoutManager(new LinearLayoutManager(this));
-
+        removeFromList = findViewById(R.id.removeToBookMark);
 
         // gettting the data
-        String postType = getIntent().getStringExtra("POST_TYPE") ;
-        String id = getIntent().getStringExtra("ID") ;
+        String postType = getIntent().getStringExtra("POST_TYPE");
+         id = getIntent().getStringExtra("ID");
 
-        Log.d("TAG", "onCreate: " + postType + id );
+        Log.d("TAG", "onCreate: " + postType + id);
         // now make call accord
 
         Call<JobPrepModel> call = RetrofitClient.getInstance().getApi()
-                .getSingle(postType ,id ) ;
+                .getSingle(postType, id);
 
         call.enqueue(new Callback<JobPrepModel>() {
             @Override
             public void onResponse(Call<JobPrepModel> call, Response<JobPrepModel> response) {
-                if(response.code()== 200) {
-                    JobPrepModel model = response.body() ;
+                if (response.code() == 200) {
+                    JobPrepModel model = response.body();
                     try {
-                        if(model!= null) {
+                        if (model != null) {
                             setUpView(model);
                         }
-                    }
-                    catch (Exception e ) {
+                    } catch (Exception e) {
 
-                        Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" , Toast.LENGTH_LONG)
+                        Toast.makeText(getApplicationContext(), "Something Wen Wrong!!", Toast.LENGTH_LONG)
                                 .show();
                     }
 
 
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + response.code() , Toast.LENGTH_LONG)
+                } else {
+                    Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + response.code(), Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -127,11 +125,10 @@ public class SinglePostDownloadArea extends AppCompatActivity {
             @Override
             public void onFailure(Call<JobPrepModel> call, Throwable t) {
 
-                Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + t.getMessage() , Toast.LENGTH_LONG)
+                Toast.makeText(getApplicationContext(), "Something Wen Wrong!!" + t.getMessage(), Toast.LENGTH_LONG)
                         .show();
             }
         });
-
 
 
         send.setOnClickListener(v -> {
@@ -155,6 +152,13 @@ public class SinglePostDownloadArea extends AppCompatActivity {
 //                        .show();
             }
 
+        });
+
+        removeFromList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletePostFromTheBookmark();
+            }
         });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -250,6 +254,30 @@ public class SinglePostDownloadArea extends AppCompatActivity {
         });
     }
 
+    private void deletePostFromTheBookmark() {
+        Call<MsgModel> call = RetrofitClient
+                .getInstance().getApi()
+                .deleteBookmark(utilities.isUserSignedIn(getApplicationContext()), id);
+
+        call.enqueue(new Callback<MsgModel>() {
+            @Override
+            public void onResponse(Call<MsgModel> call, Response<MsgModel> response) {
+                if (response.code() == 200) {
+
+                    Toast.makeText(getApplicationContext(), "Post Was Removed!!", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error : Try Again " + response.code(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MsgModel> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Error : Try Again " + t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void shareText(String shareText) {
 
         String s = shareText;
@@ -300,6 +328,19 @@ public class SinglePostDownloadArea extends AppCompatActivity {
 
         // sendComment("this is a commnet from the app ");
         //loadCommentList("3");
+        // check bookmark or not
+        try {
+            int i = getIntent().getIntExtra("TYPE", 0);
+
+            if (i == 0) {
+                removeFromList.setVisibility(View.GONE);
+            } else {
+
+                removeFromList.setVisibility(View.VISIBLE);
+            }
+        } catch (Exception e) {
+
+        }
     }
 
     private void resizeTheFont() {

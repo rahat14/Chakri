@@ -48,14 +48,14 @@ public class jobCircularCategory extends AppCompatActivity implements View.OnCli
         healthJob.setOnClickListener(this);
 
 
-        headerTitle.setText("চাকরির ক্যাটাগরী");
+        headerTitle.setText("⭐ চাকরির ক্যাটাগরী ⭐");
         bottomHeader.setSelected(true);
         bottomHeader.setText("⭐চলতি সপ্তাহের চাকরি পত্রিকার রিভিউ দেখুন ⭐");
 
         bottomHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(getApplicationContext(), Master_List_Page.class);
+                Intent p = new Intent(getApplicationContext(), All_Circular_List.class);
                 p.putExtra("SUB_CAT_ID", "11");
                 startActivity(p);
             }

@@ -14,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.lists.Book_Mark_List"></activity>
-        <activity android:name=".Activities.SinglePostDownloadArea"></activity>
+        <activity android:name=".Activities.lists.All_List_Page"/>
+        <activity android:name=".Activities.Contact_us"></activity>
+        <activity android:name=".Activities.lists.Book_Mark_List" />
+        <activity android:name=".Activities.Details.SinglePostDownloadArea" />
         <activity android:name=".Activities.lists.FaqList" />
         <activity android:name=".Activities.Search" />
         <activity android:name=".Activities.RankPage" />

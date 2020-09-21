@@ -175,7 +175,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
 
         } else {
             isScrolling = false;
-            Toast.makeText(getApplicationContext(), "You Are At The Last PAge", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "You Are At The Last Page", Toast.LENGTH_LONG).show();
         }
 
 

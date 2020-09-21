@@ -74,7 +74,7 @@ public class Runinng_Exam_notice_and_result_page extends AppCompatActivity imple
         loadList(currentPage);
         initScrollListener();
 
-        headerTitle.setText("চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট দেখুন");
+        headerTitle.setText("⭐ চলমান চাকরি পরীক্ষার নোটিশ ও রেজাল্ট দেখুন ⭐");
         headerTitle.setSelected(true);
 
     }
@@ -86,7 +86,7 @@ public class Runinng_Exam_notice_and_result_page extends AppCompatActivity imple
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().getPrepList(cat_id, sub_cat_id, "" + page);
+                .getApi().GetJobCirCularViaCategory(cat_id,page);
 
 
         call.enqueue(new Callback<JobCircularReponseModel>() {

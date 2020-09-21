@@ -44,6 +44,17 @@ public class bcsSpecialPage extends AppCompatActivity implements View.OnClickLis
         mental_skill.setOnClickListener(this);
         ethics.setOnClickListener(this);
 
+        findViewById(R.id.bottomContainer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent p = new Intent(getApplicationContext() , All_Job_Prep.class) ;
+                p.putExtra("cat_id" , "20" ) ;
+                p.putExtra("sub_cat_id" , "0") ;
+                startActivity(p);
+            }
+        });
+
     }
 
 

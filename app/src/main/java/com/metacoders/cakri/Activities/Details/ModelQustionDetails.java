@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +58,8 @@ public class ModelQustionDetails extends AppCompatActivity {
     private   int EXAM_MAX_TIME  = 600000;
     TextView timer ;
     CountDownTimer countDownTimer  ;
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +70,9 @@ public class ModelQustionDetails extends AppCompatActivity {
         title = findViewById(R.id.title);
         date = findViewById(R.id.date);
         startDwld = findViewById(R.id.startDwld) ;
-
+        progressBar = findViewById(R.id.pbar) ;
         floatingActionButton = findViewById(R.id.goToOtherPage) ;
+        floatingActionButton.setVisibility(View.GONE);
         recyclerView = findViewById(R.id.list) ;
         loadingButton = findViewById(R.id.loading_button);
         startContainer =findViewById(R.id.startModelTstContainer) ;
@@ -83,7 +87,7 @@ public class ModelQustionDetails extends AppCompatActivity {
 
                 startContainer.setVisibility(View.INVISIBLE);
                 recyclerView.setVisibility(View.VISIBLE);
-
+                floatingActionButton.setVisibility(View.VISIBLE);
                 // start exam
                 startTimer() ;
 
@@ -112,6 +116,7 @@ public class ModelQustionDetails extends AppCompatActivity {
     }
 
     private void startTimer() {
+
         if(model.getSubCatId().equals("0")){
 // full qustion
             if(model.getId().equals("2")){
@@ -125,6 +130,8 @@ public class ModelQustionDetails extends AppCompatActivity {
         else {
             EXAM_MAX_TIME = Constants.BANK_HALF_TIME ;
         }
+        progressBar.setMax(EXAM_MAX_TIME);
+        progressBar.setProgress(EXAM_MAX_TIME);
         countDownTimer  =   new CountDownTimer(EXAM_MAX_TIME, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -134,12 +141,17 @@ public class ModelQustionDetails extends AppCompatActivity {
 //                            long ss =TimeUnit.MINUTES.toMillis(min);
 //                            String sec = TimeUnit.MILLISECONDS.toSeconds(ss) + "" ;
 
+                long rest =(millisUntilFinished /  EXAM_MAX_TIME ) * 100;
+
+                progressBar.setProgress((int) millisUntilFinished);
+                Log.d("TAG", "onTick: " + rest);
                 timer.setText(getIntervalTime(millisUntilFinished));
 
 
             }
 
             public void onFinish() {
+                progressBar.setProgress(0);
                 timer.setText("Time Up!");
                 // TODO show A dialouge that times up
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ModelQustionDetails.this);

@@ -6,21 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.ybq.android.spinkit.SpinKitView;
-import com.metacoders.cakri.Activities.Details.PostDetailActivity;
-import com.metacoders.cakri.Activities.SinglePostDownloadArea;
+import com.metacoders.cakri.Activities.Details.SinglePostDownloadArea;
 import com.metacoders.cakri.Adapter.BookMarkAdaper;
-import com.metacoders.cakri.Adapter.JobCircularAdaper;
 import com.metacoders.cakri.Models.BookmarkModel;
-import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.R;
 import com.metacoders.cakri.Service.RetrofitClient;
 import com.metacoders.cakri.Utils.Constants;
@@ -118,6 +112,7 @@ public class Book_Mark_List extends AppCompatActivity implements  BookMarkAdaper
         // getting the data
         p.putExtra("POST_TYPE" , model.getPostType()+"") ;
         p.putExtra("ID" , model.getPostId()+"") ;
+        p.putExtra("TYPE" , 1 ) ;
         startActivity(p);
 
 

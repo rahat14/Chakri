@@ -7,9 +7,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -19,11 +20,13 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.metacoders.cakri.Activities.Contact_us;
 import com.metacoders.cakri.Activities.Details.PostDetailActivity;
 import com.metacoders.cakri.Activities.Profile_Activity;
 import com.metacoders.cakri.Activities.Search;
-import com.metacoders.cakri.Activities.SinglePostDownloadArea;
+import com.metacoders.cakri.Activities.Details.SinglePostDownloadArea;
 import com.metacoders.cakri.Activities.lists.All_Job_Prep;
+import com.metacoders.cakri.Activities.lists.All_List_Page;
 import com.metacoders.cakri.Activities.lists.Book_Mark_List;
 import com.metacoders.cakri.Activities.lists.FaqList;
 import com.metacoders.cakri.Activities.lists.NotificaitonList;
@@ -55,6 +58,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
     StartUpResponse startUpResponse = null;
     List<JobCircularReponseModel.Job_Circular_Model> circularList = new ArrayList<>();
     List<JobCircularReponseModel.Job_Circular_Model> prepList = new ArrayList<>();
+    TextView allCircular , allPrep ;
+
     listAdapter adapter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +80,32 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
 
         setUpSideBar();
+
+
+        findViewById(R.id.allBtnForCircular).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent p = new Intent(getApplicationContext(), All_List_Page.class);
+                p.putExtra("TYPE" , Constants.CIRCULAR_TYPE) ;
+                startActivity(p);
+
+            }
+        });
+
+        findViewById(R.id.allBtnForPrep).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent p = new Intent(getApplicationContext(), All_List_Page.class);
+                p.putExtra("TYPE" , Constants.JOB_PREP_TYPE) ;
+                startActivity(p);
+
+
+
+            }
+        });
+
 
         findViewById(R.id.job_category_id).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,10 +182,11 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
 
         LinearLayout bcs_model_test, bank_model_test , daily_news,bcs_preparation,bank_preparation,teacher_preparation,current_qus_sol,all_job_sol
                         ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi
-                , love , share , bookmark ;
+                , love , share , bookmark , contact ;
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
+        contact =findViewById(R.id.contact) ;
         daily_news = drawerLayout.findViewById(R.id.daily_news);
         bcs_preparation = drawerLayout.findViewById(R.id.bcs_preparation);
         bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
@@ -225,6 +257,35 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             }
         });
 
+       love.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               try {
+                   startActivity(new Intent(Intent.ACTION_VIEW,
+                           Uri.parse("market://details?id=" + getPackageName())));
+
+               } catch (ActivityNotFoundException e) {
+
+                   startActivity(new Intent(Intent.ACTION_VIEW,
+                           Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
+
+               }
+           }
+       });
+
+
+       share.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               String s ="https://play.google.com/store/apps/details?id=" + getPackageName();
+               Intent shareIntent = new Intent(Intent.ACTION_SEND);
+               shareIntent.setType("text/plain");
+               shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Share This App");
+               shareIntent.putExtra(Intent.EXTRA_TEXT, s);
+               startActivity(Intent.createChooser(shareIntent, "Share Via"));
+           }
+       });
+
 
 
 
@@ -276,6 +337,13 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             }
         });
 
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  p = new Intent(getApplicationContext() , Contact_us.class);
+                startActivity(p);
+            }
+        });
         bcs_preparation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -408,6 +476,11 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
 
+                String url = "https://docs.google.com/document/d/19Fast0IlEUd2XC5hPpNDP038DQKBYjNkCZ4EpLbFdWQ/edit?usp=sharing" ;
+
+                Uri uri = Uri.parse(url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
 
