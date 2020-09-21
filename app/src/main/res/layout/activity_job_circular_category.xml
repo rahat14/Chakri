@@ -1,375 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/colorAppBackground"
     tools:context=".Bank_job_special">
 
     <LinearLayout
-        android:id="@+id/topContianer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/app_bar"/>
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </LinearLayout>
 
-
-    <ScrollView
-        android:layout_below="@+id/topContianer"
-        android:layout_above="@+id/bottomContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
             <LinearLayout
+                android:id="@+id/topContianer"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
                 android:layout_height="wrap_content">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
+                <include layout="@layout/app_bar"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/govt_job"
-
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    app:cardCornerRadius="16dp"
-                  >
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/heading_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="সরকারী নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:id="@+id/bank_job"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:foreground="?attr/selectableItemBackground"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/bank"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="ব্যাংক নিয়োগ বিজ্ঞপ্তি"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/non_govt_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/private_sector"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="বেসরকারি নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tcr_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/teacher"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="শিক্ষক নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/part_time_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/part_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="পার্ট টাইম নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/garments_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/garments"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="গার্মেন্টস নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ngo_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/ngo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="এন.জি.ও নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/defence_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/defence"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="ডিফেন্স ও রেলওয়ে নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/health_job"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/health"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/kalpurush"
-                            android:text="হেলথ বা মেডিকেল নিয়োগ বিজ্ঞপ্তি"
-                            android:layout_gravity="center"
-                            android:drawableStart="@mipmap/category_drawable"
-                            android:drawablePadding="8dp"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
             </LinearLayout>
 
 
+            <androidx.core.widget.NestedScrollView
+                android:layout_below="@+id/topContianer"
+                android:layout_above="@+id/bottomContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/govt_job"
+
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:cardCornerRadius="16dp"
+                        >
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/heading_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="সরকারী নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:id="@+id/bank_job"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/bank"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="ব্যাংক নিয়োগ বিজ্ঞপ্তি"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/non_govt_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/private_sector"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="বেসরকারি নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tcr_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/teacher"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="শিক্ষক নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/part_time_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/part_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="পার্ট টাইম নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/garments_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/garments"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="গার্মেন্টস নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ngo_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/ngo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="এন.জি.ও নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/defence_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/defence"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="ডিফেন্স ও রেলওয়ে নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/health_job"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="হেলথ বা মেডিকেল নিয়োগ বিজ্ঞপ্তি"
+                                android:layout_gravity="center"
+                                android:drawableStart="@mipmap/category_drawable"
+                                android:drawablePadding="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"/>
+                </LinearLayout>
 
 
 
 
 
-    </ScrollView>
 
 
-    <LinearLayout
-        android:background="@color/colorAppBackground"
-        android:id="@+id/bottomContainer"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_height="wrap_content">
-        <include layout="@layout/bottom_heading_layout"/>
+            </androidx.core.widget.NestedScrollView>
+
+
+            <LinearLayout
+                android:background="@color/colorAppBackground"
+                android:id="@+id/bottomContainer"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content">
+                <include layout="@layout/bottom_heading_layout"/>
+            </LinearLayout>
+
+        </RelativeLayout>
     </LinearLayout>
-</RelativeLayout>
+
+
+    <include layout="@layout/navigation_drawer_layout"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

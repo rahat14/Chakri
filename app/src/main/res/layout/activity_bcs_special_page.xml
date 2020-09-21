@@ -1,464 +1,482 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
+    tools:openDrawer="start"
     android:background="@color/colorAppBackground"
     tools:context=".Bank_job_special">
 
     <LinearLayout
-        android:id="@+id/app_bar_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/app_bar"/>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-
-    <ScrollView
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/app_bar_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/app_bar_container"
             android:layout_width="match_parent"
-            android:orientation="vertical"
             android:layout_height="wrap_content">
 
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:id="@+id/adviceC"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="🔥🔥পরামর্শ ও দিক নির্দেশনা🔥🔥"
-                        android:layout_gravity="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/banglaC"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:textAlignment="center"
-                        android:text="📕 বাংলা ভাষা ও সাহিত্য"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/englishC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:id="@+id/engBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📗 ইংরেজি ভাষা ও সাহিত্য"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/bangladesh"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📘 বাংলাদেশ বিষয়াবলি"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/internationl"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📓 আন্তর্জাতিক বিষয়াবলি"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/geoC"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📔 ভূগোল, পরিবেশ, দুর্যোগ"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:textAlignment="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="17.5sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gk_C"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:textAlignment="center"
-                        android:text="📒 সাধারণ বিজ্ঞান"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ict_C"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📘 কম্পিউটার ও তথ্য প্রযুক্তি"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/math_logics"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📕 গাণিতিক যুক্তি"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:id="@+id/mental_skill"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📓 মানসিক দক্ষতা"
-                        android:textAlignment="center"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:id="@+id/ethics"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📒নৈতিকতা মূল্যবোধ ও সু-শাসন"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:textAlignment="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:visibility="invisible"
-                android:layout_marginEnd="@dimen/_20sdp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kalpurush"
-                        android:text="📒নৈতিকতা মূল্যবোধ ও সু-শাসন"
-                        android:layout_marginStart="@dimen/_55sdp"
-                        android:textAlignment="center"
-                        android:drawablePadding="8dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp"/>
+            <include layout="@layout/app_bar" />
         </LinearLayout>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/app_bar_container"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/adviceC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="🔥🔥পরামর্শ ও দিক নির্দেশনা🔥🔥"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
 
+                    </LinearLayout>
 
-    </ScrollView>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/banglaC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📕 বাংলা ভাষা ও সাহিত্য"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold" />
 
 
+                    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:id="@+id/bottomContainer"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_height="wrap_content">
+                </com.google.android.material.card.MaterialCardView>
 
-        <include layout="@layout/bottom_heading_layout"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/englishC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/engBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📗 ইংরেজি ভাষা ও সাহিত্য"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
 
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/bangladesh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📘 বাংলাদেশ বিষয়াবলি"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
 
-    </LinearLayout>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/internationl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📓 আন্তর্জাতিক বিষয়াবলি"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/geoC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📔 ভূগোল, পরিবেশ, দুর্যোগ"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17.5sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gk_C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📒 সাধারণ বিজ্ঞান"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/ict_C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📘 কম্পিউটার ও তথ্য প্রযুক্তি"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/math_logics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📕 গাণিতিক যুক্তি"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mental_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📓 মানসিক দক্ষতা"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/ethics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📒নৈতিকতা মূল্যবোধ ও সু-শাসন"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:visibility="invisible"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_55sdp"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="📒নৈতিকতা মূল্যবোধ ও সু-শাসন"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp" />
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <include layout="@layout/bottom_heading_layout" />
+
+
+        </LinearLayout>
+
 </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/navigation_drawer_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

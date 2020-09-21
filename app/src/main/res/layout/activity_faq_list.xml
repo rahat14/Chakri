@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/colorAppBackground"
     tools:context=".Activities.lists.FaqList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+
 
     <include layout="@layout/app_bar_main"/>
 
@@ -35,4 +45,7 @@
 
     </FrameLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/navigation_drawer_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>
