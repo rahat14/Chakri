@@ -87,7 +87,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             public void onClick(View v) {
 
                 Intent p = new Intent(getApplicationContext(), All_List_Page.class);
-                p.putExtra("TYPE" , Constants.CIRCULAR_TYPE) ;
+                p.putExtra("TYPE" , Constants.CIRCULAR_TYPE+"") ;
                 startActivity(p);
 
             }
@@ -98,7 +98,7 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             public void onClick(View v) {
 
                 Intent p = new Intent(getApplicationContext(), All_List_Page.class);
-                p.putExtra("TYPE" , Constants.JOB_PREP_TYPE) ;
+                p.putExtra("TYPE" , Constants.JOB_PREP_TYPE+"") ;
                 startActivity(p);
 
 

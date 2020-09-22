@@ -83,13 +83,13 @@ public  class All_List_Page extends AppCompatActivity implements JobCircularAdap
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().getAll(SUB_CAT_ID  ,page);
+                .getApi().getAll(Type  ,page);
 
 
         call.enqueue(new Callback<JobCircularReponseModel>() {
             @Override
             public void onResponse(Call<JobCircularReponseModel> call, Response<JobCircularReponseModel> response) {
-
+                Log.d("TAG", "loadList: " + response.raw() );
                 if (response.code() == 200) {
 
 
