@@ -58,7 +58,7 @@ public class SearchAdaper extends RecyclerView.Adapter<SearchAdaper.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mDataFiltered == null ? 0 : mDataFiltered.size();
+        return  mDataFiltered.size();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class SearchAdaper extends RecyclerView.Adapter<SearchAdaper.ViewHolder> 
 
 
     public void addItems(List<JobCircularReponseModel.Job_Circular_Model> newItems) {
-        Log.d("TAG", "addItems: " + newItems.size());
+        //Log.d("TAG", "addItems: " + newItems.size());
         mData.addAll(newItems);
         mDataFiltered = mData;
         notifyDataSetChanged();

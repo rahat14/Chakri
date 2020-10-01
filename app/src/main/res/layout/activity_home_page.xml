@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
@@ -62,8 +61,9 @@
                 android:layout_height="wrap_content"
                 android:text="সব দেখুন ..."
                 android:id="@+id/allBtnForCircular"
-                android:textSize="17sp"
-                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="italic"
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:gravity="end"
@@ -90,8 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="সব দেখুন ..."
-                android:textSize="17sp"
-                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="italic"
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:gravity="end"

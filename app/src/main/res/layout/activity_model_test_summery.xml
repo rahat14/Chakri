@@ -7,6 +7,7 @@
     android:background="@color/colorAppBackground"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout"
     tools:context=".Activities.ModelTestSummery">
 
 
@@ -64,6 +65,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15.5"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
                         android:textSize="25sp"
                         android:layout_centerInParent="true"/>
 
@@ -72,7 +75,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="100 Out Of 100"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:textAlignment="center"
                         android:layout_below="@id/total_ammount_tv_id"
                         android:layout_centerHorizontal="true"/>
 

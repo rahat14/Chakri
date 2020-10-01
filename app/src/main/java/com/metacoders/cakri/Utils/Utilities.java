@@ -2,6 +2,8 @@ package com.metacoders.cakri.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -45,7 +47,12 @@ public class Utilities {
         return date;
     }
 
-
+    public boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     public  void deleteExistingUSER(Context context){
 
         SharedPreferences.Editor editor=getPrefs(context).edit();
@@ -56,7 +63,7 @@ public class Utilities {
         editor.putInt("user_id", 0);
         editor.apply();
 
-        Log.d("TAG", "ReadExistingResname:  USER DELTED !!"  );
+       // Log.d("TAG", "ReadExistingResname:  USER DELTED !!"  );
     }
 
     public  void createUser(Context context, String number, String pass, int user_id, String name, String adress  , String mail  ){
@@ -81,12 +88,12 @@ public class Utilities {
         int UserID  = getPrefs(context).getInt("user_id" , 0) ;
 
         if(!number.equals("null") && !pass.equals("null") && UserID!= 0) {
-            Log.d("TAG", "ReadExistingResname:  USER Found "+ UserID );
+          //  Log.d("TAG", "ReadExistingResname:  USER Found "+ UserID );
             return UserID ;
 
         }
         else {
-            Log.d("TAG", "ReadExistingResname:  USER NOT FOUND  " );
+            //Log.d("TAG", "ReadExistingResname:  USER NOT FOUND  " );
             return  def  ;
 
         }
@@ -115,12 +122,12 @@ public class Utilities {
 
 
         if(!number.equals("null") ){
-            Log.d("TAG", "ReadExistingResname:  Address Found "+ number );
+         //   Log.d("TAG", "ReadExistingResname:  Address Found "+ number );
             return number ;
 
         }
         else {
-            Log.d("TAG", "ReadExistingResname:  Address NOT FOUND  " );
+            //Log.d("TAG", "ReadExistingResname:  Address NOT FOUND  " );
             return  "null"  ;
 
         }
@@ -148,12 +155,12 @@ public class Utilities {
 
 
         if(number !=0 ){
-            Log.d("TAG", "ReadExistingResname:  Address Found "+ number );
+          //  Log.d("TAG", "ReadExistingResname:  Address Found "+ number );
             return number ;
 
         }
         else {
-            Log.d("TAG", "ReadExistingResname:  Address NOT FOUND  " );
+          //  Log.d("TAG", "ReadExistingResname:  Address NOT FOUND  " );
             return  0  ;
 
         }

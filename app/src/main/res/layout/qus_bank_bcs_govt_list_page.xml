@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
     android:orientation="vertical"
     android:background="@color/colorAppBackground"
     tools:context=".qus_bank_bcs_govt_list_page">

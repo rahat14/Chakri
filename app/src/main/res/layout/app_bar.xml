@@ -125,7 +125,7 @@ android:fitsSystemWindows="true">
             >
 
             <LinearLayout
-
+                android:id="@+id/heart"
                 android:layout_width="30dp"
                 android:layout_marginStart="8dp"
                 android:padding="3dp"
@@ -140,6 +140,7 @@ android:fitsSystemWindows="true">
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/bookmark"
                 android:layout_width="30dp"
                 android:padding="3dp"
                 android:layout_marginStart="5dp"
@@ -154,6 +155,7 @@ android:fitsSystemWindows="true">
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/share"
                 android:layout_width="30dp"
                 android:padding="3dp"
                 android:layout_marginStart="5dp"

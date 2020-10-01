@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:text="Test User"
+        android:text=""
         android:layout_toEndOf="@+id/image_on_header"
         />
     <TextView
@@ -39,7 +39,7 @@
         android:textColor="@color/white"
         android:layout_marginStart="8dp"
         android:textStyle="bold"
-        android:text="(01516185792)"
+        android:text=""
         android:layout_below="@+id/name_on_header"
         />
 
@@ -53,6 +53,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
+        app:queryHint="Search"
         android:background="@drawable/grey_back_radius"
         android:elevation="2dp"
         android:focusable="true"

@@ -3,9 +3,9 @@ package com.metacoders.cakri.Utils;
 public class Constants {
 
     public static String TAG = "TAG";
-    public static String BASE_URL = "https://rajokiofashion.com/aapp/api/v1/";
-    public static String PDF_URL = "https://rajokiofashion.com/chakri_admin/all_pdf/";
-    public static String IMAGE_URL = "https://rajokiofashion.com/chakri_admin/all_images/";
+    public static String BASE_URL = "http://latestcircular.com/aapp/api/v1/";
+    public static String PDF_URL = "https://latestcircular.com/chakri_admin/all_pdf/";
+    public static String IMAGE_URL = "https://latestcircular.com/chakri_admin/all_images/";
     public static String ROOTURL = "TAG";
     public static double MINUS_MARKING_BCS = -.50;
     public static double MINUS_MARKING_BANK = -.25;
@@ -22,6 +22,7 @@ public class Constants {
 
     public  static  int JOB_PREP_TYPE = 555 ;
     public  static  int  CIRCULAR_TYPE  = 666 ;
-
+    public  static  String  SHARE_TEXT  = "প্রতি ঘণ্টায় বিভিন্ন পত্রিকা ও অনলাইনে প্রকাশিত চাকরির বিজ্ঞপ্তি, আবেদনের নিয়ম, আবেদন ফরম/ঠিকানা, সিভি তৈরি, পরীক্ষার সময়সূচী, ফলাফল, পরীক্ষা সংক্রান্ত সব নোটিশ এবং নিয়োগ প্রস্তুতি সহায়ক সকল তথ্য সহ চাকরির সবকিছু নিয়ে অ্যাপ “Latest Job Circular”\n" +
+            "অ্যাপটি’র ডাউনলোড লিংকঃ" ;
     // bank = 0  bcs =1
 }
