@@ -108,6 +108,7 @@ public class SignupActivity extends AppCompatActivity implements  Validator.Vali
                         i.putExtra("MAIL", mailIn.getText().toString());
                         i.putExtra("NUM", mobileIn.getText().toString());
                         startActivity(i);
+                        finish();
 
                     }
 
