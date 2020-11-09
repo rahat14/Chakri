@@ -15,14 +15,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.metacoders.cakri"
         minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 2
-        versionName "1.1"
+        targetSdkVersion 30
+        versionCode 6
+        versionName "1.6"
         manifestPlaceholders = [
                 onesignal_app_id: '680413e3-cee6-4ad2-a9f6-318c23bae953',
                 // Project number pulled from dashboard, local value is ignored.

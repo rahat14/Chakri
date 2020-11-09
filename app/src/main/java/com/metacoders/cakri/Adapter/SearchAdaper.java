@@ -115,10 +115,18 @@ public class SearchAdaper extends RecyclerView.Adapter<SearchAdaper.ViewHolder> 
 
     public void addItems(List<JobCircularReponseModel.Job_Circular_Model> newItems) {
         //Log.d("TAG", "addItems: " + newItems.size());
+        mDataFiltered.clear();
+        mData.clear();
         mData.addAll(newItems);
         mDataFiltered = mData;
         notifyDataSetChanged();
     }
+
+    public void clear() {
+        mDataFiltered.clear();
+        notifyDataSetChanged();
+    }
+
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {

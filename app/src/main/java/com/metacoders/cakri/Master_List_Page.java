@@ -343,8 +343,8 @@ import retrofit2.Response;
              @Override
              public void onClick(View v) {
                  Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
-                 p.putExtra("cat_id", "0");
-                 p.putExtra("sub_cat_id", "14");
+                 p.putExtra("cat_id", "14");
+                 p.putExtra("sub_cat_id", "0");
                  startActivity(p);
              }
          });

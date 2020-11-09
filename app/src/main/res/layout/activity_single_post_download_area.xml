@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@color/colorAppBackground"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBackground"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".Activities.Details.PostDetailActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -16,232 +15,240 @@
         android:layout_height="match_parent">
 
 
-
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-
-        <include layout="@layout/app_bar_main"/>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:text=""
-            android:fontFamily="@font/kalpurush"
-            android:layout_margin="8dp"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:text="Date : 12/8/2019"
-            android:fontFamily="@font/kalpurush"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:id="@+id/desc"
-            android:fontFamily="@font/kalpurush"
-            android:justificationMode="inter_word"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/imag1"
-            android:layout_width="match_parent"
-            android:src="@drawable/placeholder"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/image2"
-            android:layout_width="match_parent"
-            android:src="@drawable/placeholder"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/image3"
-            android:layout_width="match_parent"
-            android:src="@drawable/placeholder"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:orientation="horizontal">
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/downloadBtn"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:text="Download"
-                android:layout_margin="3dp"
-                android:layout_height="wrap_content"/>
+            android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/shareBtn"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_margin="3dp"
-                android:text="Share"
-                android:layout_height="wrap_content"/>
+            <include layout="@layout/app_bar_main" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="-2dp"
-            android:orientation="horizontal">
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/removeToBookMark"
-                android:layout_width="wrap_content"
-                android:text="Remove From The Bookmark"
-                android:layout_margin="3dp"
-                android:layout_height="wrap_content"/>
-
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:visibility="gone"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="-2dp"
-            android:orientation="horizontal">
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/addToBookMark"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:text="Add To BookMark"
-                android:layout_margin="3dp"
-                android:layout_height="wrap_content"/>
-
-
-
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:text="All Comments"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:textStyle=""
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_height="wrap_content"/>
-
-        <LinearLayout
-            android:id="@+id/LoginContainer"
-            android:visibility="visible"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_height="@dimen/_60sdp">
-
-
-            <Button
-                android:id="@+id/loginBtn"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:text="@string/you_have_to_be_registerd_user_to_comment"/>
+                android:layout_margin="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold" />
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:visibility="visible"
-            android:id="@+id/commentContainer"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/editText"
+            <TextView
+                android:id="@+id/date"
                 android:layout_width="match_parent"
-                android:maxLines="14"
-                android:minLines="4"
-                android:paddingStart="@dimen/_6sdp"
-                android:paddingEnd="@dimen/_6sdp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/rec"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                android:hint="Leave a comment"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="Date : 12/8/2019"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:justificationMode="inter_word"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-
-            <Button
-                android:id="@+id/btnSend"
-                android:layout_width="wrap_content"
-                android:layout_gravity="end"
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/imag1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:text="Send"
-                android:drawableEnd="@drawable/ic_baseline_send_24"
-                android:layout_height="wrap_content"/>
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder" />
 
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_margin="@dimen/_2sdp"
-            android:layout_height="wrap_content">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/commentList"
-                android:nestedScrollingEnabled="false"
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/image2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
+
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/image3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/downloadBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="0.5"
+                    android:text="Download" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/shareBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="0.5"
+                    android:text="Share" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addToBookMark"
+                    android:layout_width="wrap_content"
+                    android:text="🔖Add to Bookmark🔖"
+                    android:layout_margin="3dp"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/removeToBookMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:visibility="gone"
+                    android:text="Remove From The Bookmark" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/addToBookMark"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="3dp"-->
+<!--                    android:layout_weight="0.5"-->
+<!--                    android:text="Add To BookMark" />-->
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="All Comments"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                android:textStyle="" />
+
+            <LinearLayout
+                android:id="@+id/LoginContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/you_have_to_be_registerd_user_to_comment"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/commentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rec"
+                    android:hint="Leave a comment"
+                    android:maxLines="14"
+                    android:minLines="4"
+                    android:paddingStart="@dimen/_6sdp"
+
+                    android:paddingEnd="@dimen/_6sdp" />
+
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:drawableEnd="@drawable/ic_baseline_send_24"
+                    android:text="Send" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2sdp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
 
-    <include layout="@layout/navigation_drawer_layout"/>
+    <include layout="@layout/navigation_drawer_layout" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -35,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.metacoders.cakri.Activities.Contact_us;
 import com.metacoders.cakri.Activities.Profile_Activity;
@@ -86,6 +87,7 @@ public class SinglePostDownloadArea extends AppCompatActivity {
     LinearLayout commentBox, LoginBox;
     Utilities utilities = new Utilities();
     String id ;
+    MaterialButton addToBookMark ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +110,8 @@ public class SinglePostDownloadArea extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         comment_list.setLayoutManager(new LinearLayoutManager(this));
         removeFromList = findViewById(R.id.removeToBookMark);
+        addToBookMark = findViewById(R.id.addToBookMark) ;
+
 
         // gettting the data
         String postType = getIntent().getStringExtra("POST_TYPE");
@@ -192,6 +196,20 @@ public class SinglePostDownloadArea extends AppCompatActivity {
             }
         });
 
+        addToBookMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id =  utilities.isUserSignedIn(getApplicationContext());
+                if(id==0){
+                    Toast.makeText(getApplicationContext(), "Please Login " , Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    addtoBookMark(id) ;
+                }
+            }
+        });
+
         // click listener
         textSize.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -273,6 +291,36 @@ public class SinglePostDownloadArea extends AppCompatActivity {
                 dialog.show();
 
 
+            }
+        });
+    }
+
+    private void addtoBookMark(int id) {
+        ////$u_id , $p_id , $type ,$title
+        Call<MsgModel> all = RetrofitClient.getInstance().getApi()
+                .insertBookMark(id,model.getId() , model.getPost_type() , model.getTitle()+" ") ;
+
+        all.enqueue(new Callback<MsgModel>() {
+            @Override
+            public void onResponse(Call<MsgModel> call, Response<MsgModel> response) {
+                if(response.code()==200){
+                    if(response.body().getError()){
+                        Toast.makeText(getApplicationContext() , "All ready BookMarked!!" , Toast.LENGTH_LONG)
+                                .show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext() , "Post BookMarked!!" , Toast.LENGTH_LONG)
+                                .show();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext() , "Something Went Wrong " +response.code() , Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MsgModel> call, Throwable t) {
+                Toast.makeText(getApplicationContext() , "Something Went Wrong " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -697,8 +745,8 @@ public class SinglePostDownloadArea extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
-                p.putExtra("cat_id", "0");
-                p.putExtra("sub_cat_id", "14");
+                p.putExtra("cat_id", "14");
+                p.putExtra("sub_cat_id", "0");
                 startActivity(p);
             }
         });

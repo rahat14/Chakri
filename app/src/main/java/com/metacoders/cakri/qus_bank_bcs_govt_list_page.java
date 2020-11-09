@@ -291,8 +291,8 @@ public class qus_bank_bcs_govt_list_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
-                p.putExtra("cat_id", "0");
-                p.putExtra("sub_cat_id", "14");
+                p.putExtra("cat_id", "14");
+                p.putExtra("sub_cat_id", "0");
                 startActivity(p);
             }
         });

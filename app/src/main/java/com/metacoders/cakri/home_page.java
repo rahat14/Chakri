@@ -36,6 +36,7 @@ import com.metacoders.cakri.Adapter.listAdapter;
 import com.metacoders.cakri.Models.JobCircularReponseModel;
 import com.metacoders.cakri.Models.StartUpResponse;
 import com.metacoders.cakri.Utils.Constants;
+import com.metacoders.cakri.Utils.FireBase_notification;
 import com.metacoders.cakri.Utils.Utilities;
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
@@ -73,10 +74,11 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
         // recive the data
         startUpResponse = (StartUpResponse) getIntent().getSerializableExtra("DATA");
 
-
+      //  startService(new Intent(this, FireBase_notification.class));
+     //   startService(new Intent(this, FireBase_notification.class));
         setupUI(startUpResponse);
 
-
+        startService(new Intent(this, FireBase_notification.class));
 
 
         setUpSideBar();
@@ -419,8 +421,8 @@ public class home_page extends AppCompatActivity implements JobCircularAdaper.It
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
-                p.putExtra("cat_id", "0");
-                p.putExtra("sub_cat_id", "14");
+                p.putExtra("cat_id", "14");
+                p.putExtra("sub_cat_id", "0");
                 startActivity(p);
             }
         });

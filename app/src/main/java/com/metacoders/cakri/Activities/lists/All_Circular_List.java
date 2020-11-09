@@ -64,7 +64,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
     SpinKitView progress;
     RelativeLayout loadingPanel;
     LottieAnimationView animationView;
-    String SUB_CAT_ID = "1" ;
+    String SUB_CAT_ID = "1";
 
 
     @Override
@@ -85,11 +85,8 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         manager = new LinearLayoutManager(this);
 
         recyclerView.setLayoutManager(manager);
-
         adaper = new JobCircularAdaper(getApplicationContext(), circularList, this);
         recyclerView.setAdapter(adaper);
-
-
         loadList(currentPage);
 
         initScrollListener();
@@ -104,9 +101,9 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
 
 
         Call<JobCircularReponseModel> call = RetrofitClient.getInstance()
-                .getApi().GetJobCirCularViaCategory(SUB_CAT_ID  ,page);
+                .getApi().GetJobCirCularViaCategory(SUB_CAT_ID, page);
 
-        Log.d("TAG", "loadList: "+ SUB_CAT_ID);
+        Log.d("TAG", "loadList: " + SUB_CAT_ID);
         call.enqueue(new Callback<JobCircularReponseModel>() {
             @Override
             public void onResponse(Call<JobCircularReponseModel> call, Response<JobCircularReponseModel> response) {
@@ -202,19 +199,17 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
     }
 
     public void setUpSideBar() {
-        NavigationView navigationView ;
+        NavigationView navigationView;
         DrawerLayout drawerLayout;
-        TextView name , phone ;
+        TextView name, phone;
 
-        LinearLayout bcs_model_test, bank_model_test , daily_news,bcs_preparation,bank_preparation,teacher_preparation,current_qus_sol,all_job_sol
-                ,viva_expi,interview_tip,application_cv,job_qus,inspratn,age_cal,prblms_update,notifi
-                , love , share , bookmark , contact ;
+        LinearLayout bcs_model_test, bank_model_test, daily_news, bcs_preparation, bank_preparation, teacher_preparation, current_qus_sol, all_job_sol, viva_expi, interview_tip, application_cv, job_qus, inspratn, age_cal, prblms_update, notifi, love, share, bookmark, contact;
 
         ImageView hamburger_Btn;
 
         hamburger_Btn = findViewById(R.id.hamburgerBtn);
         drawerLayout = findViewById(R.id.drawer_layout);
-        contact =findViewById(R.id.contact) ;
+        contact = findViewById(R.id.contact);
         daily_news = drawerLayout.findViewById(R.id.daily_news);
         bcs_preparation = drawerLayout.findViewById(R.id.bcs_preparation);
         bcs_model_test = drawerLayout.findViewById(R.id.bcs_model_test);
@@ -231,26 +226,24 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         age_cal = drawerLayout.findViewById(R.id.age_cal);
         prblms_update = drawerLayout.findViewById(R.id.prblms_update);
         notifi = drawerLayout.findViewById(R.id.notifi);
-        navigationView=findViewById(R.id.nav_view);
-        love = findViewById(R.id.heart) ;
-        bookmark = findViewById(R.id.bookmark) ;
-        share = findViewById(R.id.share) ;
+        navigationView = findViewById(R.id.nav_view);
+        love = findViewById(R.id.heart);
+        bookmark = findViewById(R.id.bookmark);
+        share = findViewById(R.id.share);
 
 
-
-
-        name = drawerLayout.findViewById(R.id.name_on_header) ;
+        name = drawerLayout.findViewById(R.id.name_on_header);
         phone = drawerLayout.findViewById(R.id.ph_on_header);
 
-        SearchView searchView = findViewById(R.id.search_ed) ;
+        SearchView searchView = findViewById(R.id.search_ed);
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                Intent p = new Intent(getApplicationContext() , Search.class);
-                p.putExtra("search" , query) ;
+                Intent p = new Intent(getApplicationContext(), Search.class);
+                p.putExtra("search", query);
                 startActivity(p);
                 return false;
             }
@@ -261,17 +254,16 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
             }
         });
 
-        Utilities utilities = new Utilities() ;
+        Utilities utilities = new Utilities();
 
-        int id  =0 ;
+        int id = 0;
 
-        id =  utilities.isUserSignedIn(getApplicationContext()) ;
-        if(id == 0 ){
+        id = utilities.isUserSignedIn(getApplicationContext());
+        if (id == 0) {
             name.setText("Login");
 
             phone.setText("");
-        }
-        else {
+        } else {
             name.setText(utilities.getSavedName(getApplicationContext()));
             phone.setText(utilities.getSavedContacts(getApplicationContext()));
         }
@@ -280,7 +272,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         bookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(getApplicationContext() , Book_Mark_List.class);
+                Intent p = new Intent(getApplicationContext(), Book_Mark_List.class);
                 startActivity(p);
             }
         });
@@ -305,7 +297,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s =Constants.SHARE_TEXT + " https://play.google.com/store/apps/details?id=" + getPackageName();
+                String s = Constants.SHARE_TEXT + " https://play.google.com/store/apps/details?id=" + getPackageName();
 
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
@@ -316,27 +308,23 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         });
 
 
-
-
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id =  utilities.isUserSignedIn(getApplicationContext()) ;
-                if(id==0){
-                    Intent p = new Intent(getApplicationContext(), login_activity.class) ;
+                int id = utilities.isUserSignedIn(getApplicationContext());
+                if (id == 0) {
+                    Intent p = new Intent(getApplicationContext(), login_activity.class);
                     startActivity(p);
 
-                }
-                else {
+                } else {
 
-                    Intent p = new Intent(getApplicationContext(), Profile_Activity.class) ;
+                    Intent p = new Intent(getApplicationContext(), Profile_Activity.class);
                     startActivity(p);
 
                 }
 
             }
         });
-
 
 
         hamburger_Btn.setOnClickListener(new View.OnClickListener() {
@@ -350,7 +338,6 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
                 }
             }
         });
-
 
 
         //set click listener
@@ -369,7 +356,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
         contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent  p = new Intent(getApplicationContext() , Contact_us.class);
+                Intent p = new Intent(getApplicationContext(), Contact_us.class);
                 startActivity(p);
             }
         });
@@ -377,7 +364,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
             @Override
             public void onClick(View v) {
 
-                Intent  nextPage = new Intent(getApplicationContext(), bcsSpecialPage.class);
+                Intent nextPage = new Intent(getApplicationContext(), bcsSpecialPage.class);
                 startActivity(nextPage);
             }
         });
@@ -448,8 +435,8 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(getApplicationContext(), All_Job_Prep.class);
-                p.putExtra("cat_id", "0");
-                p.putExtra("sub_cat_id", "14");
+                p.putExtra("cat_id", "14");
+                p.putExtra("sub_cat_id", "0");
                 startActivity(p);
             }
         });
@@ -505,7 +492,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
             @Override
             public void onClick(View v) {
 
-                String url = "https://docs.google.com/document/d/19Fast0IlEUd2XC5hPpNDP038DQKBYjNkCZ4EpLbFdWQ/edit?usp=sharing" ;
+                String url = "https://docs.google.com/document/d/19Fast0IlEUd2XC5hPpNDP038DQKBYjNkCZ4EpLbFdWQ/edit?usp=sharing";
 
                 Uri uri = Uri.parse(url);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -517,7 +504,7 @@ public class All_Circular_List extends AppCompatActivity implements JobCircularA
             @Override
             public void onClick(View v) {
 
-                Intent p = new Intent(getApplicationContext() , NotificaitonList.class) ;
+                Intent p = new Intent(getApplicationContext(), NotificaitonList.class);
                 startActivity(p);
             }
         });
