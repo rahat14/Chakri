@@ -1,0 +1,47 @@
+[03-Sep-2020 14:57:46 UTC] PHP Notice:  Undefined index: share_text in /home/rajokiof/public_html/chakri_admin/insert_job_prepration.php on line 281
+[07-Sep-2020 06:34:18 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rajokiof/public_html/chakri_admin/edit_job_prepration.php on line 59
+[20-Sep-2020 15:58:40 UTC] PHP Notice:  Undefined index: id in /home/rajokiof/public_html/chakri_admin/send_notification.php on line 350
+[25-Sep-2020 14:17:13 UTC] PHP Notice:  Undefined variable: response in /home/rajokiof/public_html/chakri_admin/send_notification.php on line 353
+[25-Sep-2020 14:17:13 UTC] PHP Notice:  Undefined variable: response in /home/rajokiof/public_html/chakri_admin/send_notification.php on line 356
+[25-Sep-2020 16:00:26 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:00:26 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:00:26 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:00:26 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 125
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 127
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 131
+[25-Sep-2020 16:00:33 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/login.php on line 133
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 125
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 127
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 131
+[25-Sep-2020 16:00:39 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/login.php on line 133
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 125
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 127
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 131
+[25-Sep-2020 16:01:47 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/login.php on line 133
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'latestci_og'@'localhost' (using password: YES) in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 125
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 127
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/login.php on line 131
+[25-Sep-2020 16:01:59 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/login.php on line 133
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home/latestci/public_html/chakri_admin/includes/db.php on line 5
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/includes/db.php on line 10
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/index.php on line 23
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/index.php on line 25
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/insert_job_prepration.php on line 206
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/insert_job_prepration.php on line 207
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/latestci/public_html/chakri_admin/index.php on line 766
+[26-Sep-2020 11:13:01 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/latestci/public_html/chakri_admin/index.php on line 767
+[09-Nov-2020 03:47:50 UTC] PHP Warning:  include(view_users.php): failed to open stream: No such file or directory in /home/latestci/public_html/chakri_admin/index.php on line 318
+[09-Nov-2020 03:47:50 UTC] PHP Warning:  include(view_users.php): failed to open stream: No such file or directory in /home/latestci/public_html/chakri_admin/index.php on line 318
+[09-Nov-2020 03:47:50 UTC] PHP Warning:  include(): Failed opening 'view_users.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/latestci/public_html/chakri_admin/index.php on line 318
+[30-Dec-2020 03:29:11 UTC] PHP Warning:  include(view_users.php): failed to open stream: No such file or directory in /home/latestci/public_html/chakri_admin/index.php on line 318
+[30-Dec-2020 03:29:11 UTC] PHP Warning:  include(view_users.php): failed to open stream: No such file or directory in /home/latestci/public_html/chakri_admin/index.php on line 318
+[30-Dec-2020 03:29:11 UTC] PHP Warning:  include(): Failed opening 'view_users.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/latestci/public_html/chakri_admin/index.php on line 318
