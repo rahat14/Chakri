@@ -69,7 +69,7 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String code =  pinView.getOTP();
+                String code =  pinView.getOtp();
 
                   utilities.showMsg(getApplicationContext() , code );
 
