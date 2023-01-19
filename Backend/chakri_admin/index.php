@@ -108,7 +108,18 @@ if (!isset($_SESSION['admin_email'])) {
 
                         include("insert_course.php");
                         }
+                        if (isset($_GET['insert_batch'])) {
 
+                            include("insert_batch.php");
+                            }
+                            if (isset($_GET['insert_batch_register'])) {
+
+                                include("insert_batch_register.php");
+                                }
+                                if (isset($_GET['insert_student_details'])) {
+
+                                    include("insert_student_details.php");
+                                    }
                     if (isset($_GET['dashboard'])) {
 
                         include("dashboard.php");
