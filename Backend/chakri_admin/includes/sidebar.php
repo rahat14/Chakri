@@ -99,9 +99,21 @@ if (!isset($_SESSION['admin_email'])) {
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="index.php?view_course" class="nav-link">
+                                        <a href="index.php?insert_batch" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>View Courses</p>
+                                            <p>Batch</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index.php?insert_student_details" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Student Details</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index.php?insert_batch" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Batch Register</p>
                                         </a>
                                     </li>
 
