@@ -21,7 +21,7 @@ if (!isset($_SESSION['admin_email'])) {
 <!-- Main content -->
 <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
           <!-- left column -->
           <div class="col-md-4">
             <!-- general form elements -->

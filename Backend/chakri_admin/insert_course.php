@@ -21,13 +21,13 @@ if (!isset($_SESSION['admin_email'])) {
 <!-- Main content -->
 <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
           <!-- left column -->
           <div class="col-md-6">
             <!-- general form elements -->
-            <div class="card card-primary">
+            <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Student Details</h3>
+                <h3 class="card-title">course Details</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
