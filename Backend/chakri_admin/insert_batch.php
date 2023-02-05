@@ -23,7 +23,7 @@ if (!isset($_SESSION['admin_email'])) {
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
           <!-- left column -->
-          <div class="col-md-4">
+          <div class="col-md-6">
             <!-- general form elements -->
             <div class="card card-danger">
               <div class="card-header">
