@@ -5,8 +5,7 @@ if (!isset($_SESSION['admin_email'])) {
 
     echo "<script>window.open('login.php','_self')</script>";
 } else {
-
-?>
+  ?>
 
 
 <!DOCTYPE html>
@@ -80,5 +79,8 @@ if (!isset($_SESSION['admin_email'])) {
             <!-- /.card -->
 
 
+    
 
-<?php } ?>
+ <?php }?>
+
+
