@@ -158,7 +158,8 @@ if (!isset($_SESSION['admin_email'])) {
 
                                 </div>
                             </div>
-                        </div><!-- form-group Ends -->
+                        </div>
+                        <!-- form-group Ends -->
                         
                             <div class="form-group">
 

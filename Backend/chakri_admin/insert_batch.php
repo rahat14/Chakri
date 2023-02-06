@@ -36,12 +36,12 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Id</label>
-                    <input type="number" name="id" class="form-control" id="" placeholder="Enter your id">
-                  </div>
+                    <input type="number" name="student_id" class="form-control" id="" placeholder="Enter your id">
+                </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" name="student_name" class="form-control" id="" placeholder="Enter your name">
+                    <input type="text" name="course_name" class="form-control" id="" placeholder="Enter your name">
                   </div>
                   <div class="form-group">
                     <label for="phoneNumber">Code</label>
@@ -81,6 +81,23 @@ if (!isset($_SESSION['admin_email'])) {
 
     
 
- <?php }?>
+ <?php
+if (isset($_POST['submit'])) {
+
+  $student_id = $_POST['student_id'];
+
+  $course_name = $_POST['course_name'];
+
+  $code = $_POST['code'];
+
+  $course_id = $_POST['course_id'];
+
+  $course_start_Date = $_POST['course_start_Date'];
+
+  $course_End_Date = $_POST['course_End_Date'];
+
+
+}
+?>
 
 

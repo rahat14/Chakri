@@ -74,10 +74,16 @@ if (!isset($_SESSION['admin_email'])) {
                           <label for="exampleInputEmail1">Amount</label>
                           <input type="number" name="amount" class="form-control" id="exampleInputEmail1" placeholder=" ">
                         </div>
+                       
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Comment</label>
-                          <input type="number" name="comment"  class="form-control" id="comment" placeholder="Enter your comment ">
+                            <label class="col-md-3 control-label">Comment:</label>
+                            <div class="col-md-12">
+                                <textarea name="comment" class="form-control" rows="8" cols="8" placeholder="Write The Description"></textarea>
+                            </div>
+
                         </div>
+
+
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label"   for="exampleCheck1">Check me out</label>
@@ -94,4 +100,26 @@ if (!isset($_SESSION['admin_email'])) {
 
 
 
-<?php } ?>
+<?php 
+if (isset($_POST['submit'])) {
+
+  $id = $_POST['id'];
+
+  $student_id = $_POST['student_id'];
+
+  $batch_id = $_POST['batch_id'];
+
+  $code = $_POST['code'];
+
+  $course_id = $_POST['course_id'];
+
+  $payment_date = $_POST['payment_date'];
+
+  $amount = $_POST['amount'];
+
+  $comment = $_POST['comment'];
+
+
+
+
+} ?>
