@@ -37,15 +37,15 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Id</label>
-                    <input type="number" class="form-control" id="id" placeholder="Enter your id">
+                    <input type="number" name="id" class="form-control" id="id" placeholder="Enter your id">
                   </div>
                   <div class="form-group">
                     <label for="">Student Id</label>
-                    <input type="number" class="form-control" id="Student Id" placeholder="Enter your student id">
+                    <input type="number" name="student_id" class="form-control" id="Student Id" placeholder="Enter your student id">
                   </div>
                   <div class="form-group">
                     <label for="">Batch Id</label>
-                    <input type="number" class="form-control" id="Batch Id" placeholder="Enter your Batch id">
+                    <input type="number" name="batch_id" class="form-control" id="Batch Id" placeholder="Enter your Batch id">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Is paid</label>
@@ -61,28 +61,28 @@ if (!isset($_SESSION['admin_email'])) {
                             No
                         </label>
                         </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Course Id</label>
-                    <input type="number" class="form-control" id="Course id" placeholder="Enter your Course id">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Payment Date</label>
-                    <input type="Date" class="form-control" id="payment Date" placeholder="Enter your payment Date ">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Amount</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder=" ">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Comment</label>
-                    <input type="number" class="form-control" id="comment" placeholder="Enter your comment ">
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="">Course Id</label>
+                          <input type="number" name="course_id" class="form-control" id="Course id" placeholder="Enter your Course id">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Payment Date</label>
+                          <input type="Date" name="payment_date" class="form-control" id="payment Date" placeholder="Enter your payment Date ">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Amount</label>
+                          <input type="number" name="amount" class="form-control" id="exampleInputEmail1" placeholder=" ">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Comment</label>
+                          <input type="number" name="comment"  class="form-control" id="comment" placeholder="Enter your comment ">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label"   for="exampleCheck1">Check me out</label>
+                        </div>
+                      </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">

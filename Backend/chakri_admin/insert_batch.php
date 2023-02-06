@@ -37,33 +37,33 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Id</label>
-                    <input type="number" class="form-control" id="" placeholder="Enter your id">
+                    <input type="number" name="id" class="form-control" id="" placeholder="Enter your id">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control" id="" placeholder="Enter your name">
+                    <input type="text" name="student_name" class="form-control" id="" placeholder="Enter your name">
                   </div>
                   <div class="form-group">
                     <label for="phoneNumber">Code</label>
-                    <input type="number" class="form-control" id="" placeholder="Enter your code number">
+                    <input type="number" name="code" class="form-control" id="" placeholder="Enter your code number">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Course Id</label>
-                    <input type="number" class="form-control" id="" placeholder="Enter your id">
+                    <input type="number" name="course_id" class="form-control" id="" placeholder="Enter your id">
                   </div>
 
                   <div class="form-group">
                     <label for="">Start Date</label>
-                    <input type="date" class="form-control" id="" placeholder="">
+                    <input type="date" name="course_start_Date" class="form-control" id="" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="">End Date</label>
-                    <input type="date" class="form-control" id="" placeholder="">
+                    <input type="date" name="course_End_Date" class="form-control" id="" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="">Max Quota</label>
-                    <input type="number" class="form-control" id="" placeholder="">
+                    <input type="number" name="max_quota"  class="form-control" id="" placeholder="">
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

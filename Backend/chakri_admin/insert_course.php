@@ -53,7 +53,8 @@ if (!isset($_SESSION['admin_email'])) {
 
                             </div>
 
-                        </div><!-- form-group Ends -->
+                        </div>
+                        <!-- form-group Ends -->
 
 
 
@@ -133,7 +134,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Course Price (BDT)</label>
-                    <input type="number" class="form-control" name = "course_price" " placeholder="Course Price">
+                    <input type="number" class="form-control" name = "course_price"  placeholder="Course Price">
                   </div>
 
 
